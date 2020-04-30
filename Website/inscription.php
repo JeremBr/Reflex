@@ -1,18 +1,24 @@
 <?php
 
    $bdd = new PDO('mysql:host=localhost;dbname=reflex', 'root', '');
+   
+
+
+   /* ICI ON INSCRIT LUTILISATEUR SI LE FORMULAIRE A ETE CORRECTEMENT REMPLIE */
     
    if(isset($_POST['forminscription'])) {
 
-      $genre = htmlspecialchars($_POST['choix']);
-      $prenom = htmlspecialchars($_POST['prenom']);
-      $nom = htmlspecialchars($_POST['nom']);
-      $mail = htmlspecialchars($_POST['mail']);
-      $mail2 = htmlspecialchars($_POST['mail2']);
-      $mdp = sha1($_POST['mdp']);
-      $mdp2 = sha1($_POST['mdp2']);
 
       if(!empty($_POST['choix']) AND !empty($_POST['nom']) AND!empty($_POST['prenom']) AND !empty($_POST['mail']) AND !empty($_POST['mail2']) AND !empty($_POST['mdp']) AND !empty($_POST['mdp2'])) {
+
+         $genre = htmlspecialchars($_POST['choix']);
+         $prenom = htmlspecialchars($_POST['prenom']);
+         $nom = htmlspecialchars($_POST['nom']);
+         $mail = htmlspecialchars($_POST['mail']);
+         $mail2 = htmlspecialchars($_POST['mail2']);
+         $mdp = sha1($_POST['mdp']);
+         $mdp2 = sha1($_POST['mdp2']);
+
 
          $nomlength = strlen($nom);
          $prenomlength = strlen($prenom);
@@ -23,26 +29,56 @@
                if($mail == $mail2) {
                   if(filter_var($mail, FILTER_VALIDATE_EMAIL)) {
 
-                     $reqmail = $bdd->prepare("SELECT * FROM utilisateur WHERE mail = ?");
-                     $reqmail->execute(array($mail));
-                     $mailexist = $reqmail->rowCount();
+                     //ON REGARDE SI LE MAIL EST INVITER A SINSCRIRE
 
-                     if($mailexist == 0) {
+                     $goodMail = $bdd->prepare("SELECT temps FROM invitation WHERE mail = ?");
+                     $goodMail->execute(array($mail));
 
-                        if($mdp == $mdp2) {
+                     if( ($goodMail->rowCount()) > 0) {
 
-                           $insertmbr = $bdd->prepare("INSERT INTO utilisateur(genre, prenom, nom, mail, motDePasse) VALUES(?, ?, ?, ?, ?)");
-                           $insertmbr->execute(array($genre, $prenom, $nom, $mail, $mdp));
+                        $timeInvit = $goodMail->fetch();
+
+                        $time = time();
+                        if(($time - $timeInvit['temps']) < (24*3600)){
+
+                           $reqmail = $bdd->prepare("SELECT * FROM utilisateur WHERE mail = ?");
+                           $reqmail->execute(array($mail));
+                           $mailexist = $reqmail->rowCount();
+
+                           if($mailexist == 0) {
+
+                              if($mdp == $mdp2) {
+
+                                 $insertmbr = $bdd->prepare("INSERT INTO utilisateur(genre, prenom, nom, mail, motDePasse) VALUES(?, ?, ?, ?, ?)");
+                                 $insertmbr->execute(array($genre, $prenom, $nom, $mail, $mdp));
 
 
-                           $erreur = "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>";
-                           
+                                 $delUser = $bdd->prepare("DELETE FROM invitation WHERE mail =?");
+                                 $delUser->execute(array($mail));
+
+
+                                 $erreur = "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>";
+                                 
+                              } else {
+                                 $erreur = "Vos mots de passes ne correspondent pas !";
+                              }
+                           } else {
+                              $erreur = "Adresse mail déjà utilisée !";
+                           }
+
+
+
                         } else {
-                           $erreur = "Vos mots de passes ne correspondent pas !";
+                           $erreur = "Vous n'êtes plus autorisé à vous inscrire !";
                         }
+
+
+
                      } else {
-                        $erreur = "Adresse mail déjà utilisée !";
+                        $erreur = "L'email saisie n'est pas autorisé à s'inscrire !";
                      }
+                            
+                     
                   } else {
                      $erreur = "Votre adresse mail n'est pas valide !";
                   }
@@ -61,10 +97,58 @@
          $erreur = "Tous les champs doivent être complétés !";
       }
    }
+
+
+
+   /* ICI ON VERIFIE LACCES A LA PAGE */
+
+   if( ( isset($_GET['inscription']) && !empty($_GET['inscription']) ) ){
+
+      
+         
+         /* 
+            On regarde si le token est bien enregistré, sinon l'utilisateur est redirigé
+            car si on redirige pas quand un utilisateur essaie d'usurpater
+            alors il peut tenter de faire du bruteForce sur le mail et essayer de s'inscrire avec le mail en question (qui n'est donc pas le sien)
+         */
+
+         $reqInscris = $bdd->prepare("SELECT * FROM invitation WHERE token = ?");
+         $reqInscris->execute(array($_GET['inscription']));
+         $nmbrToken = $reqInscris->rowCount();
+
+         if($nmbrToken == 0){
+            header("Location: connexion.php");
+         } else {
+             //Pour maintenir l'accès quand on POST
+         }
+
+
+      
+
+      // if(isset($_SESSION['inscription'])){
+      //    //on regarde, sinon on est rediriger, pour eviter l'usurpation
+      //    $keepSession = $bdd->prepare("SELECT * FROM utilisateur WHERE mail = ?");
+      //    $keepSession->execute(array($_SESSION['inscription']));
+      //    $nmbrMail = $keepSession->rowCount();
+
+      //    if($nmbrMail == 0){
+      //       header("Location: index.php");
+      //    }
+      // }
+
+   }else{
+      header("Location: index.php");
+   }
 ?>
 
 
 
+
+
+
+
+
+<!-- CHECK AUSSI QUIL SINSCRIT AVEC LE MAIL DU TOKEN, ET PAS AVEC UN AUTRE COMPTE :) -->
 
 
 <html>
@@ -98,10 +182,12 @@
                             <option value="Autre">Autre</option>
                            
                         </select>
-                        <!-- <input type="text" placeholder="Votre genre" id="genre" name="genre" value="<?php //if(isset($genre)) { echo $genre; } ?>" /> -->
+                        
                      </td>
                   </tr>
                   <tr>
+                     <!-- value="if(isset($variable)){echo}" 
+                        permet de laissez les informations qui ont étaient correctement remplies, pour pas que l'utilisateur ait a remettre ses informations-->
                      <td>
                         <input type="text" placeholder="Votre prénom" id="prenom" name="prenom" value="<?php if(isset($prenom)) { echo $prenom; } ?>" />
                      </td>

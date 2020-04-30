@@ -91,16 +91,17 @@ if(isset($_COOKIE['idUtilisateur']) AND $_COOKIE['idUtilisateur'] > 0) {
                             } else if($userinfo['permission'] == 1){
                                 ?>
                                 <li><a href="envoyerMail.php">Envoyer un mail</a></li>
-                                <li><a href="editionprofil.php">Editer mon profil</a></li>
+                                <li><a href="inviteUtilisateur.php">Inviter un utilisateur</a></li>
                                 <li><a href="resultatsRechercheGestionnaire.php">Rechercher un utilisateur</a></li>
+                                <li><a href="editionprofil.php">Editer mon profil</a></li>
 
                                 <?php
                             } else if($userinfo['permission'] ==2){
                                 ?>
                                 <li><a href="envoyerMail.php">Envoyer un mail</a></li>
-                                <li><a href="editionprofil.php">Editer mon profil</a></li>
-                                <li><a href="resultatsRechercheGestionnaire.php">Rechercher un utilisateur</a></li>
+                                <li><a href="inviteUtilisateur.php">Inviter un utilisateur</a></li>
                                 <li><a href="cgu_modifier.php">Gérer la CGU</a></li>
+                                <li><a href="editionprofil.php">Editer mon profil</a></li>
 
                                 <?php
                             }
