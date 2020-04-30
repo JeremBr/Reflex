@@ -31,7 +31,7 @@
 
                      //ON REGARDE SI LE MAIL EST INVITER A SINSCRIRE
 
-                     $goodMail = $bdd->prepare("SELECT temps FROM invitation WHERE mail = ?");
+                     $goodMail = $bdd->prepare("SELECT * FROM invitation WHERE mail = ?");
                      $goodMail->execute(array($mail));
 
                      if( ($goodMail->rowCount()) > 0) {

@@ -35,8 +35,7 @@ include('./function/traduction.php');
 						} else {
 							?> 
 							<li><a href="./index.php"><?php echo trad("Accueil","Home")?></a></li>
-							<li><a href="./inscription.php"><?php echo trad("Inscription","Sign Up")?></a></li>
-							<li><a href="./connexion.php"><?php echo trad("Connexion","Connection")?></a></li>
+							<li><a href="./connexion.php"><?php echo trad("Connexion","Sign In")?></a></li>
 							<!-- <li><a href="./envoyerMail.php">Contact</a></li> -->
 
 							<?php
