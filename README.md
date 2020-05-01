@@ -8,7 +8,7 @@ You can find here all the code architecture of the Reflex's Product
 (1) Régler soucis BDD
 
 (2) Graphiques -> mettres données arbitraire pour chaque utilisateur
+  + et qu'ils puissent observer leurs résultats
 
-(3) Modifier quelques CSS
+(3) Finir CSS responsive
 
-(4) Traduction textes en Anglais
