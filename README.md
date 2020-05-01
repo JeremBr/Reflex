@@ -32,3 +32,10 @@ You can find here all the code architecture of the Reflex's Product
 - page de connexion, quand mdp est vide
 
 - pages de Test doit être plus attrayantes à utiliser
+
+
+
+(+)
+- Aligner les champs dans les formulaires
+- mettre adresse dans profil
+- connexion email invalide
