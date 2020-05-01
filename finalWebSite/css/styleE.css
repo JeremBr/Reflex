@@ -5,9 +5,9 @@
 
 form
 {
-	border : 2px grey solid;
+	border : 5px #17e2cd solid;
 	border-radius: 10px;
-	background-color: rgb(173,179,197);
+	background-color: #ddd;
 	/*margin-right : 5em;
 	margin-left: 5em;*/
 	margin : auto;
@@ -47,10 +47,12 @@ label strong
 }
 .titre 
 {
-	padding-left: 2.5em;
-	padding-bottom: 0.5em;
-	color : rgb(243,143,50);
-	font-size: 2.5em;
+	padding-left: 4.5em;
+	padding-bottom: 1em; /*0.5em*/
+	color : #505050;
+	font-size: 2em; /*2.5em*/
+	font-family: "Arial";
+	font-weight: bold;
 }
 /*p
 {
@@ -76,12 +78,24 @@ label strong
 	padding-left:12em;
 	
 }
+input[type="submit"]:hover
+{
+	background-color: #17e2cd;
+	color : white;
+}
 
 input,textarea
 {
-	border-radius: 10px;
+	border: 2px solid #ddd;
+	border-radius: 3px;
 	background-color: rgb(243,241,240);
 	font-size: 1.2em;
 	margin-bottom: 1em;
 	margin-top: 0.5em;
+	font-family:"Calibri";
+	padding: 10px;
+	margin-right: 20px;
 }
+
+	
+	

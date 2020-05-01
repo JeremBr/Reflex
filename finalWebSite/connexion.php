@@ -79,8 +79,7 @@ if(isset($_POST['formconnexion'])) {
       </section>
 
       <div class="test">
-      <a href="motPasseOublie.php">Mot de passe oublié ? - </a>
-      <a href="inscription.php">S'inscrire</a>
+      <a href="motPasseOublie.php">Mot de passe oublié ?</a>
       </div>
 
       <?php include("includes/footer.php"); ?>

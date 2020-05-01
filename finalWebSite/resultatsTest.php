@@ -23,25 +23,25 @@
 
 			<tr>
 				<th>Reconnaissance de tonalité (score)</th>
-				<th>Rythme cardiaque (en bps)</th>
+				<th>Rythme cardiaque (en bpm)</th>
 				<th>Température de la peau (en degré)
-				<th>Réflexe sonore (temps en secondes)</th>
-				<th>Réflexe visuel (temps en secondes)</th>
+				<th>Réflexe sonore (temps en )</th>
+				<th>Réflexe visuel (temps en )</th>
 			</tr>
 
 			<tr>
-				<td><br/></td>
-				<td><br/></td>
-				<td><br/></td>
-				<td><br/></td>
-				<td><br/></td>
+				<td>30<br/></td>
+				<td>80<br/></td>
+				<td>38<br/></td>
+				<td>30<br/></td>
+				<td>31<br/></td>
 
 
 			</tr>
 
 		</table>
 		
-	<img src="radar.php">
+	<img class="graph" src="radar.php">
 
 	<div class="commentaire">
 		<p><label for="comGestionnaire"> Commentaires du gestionnaire : </label></p>

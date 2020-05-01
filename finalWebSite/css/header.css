@@ -13,8 +13,11 @@ header
 .logo
 {
 	position: absolute;
-	left: 30px;
-	top: 2px;
+	left: 6%;
+	top: 1.5%;
+
+
+	width: 4%;
 }
 
 header h1
