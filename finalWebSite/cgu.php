@@ -14,6 +14,7 @@
 		<link href="css/footer.css" rel="stylesheet">
       	<link href="css/header.css" rel="stylesheet">
 
+		<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel="stylesheet">
 	
 		<title>Reflex</title>
 	</head>
@@ -29,46 +30,40 @@
 			</div>
 		</section>
 
-		<div class="cadre">
-		<section id="reglement">
-			
-			<div class="rectangle">Réglement</div>
-			</div>
-		</section>
-
 		
-		<div class="carré">
+		<div class="carré"> 
 
+				<h1>Réglement	</h1> <br>
 	
-			<H5>Article 1.1 :</H5> <H6>L'accès au Site est possible 24 heures sur 24, 7 jours sur 7, sauf en cas d'éventuelles pannes du Site ainsi que des interventions de maintenance nécessaires au bon fonctionnement du Site. </H6>
+			<h5>Article 1.1 :</h5> <h6> <br/> L'accès au Site est possible 24 heures sur 24, 7 jours sur 7, sauf en cas d'éventuelles pannes du Site ainsi que des interventions de maintenance nécessaires au bon fonctionnement du Site. </h6>
 		
 
 	<br>
 		
 		
 		
-			<H5>Article 1.2 :</H5>  <H6>Le service clientèle est disponible par téléphone au 01 42 22 33 44 du lundi au vendredi de 9h00 à 18h00. </H6> 
+			<h5>Article 1.2 :</h5>  <h6> <br/>Le service clientèle est disponible par téléphone au 01 42 22 33 44 du lundi au vendredi de 9h00 à 18h00. </h6> 
 		
 
 	<br>
 
 
 
-			<H5>Article 2.1 : </H5> <H6>Le compte ouvert par l’Utilisateur est personnel. L’Utilisateur est seul responsable de sa gestion et de son utilisation. Toute connexion effectuée dans le cadre de l’utilisation des Services sera réputée avoir été réalisée par l’Utilisateur et sous sa responsabilité exclusive. </H6>
+			<h5>Article 2.1 : </h5> <h6> <br/> Le compte ouvert par l’Utilisateur est personnel. L’Utilisateur est seul responsable de sa gestion et de son utilisation. Toute connexion effectuée dans le cadre de l’utilisation des Services sera réputée avoir été réalisée par l’Utilisateur et sous sa responsabilité exclusive. </h6>
 		
 	<br>
 
 
-			<H5>Article 2.2 : </H5> <H6> L’Utilisateur demeure l’unique responsable de la protection du mot de passe qu’il utilise pour accéder aux Services ainsi que pour l’ensemble des actions nécessitant une authentification avec mot de passe sur le Site. </H6>
+			<h5>Article 2.2 : </h5> <h6> <br/> L’Utilisateur demeure l’unique responsable de la protection du mot de passe qu’il utilise pour accéder aux Services ainsi que pour l’ensemble des actions nécessitant une authentification avec mot de passe sur le Site. </h6>
 		
 
 	<br>
-			<H5>Article 3 : </H5> <H6> Les Utilisateurs sont informés que des traceurs (« Cookies ») sont utilisés lors de la consultation du Site. Les Utilisateurs sont invités à prendre connaissance de la Politique dédiée liée à la gestion des cookies. </H6>
+			<h5>Article 3 : </h5> <h6> <br/> Les Utilisateurs sont informés que des traceurs (« Cookies ») sont utilisés lors de la consultation du Site. Les Utilisateurs sont invités à prendre connaissance de la Politique dédiée liée à la gestion des cookies. </h6>
 
 
 	<br>
 
-			<H5>Article 4 : </H5> <H6> Les CGU sont soumises à la loi française.</H6>
+			<h5>Article 4 : </h5> <h6> <br/> Les CGU sont soumises à la loi française.</h6>
 
 
 
@@ -80,29 +75,7 @@
 	<br>
 	<br>
 	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-
-
+	
 		
 
 		<?php include("includes/footer.php"); ?>

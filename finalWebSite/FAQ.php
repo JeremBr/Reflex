@@ -19,22 +19,33 @@
 
 		<?php include("includes/header.php"); ?>
 		
+		<p> <h1>  Foire aux Questions </h1>
+		</p>
+
 		<div class="faq">
-			<p class="question"> Question : Pourquoi Infinite Measures ?  </p>
-			<p class="réponse"> Réponse : Infinite Measure s'engage à accompagner chacun de ses clients durant leurs tests.
-				Signer chez Infinite Measures, c'est signer pour des tests de confiance.<br/></p>
+			<p class="question1"> Question : Qui Sommes-nous ?  </p>
+			<br/><br/>
+			<p class="réponse"> Réponse : </p>
+			 <p class="suiteréponse">Infinite Measures est un installateur de solutions «clé en main» pour les centres d’évaluation psychotechniques. Nous développons les tests qui prouve que vous êtes capable de conduire!<br/></p>
 			<br/>
 
-			<p class="question"> Question : Comment être sûr que les tests ne soient pas faussés ?  </p>
-			<p class="réponse"> Réponse : Nos tests ont été élaborés avec soin par des spécialistes pour votre plus grand bien.<br/></p>
+			<p class="question"> Question : A quoi servent les tests ? </p>
+			<br/><br/>
+			<p class="réponse"> Réponse : </p>
+			 <p class="suiteréponse">Les tests que nous produisons permettent de déterminer l'aptitude ou non d'un conducteur à repasser le code après que ce dernier le lui ait été retiré.<br/></p>
 			<br/>
 
-			<p class="question"> Question : Mettre une question ici</p>
-			<p class="réponse"> Réponse : Mettre une réponse ici <br/></p>
-			<br/>
+			<p class="question"> Question : Où puis-je consulter mes tests ? </p>
+			<br/><br/>
+			<p class="réponse"> Réponse :</p>
+			 <p class="suiteréponse">Les tests sont disponible dans la rubrique "Mes résultats" dans votre espace personnel.
+				<br/><br/>
 
-			<p class="question"> Question : Quel est le sens de la vie ? </p>
-			<p class="réponse"> Réponse : 42 <br/></p>
+
+			<p class="question"> Question : Qui peut voir mes résultats ? </p>
+			<br/><br/>
+			<p class="réponse"> Réponse :</p>
+			 <p class="lastréponse">Les seuls personnes pouvant avoir accès à vos résultats sont vous et les  gestionnaires des tests. Nous tenons à ce que ces infos restent confidentiels pour le  bien de nos clients. <br/></p>
 
 
 		</div>
