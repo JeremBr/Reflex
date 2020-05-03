@@ -34,7 +34,7 @@
             <h4> Que faisons nous ?  </h4>
             <br/>
             <article>
-                Les tests que nous produisons permettent déterminer l'aptiptude ou non d'un conducteur à repasser le code après que ce dernier le lui ait été retiré. 
+                Les tests que nous produisons permettent de déterminer l'aptitude ou non d'un conducteur à repasser le code après que ce dernier le lui ait été retiré. 
                 Pour cela notre solution va évaluer à partir de cinq épreuves, sous la surveillance d'un gestionnaire, les compétences du conducteur dans divers domaines. 
                 A partir des résultats de ces tests, le gestionnaire sera en mesure de fournir une interprétation à la capacité, ou non, du conducteur à repasser le permis. 
             </article> <br/><br/>

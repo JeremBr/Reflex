@@ -4,22 +4,54 @@
 	margin: auto;
 	margin-top: 50px;
 	margin-bottom: 50px;
-	background-color: rgb(173,179,197);
-	border : 1px  rgb(48,82,231) solid;
+	background-color: #ddd;
+	border : 2px  #17e2cd solid;
 	border-radius: 10px;
 	padding-left : 20px;
+	padding-right : 20px;
+
 
 
 }
-.question
+h1
 {
-	color : red;
+margin-top: 50px;
+text-decoration: underline #17e2cd;
+padding-left: 600px;
+}
+
+.question1
+{
+	color : #000;
+	border-bottom: 3px solid #17e2cd;
+	display: inline-block;
 	font-size : 1.2em;
 	font-family: "Calibri";
+	padding-top: 30px;
+}
+.lastréponse
+{
+	font-size : 1.2em;
+	font-family: "Calibri";
+	padding-bottom: 30px;
+	
+}
+
+
+.question
+{
+	color : #000;
+	border-bottom: 3px solid #17e2cd;
+	display: inline-block;
+	font-size : 1.2em;
+	font-family: "Calibri";
+	
 }
 .réponse
 {
-	color : green;
+	color : #000;
 	font-size : 1.2em;
 	font-family: "Calibri";
+	text-decoration: underline red;
+	
 }
