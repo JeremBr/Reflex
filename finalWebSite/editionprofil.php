@@ -61,7 +61,7 @@ if(isset($_COOKIE['idUtilisateur']) && isset($_COOKIE['mdp'])) {
    <head>
       <title>Reflex</title>
       <meta charset="utf-8">
-      
+      <link href="css/style.css" rel="stylesheet">
       <link href="css/editProfil.css" rel="stylesheet">
       
         
@@ -77,19 +77,19 @@ if(isset($_COOKIE['idUtilisateur']) && isset($_COOKIE['mdp'])) {
             <div class="formulaire">
 
             <form method="POST" action="" enctype="multipart/form-data">
-               <label>Nom :</label>
+               <label>Nom :</label><br/>
                <input type="text" name="newnom" placeholder="Nom" value="<?php echo $user['nom']; ?>" /><br /><br />
 
-               <label>Prénom :</label>
+               <label>Prénom :</label><br/>
                <input type="text" name="newprenom" placeholder="Préom" value="<?php echo $user['prenom']; ?>" /><br /><br />
 
-               <label>Mail :</label>
+               <label>Mail :</label><br/>
                <input type="text" name="newmail" placeholder="Mail" value="<?php echo $user['mail']; ?>" /><br /><br />
 
-               <label>Mot de passe :</label>
+               <label>Mot de passe :</label><p class="description">* 8 caractères dont un spécial</p><br/>
                <input type="password" name="newmdp1" placeholder="Mot de passe"/><br /><br />
 
-               <label>Confirmation - mot de passe :</label>
+               <label>Confirmation - mot de passe :</label><br/>
                <input type="password" name="newmdp2" placeholder="Confirmation du mot de passe" /><br /><br />
                
                <input type="submit" value="Mettre à jour mon profil !" />

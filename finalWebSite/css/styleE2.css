@@ -1,0 +1,97 @@
+.formulaire
+{
+	margin-left: 12%;
+}
+
+form
+{
+	border : 5px #17e2cd solid;
+	border-radius: 10px;
+	background-color: white; 
+	/*margin-right : 5em;
+	margin-left: 5em;*/
+	margin : auto;
+	margin-bottom : 16em;
+	margin-top: 16em;
+	padding-left : 20em;
+	padding-right: 5em;
+	width : 700px;
+	
+	
+}
+label strong
+{
+	color : red;
+}
+
+#champsMail
+{
+	display: flex;
+	padding:0.8em; 
+	justify-content: space-around;
+
+}
+.corps
+{
+	
+	flex-direction:column;
+	font-family: "Calibri";
+	font-size: 1.2em;
+	margin-bottom: 0.4em;
+	margin-top: 0.4em;
+	color : rgb(48,82,231);
+	
+}
+h2 
+{
+	padding-bottom: 1em; /*0.5em*/
+	color : #505050;
+	font-size: 2em; /*2.5em*/
+	font-family: "Arial";
+	font-weight: bold;
+	text-align: center; 
+	font-size: 15em;
+}
+.champs 
+{
+	color : red;
+	padding-left:2em;
+	padding-right: 2em;
+	padding-top: 1em;
+	margin-left: 5em;
+	font-size : 1em;
+	font-family:"Calibri";
+
+}
+
+.envoi
+{
+	padding-left:12em;
+	
+}
+input[type="submit"]:hover
+{
+	background-color: #17e2cd;
+	color : white;
+}
+input[type="msg"]
+{
+	text-overflow: auto; 
+}
+
+input,textarea
+{
+	border: 2px solid #ddd;
+	border-radius: 3px;
+	/*background-color: rgb(243,241,240);*/
+	font-size: 1.2em;
+	margin-bottom: 1em;
+	margin-top: 0.5em;
+	font-family:"Calibri";
+	padding: 10px;
+	margin-right: 20px;
+
+}
+
+	
+	
