@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=reflex', 'root', 'root');
     include 'function/cookie.php';
 
 ?>
@@ -27,6 +27,9 @@
 		<section id="contact">
 			<div class="wrapper">
 				<h3>Nous contacter</h3>
+
+
+				<strong><div class="faq"> Consultez la <U><a href="FAQ.php" >FAQ,</a></U> votre question a peut-être déjà été posée </strong></div>
 				
 
 				<form>
