@@ -19,7 +19,7 @@
 
 		<?php include("includes/header.php"); ?>
 		
-		<p> <h1>  Foire aux Questions </h1>
+		<p> <h2>  Foire aux Questions </h2>
 		</p>
 
 		<div class="faq">
