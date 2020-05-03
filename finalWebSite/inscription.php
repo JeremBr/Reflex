@@ -1,7 +1,10 @@
 <?php
+   
+   session_start();
 
    $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
-   
+
+
 
 
    /* ICI ON INSCRIT LUTILISATEUR SI LE FORMULAIRE A ETE CORRECTEMENT REMPLIE */
@@ -9,13 +12,11 @@
    if(isset($_POST['forminscription'])) {
 
 
-      if(!empty($_POST['choix']) AND !empty($_POST['nom']) AND!empty($_POST['prenom']) AND !empty($_POST['mail']) AND !empty($_POST['mail2']) AND !empty($_POST['mdp']) AND !empty($_POST['mdp2'])) {
+      if(!empty($_POST['choix']) AND !empty($_POST['nom']) AND!empty($_POST['prenom']) AND !empty($_POST['mdp']) AND !empty($_POST['mdp2'])) {
 
          $genre = htmlspecialchars($_POST['choix']);
          $prenom = htmlspecialchars($_POST['prenom']);
          $nom = htmlspecialchars($_POST['nom']);
-         $mail = htmlspecialchars($_POST['mail']);
-         $mail2 = htmlspecialchars($_POST['mail2']);
          $mdp = sha1($_POST['mdp']);
          $mdp2 = sha1($_POST['mdp2']);
 
@@ -23,80 +24,55 @@
          $nomlength = strlen($nom);
          $prenomlength = strlen($prenom);
 
-         if($prenomlength <= 255) {
-            if($nomlength <= 255){
+         if($prenomlength <= 50) {
+            if($nomlength <= 50){
+
                
-               if($mail == $mail2) {
-                  if(filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+               $timeInvit = $_SESSION['temps'];
+               $time = time();
 
-                     //ON REGARDE SI LE MAIL EST INVITER A SINSCRIRE
+               if( ($time - $timeInvit) < (24*3600) ){
 
-                     $goodMail = $bdd->prepare("SELECT * FROM invitation WHERE mail = ?");
-                     $goodMail->execute(array($mail));
+                  $reqmail = $bdd->prepare("SELECT * FROM utilisateur WHERE mail =?");
+                  $reqmail->execute(array($_SESSION['mail']));
 
-                     if( ($goodMail->rowCount()) > 0) {
+                  if( ($reqmail->rowCount()) ==0){
 
-                        $timeInvit = $goodMail->fetch();
+                     if($mdp == $mdp2){
 
-                        $time = time();
-                        if(($time - $timeInvit['temps']) < (24*3600)){
+                        $insertmbr = $bdd->prepare("INSERT INTO utilisateur(genre, prenom, nom, mail, motDePasse) VALUES(?,?,?,?,?)");
+                        $insertmbr->execute(array($genre,$prenom,$nom,$_SESSION['mail'],$mdp));
 
-                           $reqmail = $bdd->prepare("SELECT * FROM utilisateur WHERE mail = ?");
-                           $reqmail->execute(array($mail));
-                           $mailexist = $reqmail->rowCount();
+                        $delUser = $bdd->prepare("DELETE FROM invitation WHERE mail = ?");
+                        $delUser->execute(array($_SESSION['mail']));
 
-                           if($mailexist == 0) {
-
-                              if($mdp == $mdp2) {
-
-                                 $insertmbr = $bdd->prepare("INSERT INTO utilisateur(genre, prenom, nom, mail, motDePasse) VALUES(?, ?, ?, ?, ?)");
-                                 $insertmbr->execute(array($genre, $prenom, $nom, $mail, $mdp));
-
-
-                                 $delUser = $bdd->prepare("DELETE FROM invitation WHERE mail =?");
-                                 $delUser->execute(array($mail));
-
-
-                                 $erreur = "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>";
-                                 
-                              } else {
-                                 $erreur = "Vos mots de passes ne correspondent pas !";
-                              }
-                           } else {
-                              $erreur = "Adresse mail déjà utilisée !";
-                           }
-
-
-
-                        } else {
-                           $erreur = "Vous n'êtes plus autorisé à vous inscrire !";
-                        }
-
-
-
+                        $erreur = "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>";
                      } else {
-                        $erreur = "L'email saisie n'est pas autorisé à s'inscrire !";
+                        $erreur = "Vos mots de passes ne correspondent pas !";
                      }
+                  } else {
+                     $erreur = "Adresse mail déjà utilisée !";
+                  }
+
+               } else {
+                  $erreur = "Vous n'êtes plus autorisé à vous inscrire !";
+               }
+               
                             
                      
-                  } else {
-                     $erreur = "Votre adresse mail n'est pas valide !";
-                  }
-               } else {
-                  $erreur = "Vos adresses mail ne correspondent pas !";
-               } 
             } else {
-               $erreur = "Votre nom ne doit pas dépasser 255 caractères !";
+               $erreur = "Votre nom ne doit pas dépasser 50 caractères !";
             }
             
          } else {
-            $erreur = "Votre prenom ne doit pas dépasser 255 caractères !";
+            $erreur = "Votre prenom ne doit pas dépasser 50 caractères !";
          }
 
       } else {
          $erreur = "Tous les champs doivent être complétés !";
       }
    }
+
 
 
 
@@ -120,25 +96,20 @@
             header("Location: connexion.php");
          } else {
              //Pour maintenir l'accès quand on POST
+            $invite = $reqInscris->fetch();
+            $_SESSION['mail'] = $invite['mail'];
+            $_SESSION['temps'] = $invite['temps'];
          }
 
 
       
 
-      // if(isset($_SESSION['inscription'])){
-      //    //on regarde, sinon on est rediriger, pour eviter l'usurpation
-      //    $keepSession = $bdd->prepare("SELECT * FROM utilisateur WHERE mail = ?");
-      //    $keepSession->execute(array($_SESSION['inscription']));
-      //    $nmbrMail = $keepSession->rowCount();
-
-      //    if($nmbrMail == 0){
-      //       header("Location: index.php");
-      //    }
-      // }
-
    }else{
       header("Location: index.php");
    }
+
+
+
 ?>
 
 
@@ -167,7 +138,7 @@
       <section id="login-box">
 
          <h2>Inscription</h2>
-         <br /><br />
+         
          <div class="champsRequis">* tous les champs sont requis</div>
          <form method="POST" action="">
             <br /><br />
@@ -199,18 +170,7 @@
                         <input type="text" placeholder="Votre nom" id="nom" name="nom" value="<?php if(isset($nom)) { echo $nom; } ?>" />
                      </td>
                   </tr>
-                  <tr>
-                     
-                     <td>
-                        <input type="email" placeholder="Votre mail" id="mail" name="mail" value="<?php if(isset($mail)) { echo $mail; } ?>" />
-                     </td>
-                  </tr>
-                  <tr>
-                     
-                     <td>
-                        <input type="email" placeholder="Confirmez votre mail" id="mail2" name="mail2" value="<?php if(isset($mail2)) { echo $mail2; } ?>" />
-                     </td>
-                  </tr>
+                  
                   <tr>
                      
                      <td>
