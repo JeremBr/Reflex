@@ -49,6 +49,14 @@ td
 	display : inline;
 	color : red;
 }
+table label
+{
+	color : black;
+}
+.lien a
+{
+	color : blue;
+}
 input{
 	padding: 10px;
 	font-size: 20px;
