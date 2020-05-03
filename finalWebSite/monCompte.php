@@ -123,7 +123,8 @@ if(isset($_COOKIE['idUtilisateur']) AND $_COOKIE['idUtilisateur'] > 0) {
                 <li>Genre : <?php echo $userinfo['genre']; ?></li><br>
                 <li>Nom : <?php echo $userinfo['nom']; ?> </li><br>
                 <li>Prénom : <?php echo $userinfo['prenom']; ?></li><br>
-                <li>Adresse :</li><br>
+                <li>Adresse : <?php echo $userinfo['adresse']; ?></li><br>
+                <li>Code Postale : <?php echo $userinfo['codePostale']; ?></li><br>
                 <li>Adresse mail : <?php echo $userinfo['mail']; ?></li>
 
             </ul>

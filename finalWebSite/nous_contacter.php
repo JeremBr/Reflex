@@ -44,7 +44,8 @@
     		<a href="tel:+33142223344">Téléphone : 01 42 22 33 44</a>
     			<br>
 
-    		<a href="mailto:adresse@serveur.com"> Email : reflex@gmail.com</a>
+    		<a href="mailto:adresse@serveur.com"> Email : reflex@gmail.com</a><br/>
+    		<a class="contacter" href="mailUtilisateur.php">Contacter</a>
 </div>
 
 	<!--PARTIE GAUCHE-->
@@ -57,7 +58,8 @@
 			<a href="tel:+33642223344">Téléphone : 06 42 22 33 44</a>
     			<br>
 
-    		<a href="mailto:adresse@serveur.com"> Email : reflex.admin@gmail.com</a>
+    		<a href="mailto:adresse@serveur.com"> Email : reflex.admin@gmail.com</a> <br/>
+    		<a class="contacter" href="mailUtilisateur.php">Contacter</a>
 		<br>
 	   	<br>
 
@@ -69,7 +71,8 @@
 			<a href="tel:+33642226678">Téléphone : 06 42 22 66 78</a>
     			<br>
 
-    		<a href="mailto:adresse@serveur.com"> Email : reflex.gestio@gmail.com</a>
+    		<a href="mailto:adresse@serveur.com"> Email : reflex.gestio@gmail.com</a><br/>
+    		<a class="contacter" href="mailUtilisateur.php">Contacter</a>
 
 
 		</div>
