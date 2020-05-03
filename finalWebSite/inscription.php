@@ -1,6 +1,6 @@
 <?php
 
-   $bdd = new PDO('mysql:host=localhost;dbname=reflex', 'root', '');
+   $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
    
 
 
@@ -168,6 +168,7 @@
 
          <h2>Inscription</h2>
          <br /><br />
+         <div class="champsRequis">* tous les champs sont requis</div>
          <form method="POST" action="">
             <br /><br />
 
@@ -176,6 +177,7 @@
                <div class="textbox">
                   <tr>
                      <td>
+                        <p class="genre">Genre : </p>
                         <select name="choix">
                             <option value="Femme">Femme</option>
                             <option value="Homme">Homme</option>
@@ -213,6 +215,7 @@
                      
                      <td>
                         <input type="password" placeholder="Votre mot de passe" id="mdp" name="mdp" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+)).*$" required>
+                        <p class="description">* 8 caractères dont un spécial sont requis</p>
                      </td>
                   </tr>
                   <tr>
