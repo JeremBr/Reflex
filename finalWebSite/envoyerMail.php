@@ -30,7 +30,7 @@
 			if(($access == 1) OR ($access == 2)){
 
 				?>
-		
+				<h2>Ecrivez votre mail </h2>
 				<div class="formulaire">
 					<form id="contact-form" method="post" action="" role="form">
 							
@@ -39,11 +39,11 @@
 
 							<div class="corps">
 
-								<p class="titre">Ecrivez votre mail </p>
-								<br/>
+								<!-- <p class="titre">Ecrivez votre mail </p>
+								<br/> -->
 							
 						<p><label for="email">Adresse mail du destinataire : <strong>*</strong> </label></p>
-						<p ><input type="email" name="email" id="email" size="50" required/>
+						<p ><input type="email" name="email" id="email" size="46" required/>
 						</p><p class="comments"></p>
 
 						<p><label for="name">Votre nom : <strong>*</strong></label></p>
@@ -59,7 +59,7 @@
 						<p class="comments"></p>
 
 						<p><label for="message"> Votre message : <strong>*</strong></label></p>
-						<p ><textarea type="msg" name="message" id="message" size="50" rows="10" cols="50" required></textarea> </p>
+						<p ><textarea type="msg" name="message" id="message" size="50" rows="10" cols="45" required></textarea> </p>
 						<p class="comments"></p>
 
 						<p class="envoi"><input type="submit" value="Envoyer" /></p>

@@ -221,9 +221,12 @@
                   <tr>
                     
                      <td>
-                        <input type="password" placeholder="Confirmez votre mdp" id="mdp2" name="mdp2" />
+                        <input type="password" placeholder="Confirmez votre mdp" id="mdp2" name="mdp2" /><br/><br/>
+                        <p class="lien"><a href="cgu.php">Veuillez consulter les conditions générales d'utilisation</a></p><br/>
+                        <input type="checkbox" name="cgu" id="cgu"/><label for="cgu"> J'accepte ces conditions générales d'utilisation</label>
                      </td>
                   </tr>
+                  
                </div>
 
                
