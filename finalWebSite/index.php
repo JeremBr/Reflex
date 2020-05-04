@@ -11,8 +11,6 @@
 	<head>
 		<meta charset="utf-8">
 		<link href="css/style.css" rel="stylesheet">
-		<link href="css/footer.css" rel="stylesheet">
-		<link href="css/header.css" rel="stylesheet">
 		
 		<title>Reflex</title>
 	</head>
