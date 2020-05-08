@@ -11,7 +11,7 @@
 		<meta charset="utf-8"/>
 		<title>Reconnaissance de tonalité</title>
 		<link rel="stylesheet" href="css/tests/styleReco.css" />
-		
+		<script type="text/javascript" src="js/rebours.js"></script>
 	</head>
 
 	<body>
@@ -22,7 +22,14 @@
 
 		<div class="contenu">
 			
-			<div class="rebours"><img src="img/compteRebours.jpg" alt="compteRebours" title="Compte à rebours"/> 
+			<div class="image">
+				<div class="compte">
+					<div class="rebours"><img src="img/compteRebours.jpg" alt="compteRebours" title="Compte à rebours"/> 
+		    		</div>
+		    		<div id="compte_a_rebours"></div>
+		    	</div>
+				<div class="reco"><img src="img/test8.png" alt="Reconnaissance de tonalite" title="Reconnaissance de tonalite"/> 
+		    	</div>
 		    </div>
 
 			<div class="bouton"><p><a href="freqCard.php" style="text-decoration:none">Mesure du rythme cardiaque</a></p>
@@ -41,4 +48,5 @@
 
 
 	</body>
+
 </html>	
