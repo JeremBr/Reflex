@@ -10,7 +10,7 @@
 		<meta charset="utf-8"/>
 		<title>Mesure de la température</title>
 		<link rel="stylesheet" href="css/tests/styleTemp.css" />
-		<script type="text/javascript" src="js/rebours1.js"></script>
+		<script type="text/javascript" src="js/rebours.js"></script>
 	</head>
 
 	<body>

@@ -11,7 +11,7 @@
 		<title>Réflexe sonore</title>
 		<link rel="stylesheet" href="css/tests/styleTemp.css" />
 		<link rel="stylesheet" href="css/tests/styleReflexe.css" />
-		<script type="text/javascript" src="js/rebours1.js"></script>
+		<script type="text/javascript" src="js/rebours.js"></script>
 	</head>
 
 	<body>
