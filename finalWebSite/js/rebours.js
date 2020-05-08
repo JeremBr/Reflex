@@ -6,7 +6,7 @@ function()
     var compte_a_rebours = document.getElementById("compte_a_rebours");
     
     compte_a_rebours.style.color = "red";
-    compte_a_rebours.style.marginLeft = "100px";
+    compte_a_rebours.style.marginLeft = "20px";
     compte_a_rebours.style.padding = "20px";
     
     compte_a_rebours.style.fontSize = "40px";
@@ -21,7 +21,7 @@ function()
     	{
     		console.log("START");
     		compte_a_rebours.innerHTML = "START !"; 
-            compte_a_rebours.style.marginLeft = "100px";
+            compte_a_rebours.style.marginLeft = "20px";
     		clearInterval(rebours);
     	},1000);
     }
