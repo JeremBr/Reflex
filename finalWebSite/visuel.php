@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=reflex', 'root', 'root');
     include 'function/cookie.php';
 
 ?>
@@ -11,6 +11,7 @@
 		<title>Réflexe visuel</title>
 		<link rel="stylesheet" href="css/tests/styleTemp.css" />
 		<link rel="stylesheet" href="css/tests/styleReflexe.css" />
+		<script type="text/javascript" src="js/rebours1.js"></script>
 	</head>
 
 	<body>
@@ -21,7 +22,18 @@
 
 		<div class="contenu">
 			
-			<div class="rebours"><img src="img/compteRebours.jpg" alt="compteRebours" title="Compte à rebours"/> 
+			<div class="image">
+			
+				<div class="compte">
+					<div class="rebours"><img src="img/compteRebours.jpg" alt="compteRebours" title="Compte à rebours"/> 
+		    		</div>
+		    		<div id="cadre">
+		    			<div id="compte_a_rebours"></div>
+		    		</div>
+		    	</div>
+		    	
+		    	<div class="visuel"> <img src="img/test7.png" alt="visuel"/>
+		 		  </div>
 		    </div>
 
 			<div class="bouton"><p><a href="resultatsTest.php" style="text-decoration:none">Envoi des résultats</a></p>
@@ -42,4 +54,5 @@
 
 
 	</body>
+	
 </html>	
