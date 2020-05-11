@@ -3,6 +3,7 @@
     $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
     include 'function/cookie.php';
     include 'function/access.php';
+    include 'function/numberUserLive.php';
 
 ?>
 
@@ -43,19 +44,11 @@
 								<br/> -->
 							
 						<p><label for="email">Adresse mail du destinataire : <strong>*</strong> </label></p>
-						<p ><input type="email" name="email" id="email" size="46" required/>
+						<p ><input type="email" name="email" id="email" size="45" required/>
 						</p><p class="comments"></p>
 
-						<p><label for="name">Votre nom : <strong>*</strong></label></p>
-						<p ><input type="text" name="name" id="nameemail" size="50" required/></p>
-						<p class="comments"></p>
-
-						<p><label for="firstname">Votre prénom : <strong>*</strong></label></p>
-						<p ><input type="text" name="firstname" id="firstname" size="50" required/></p>
-						<p class="comments"></p>
-
 						<p><label for="object">Objet du message : <strong>*</strong></label></p>
-						<p ><input type="text" name="object" id="object" size="50" required/></p>
+						<p ><input type="text" name="object" id="object" size="45" required/></p>
 						<p class="comments"></p>
 
 						<p><label for="message"> Votre message : <strong>*</strong></label></p>

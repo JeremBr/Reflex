@@ -3,7 +3,7 @@
    session_start();
 
    $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
-
+   include 'function/numberUserLive.php';
 
 
 
@@ -11,12 +11,14 @@
     
    if(isset($_POST['forminscription'])) {
 
+      $prenom = htmlspecialchars($_POST['prenom']);
+      $nom = htmlspecialchars($_POST['nom']);
+
 
       if(!empty($_POST['choix']) AND !empty($_POST['nom']) AND!empty($_POST['prenom']) AND !empty($_POST['mdp']) AND !empty($_POST['mdp2'])) {
 
          $genre = htmlspecialchars($_POST['choix']);
-         $prenom = htmlspecialchars($_POST['prenom']);
-         $nom = htmlspecialchars($_POST['nom']);
+         
          $mdp = sha1($_POST['mdp']);
          $mdp2 = sha1($_POST['mdp2']);
 
@@ -33,26 +35,19 @@
 
                if( ($time - $timeInvit) < (24*3600) ){
 
-                  $reqmail = $bdd->prepare("SELECT * FROM utilisateur WHERE mail =?");
-                  $reqmail->execute(array($_SESSION['mail']));
+                  if($mdp == $mdp2){
 
-                  if( ($reqmail->rowCount()) ==0){
+                     $insertmbr = $bdd->prepare("INSERT INTO utilisateur(genre, prenom, nom, mail, motDePasse) VALUES(?,?,?,?,?)");
+                     $insertmbr->execute(array($genre,$prenom,$nom,$_SESSION['mail'],$mdp));
 
-                     if($mdp == $mdp2){
+                     $delUser = $bdd->prepare("DELETE FROM invitation WHERE mail = ?");
+                     $delUser->execute(array($_SESSION['mail']));
 
-                        $insertmbr = $bdd->prepare("INSERT INTO utilisateur(genre, prenom, nom, mail, motDePasse) VALUES(?,?,?,?,?)");
-                        $insertmbr->execute(array($genre,$prenom,$nom,$_SESSION['mail'],$mdp));
-
-                        $delUser = $bdd->prepare("DELETE FROM invitation WHERE mail = ?");
-                        $delUser->execute(array($_SESSION['mail']));
-
-                        $erreur = "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>";
-                     } else {
-                        $erreur = "Vos mots de passes ne correspondent pas !";
-                     }
+                     $erreur = "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>";
                   } else {
-                     $erreur = "Adresse mail déjà utilisée !";
+                     $erreur = "Vos mots de passes ne correspondent pas !";
                   }
+               
 
                } else {
                   $erreur = "Vous n'êtes plus autorisé à vous inscrire !";
@@ -82,10 +77,8 @@
 
       
          
-         /* 
-            On regarde si le token est bien enregistré, sinon l'utilisateur est redirigé
-            car si on redirige pas quand un utilisateur essaie d'usurpater
-            alors il peut tenter de faire du bruteForce sur le mail et essayer de s'inscrire avec le mail en question (qui n'est donc pas le sien)
+         /* On regarde si le token est bien registré
+            Si oui alors on enregistre le mail associé et quand ce token a été crée
          */
 
          $reqInscris = $bdd->prepare("SELECT * FROM invitation WHERE token = ?");
@@ -114,12 +107,6 @@
 
 
 
-
-
-
-
-
-<!-- CHECK AUSSI QUIL SINSCRIT AVEC LE MAIL DU TOKEN, ET PAS AVEC UN AUTRE COMPTE :) -->
 
 
 <html>
@@ -159,29 +146,29 @@
                      </td>
                   </tr>
                   <tr>
-                     <!-- value="if(isset($variable)){echo}" 
-                        permet de laissez les informations qui ont étaient correctement remplies, pour pas que l'utilisateur ait a remettre ses informations-->
+                     
                      <td>
-                        <input type="text" placeholder="Votre prénom" id="prenom" name="prenom" value="<?php if(isset($prenom)) { echo $prenom; } ?>" />
+                        <input type="text" placeholder="Prénom" id="prenom" name="prenom" value="<?php if(isset($prenom)) { echo $prenom; } ?>" />
                      </td>
                   </tr>
                   <tr>
                      <td>
-                        <input type="text" placeholder="Votre nom" id="nom" name="nom" value="<?php if(isset($nom)) { echo $nom; } ?>" />
+                        <input type="text" placeholder="Nom" id="nom" name="nom" value="<?php if(isset($nom)) { echo $nom; } ?>" />
                      </td>
                   </tr>
                   
                   <tr>
                      
                      <td>
-                        <input type="password" placeholder="Votre mot de passe" id="mdp" name="mdp" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+)).*$" required>
                         <p class="description">* 8 caractères dont un spécial sont requis</p>
+                        <input type="password" placeholder="Mot de passe" id="mdp" name="mdp" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+)).*$" required>
+                        
                      </td>
                   </tr>
                   <tr>
                     
                      <td>
-                        <input type="password" placeholder="Confirmez votre mdp" id="mdp2" name="mdp2" /><br/><br/>
+                        <input type="password" placeholder="Confirmez mot de passe" id="mdp2" name="mdp2" /><br/><br/>
                         <p class="lien"><a href="cgu.php">Veuillez consulter les conditions générales d'utilisation</a></p><br/>
                         <input type="checkbox" name="cgu" id="cgu"/><label for="cgu"> J'accepte ces conditions générales d'utilisation</label>
                      </td>

@@ -3,6 +3,7 @@
     $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
     include 'function/cookie.php';
     include 'function/access.php';
+    include 'function/numberUserLive.php';
 
 ?>
 
@@ -23,14 +24,14 @@
 		<?php
 
 		if(isset($access)){
-			if(($access == 1) OR ($access == 2)){
+			if(($access == 1) OR ($access == 2)){ //JCROIS QUE CEST JUSTE 2
 
 				?>
 
 
 				<section id="cgu">
 					<div class="wrapper">
-						<h3>Gérer la CGU</h3>
+						<h3>Gérer la F.A.Q</h3>
 					</div>
 				</section>
 

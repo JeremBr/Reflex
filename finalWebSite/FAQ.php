@@ -2,6 +2,7 @@
     session_start();
     $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
     include 'function/cookie.php';
+    include 'function/numberUserLive.php';
 
 ?>
 
@@ -19,10 +20,29 @@
 
 		<?php include("includes/header.php"); ?>
 		
-		<p> <h2>  Foire aux Questions </h2>
-		</p>
+		<p> <h2>  Foire aux Questions </h2> </p>
 
 		<div class="faq">
+
+			<?php
+				$allFaq = $bdd->query('SELECT * FROM faq');
+				while($faq = $allFaq->fetch())
+				{
+			?>
+					
+					<p class="question"> Question : <?= $faq['question']; ?> </p>
+					<br/><br/>
+					<p class="réponse"> Réponse : </p>
+					<p class="suiteréponse"> <?= $faq['reponse']; ?> <br/></p>
+					<br/>
+					
+			<?php
+				}
+			?>
+		</div>
+
+
+		<!-- <div class="faq">
 			<p class="question1"> Question : Qui Sommes-nous ?  </p>
 			<br/><br/>
 			<p class="réponse"> Réponse : </p>
@@ -48,7 +68,7 @@
 			 <p class="lastréponse">Les seuls personnes pouvant avoir accès à vos résultats sont vous et les  gestionnaires des tests. Nous tenons à ce que ces infos restent confidentiels pour le  bien de nos clients. <br/></p>
 
 
-		</div>
+		</div> -->
 
 		<?php include("includes/footer.php"); ?>
 

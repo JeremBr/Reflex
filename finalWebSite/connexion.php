@@ -2,32 +2,42 @@
 session_start();
  
 $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
+include 'function/numberUserLive.php';
  
 if(isset($_POST['formconnexion'])) {
-   $mailconnect = htmlspecialchars($_POST['mailconnect']);
-   $mdpconnect = sha1($_POST['mdpconnect']);
-   if(!empty($mailconnect) AND !empty($mdpconnect)) {
-      $requser = $bdd->prepare("SELECT * FROM utilisateur WHERE mail = ? AND motDePasse = ?");
-      $requser->execute(array($mailconnect, $mdpconnect));
-      $userexist = $requser->rowCount();
-      if($userexist == 1) {
-         $userinfo = $requser->fetch();
 
-         //$_SESSION['idUtilisateur'] = $userinfo['idUtilisateur'];
-         //$_SESSION['mail'] = $userinfo['mail'];
+   if(!empty($_POST['mailconnect'])) {
+      if(!empty($_POST['mdpconnect'])){
 
-         setcookie('idUtilisateur', $userinfo['idUtilisateur'], time() + (60*2));
-         //setcookie('mail', $userinfo['mail'], time() + (60*2));
-         setcookie('mdp', $mdpconnect, time() + (60*2));
+         $mailconnect = htmlspecialchars($_POST['mailconnect']);
+         $mdpconnect = sha1($_POST['mdpconnect']);
+
+         $requser = $bdd->prepare("SELECT * FROM utilisateur WHERE mail = ? AND motDePasse = ?");
+         $requser->execute(array($mailconnect, $mdpconnect));
+         $userexist = $requser->rowCount();
+         if($userexist == 1) {
+            $userinfo = $requser->fetch();
+
+            //$_SESSION['idUtilisateur'] = $userinfo['idUtilisateur'];
+            //$_SESSION['mail'] = $userinfo['mail'];
+
+            setcookie('idUtilisateur', $userinfo['idUtilisateur'], time() + (60*2));
+            //setcookie('mail', $userinfo['mail'], time() + (60*2));
+            setcookie('mdp', $mdpconnect, time() + (60*2));
 
 
-         //header("Location: monCompte.php?idUtilisateur=".$_SESSION['idUtilisateur']);
-         header("Location: monCompte.php");
+            //header("Location: monCompte.php?idUtilisateur=".$_SESSION['idUtilisateur']);
+            header("Location: monCompte.php");
+         } else {
+            $erreur = "Mauvais mail ou mot de passe !";
+         }
+
       } else {
-         $erreur = "Mauvais mail ou mot de passe !";
+         $erreur = "Veuillez saisir votre mot de passe !";
       }
+      
    } else {
-      $erreur = "Tous les champs doivent être complétés !";
+      $erreur = "Veuillez saisir votre mail !";
    }
 }
 ?>
@@ -59,7 +69,7 @@ if(isset($_POST['formconnexion'])) {
             <form method="POST" action="">
                <br /><br />
                <div class="textbox">
-                  <input type="email" name="mailconnect" placeholder="Mail" />
+                  <input type="email" name="mailconnect" placeholder="Mail" /> <!-- mettre mail si ya cookie ou autre -->
                </div>
                <div class="textbox">
                   <input type="password" name="mdpconnect" placeholder="Mot de passe" />

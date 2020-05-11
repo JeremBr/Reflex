@@ -3,6 +3,7 @@
     $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
     include 'function/cookie.php';
     include 'function/access.php';
+    include 'function/numberUserLive.php';
 
 ?>
 
@@ -26,8 +27,7 @@
 		<?php include("includes/header.php"); ?>
 
 
-		<!-- PAGE EN CONSTRUCTION, IL FAUT FAIRE NOUVEAU FORMULAIRE
-			PUIS LE CODE JAVASCRIPT/PHP POUR ENVOYER MAIL AVEC CE NOUVEAU FORMULAIRE-->
+		
 		
 		
 		<div class="formulaire">
@@ -42,7 +42,11 @@
 						<br/>
 					
 						<p><label for="email">Adresse mail du destinataire : <strong>*</strong> </label></p>
-						<p ><input type="email" name="email" id="email" size="50" required/>
+						<p ><input type="email" name="email" id="email" size="50" value="<?php if(isset($_GET['mailto'])) { echo $_GET['mailto']; } ?>" required/>
+						</p><p class="comments"></p>
+
+						<p><label for="email">Votre adresse mail : <strong>*</strong> </label></p>
+						<p ><input type="emailTo" name="emailTo" id="emailTo" size="50" required/>
 						</p><p class="comments"></p>
 
 						<p><label for="name">Votre nom : <strong>*</strong></label></p>

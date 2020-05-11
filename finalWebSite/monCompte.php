@@ -2,6 +2,7 @@
 session_start();
  
 $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
+include 'function/numberUserLive.php';
 
  
 //on utilise pas le cookie.php car on veut recup un $userinfo
@@ -100,7 +101,7 @@ if(isset($_COOKIE['idUtilisateur']) AND $_COOKIE['idUtilisateur'] > 0) {
                                 ?>
                                 <li><a href="envoyerMail.php">Envoyer un mail</a></li>
                                 <li><a href="inviteUtilisateur.php">Inviter un utilisateur</a></li>
-                                <li><a href="cgu_modifier.php">Gérer la CGU</a></li>
+                                <li><a href="faq_modifier.php">Gérer la F.A.Q</a></li>
                                 <li><a href="editionprofil.php">Editer mon profil</a></li>
 
                                 <?php
