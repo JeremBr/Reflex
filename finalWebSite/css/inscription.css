@@ -27,12 +27,40 @@ table{
 	margin: 30px 30px;
 }
 
-
-
+td 
+{
+	padding-bottom: 10px;
+}
+.description 
+{
+	color : red;
+	font-size : 0.8em;
+	display: inline;
+	
+}
+.genre
+{
+	display : inline;
+	padding : 10px; 
+	font-size : 20px;
+}
+.champsRequis
+{
+	display : inline;
+	color : red;
+}
+table label
+{
+	color : black;
+}
+.lien a
+{
+	color : blue;
+}
 input{
 	padding: 10px;
 	font-size: 20px;
-	margin-right: 40%;
+	/*margin-right: 40%;*/
 	border: 2px solid #ddd;
 	border-radius: 3px;
 	

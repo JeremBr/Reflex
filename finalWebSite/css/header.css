@@ -4,29 +4,30 @@
 header
 {
 	
-	/* position: fixed; */
 	height: 80px;
 	background-color: #efefef;
 	width: 100%;
+
 }
 
 .logo
 {
 	position: absolute;
-	left: 6%;
-	top: 1.5%;
-
-
-	width: 4%;
+	left: 9%;
+	top: 7px;
+	width: 60px;
+	
 }
 
 header h1
 {
 	position: absolute;
 	float: left;
-	top: 2%;
-	left: 140px;
-	font-size : 230%;
+	top: 14px;
+	left: 9%;
+	font-size : 37px;
+	margin-left: 68px;
+	
 }
 
 .logoMonCompte{
@@ -39,7 +40,7 @@ header nav
 {
 	position: absolute;
 	top: 30px;
-	right: 180px;
+	right: 13%;
 
 }
 
@@ -59,33 +60,168 @@ header nav ul li a
 
 .drapeau{
 	position: absolute;
-	right: 140px;
-	top: 31px;
-	width: 2%;
+	right: 10%;
+	top: 25px;
+	width: 40px;
 }
 
 
-/* FOOTER */
 
-/*
-footer
+
+
+
+
+
+/*------------RESPONSIVE 900PX--------------*/
+
+@media all and (max-width: 900px)
 {
-	height: 260px;
-	background-color: #444;
+
+	
+	header
+	{
+		
+		height: 60px;
+		background-color: #efefef;
+		width: 100%;
+
+	}
+
+	.logo
+	{
+		position: absolute;
+		left: 8%;
+		top: 7px;
+		width: 40px;
+		
+	}
+
+	header h1
+	{
+		position: absolute;
+		float: left;
+		top: 9px;
+		left: 8%;
+		font-size : 27px;
+		margin-left: 45px;
+		
+	}
+
+
+	.logoMonCompte{
+		float: left;
+		margin-right: 15px;
+		margin-top: -11px;
+		width: 24px;
+		height: 30px;
+	}
+
+
+	header nav
+	{
+		position: absolute;
+		top: 21px;
+		right: 13%;
+
+	}
+
+	header nav ul li
+	{
+		float: left;
+		display: inline-block;
+		font-size: 11px;
+	}
+
+	header nav ul li a
+	{
+		text-transform: uppercase;
+		font-weight: bold;
+		margin-right: 9px;
+	}
+
+	.drapeau{
+		position: absolute;
+		right: 9%;
+		top: 18px;
+		width: 30px;
+	}
+	
 }
 
-footer h1
-{
-	color: #fff;
-	text-align: center;
-	padding-top: 80px;
-}
 
-.copyright
+
+
+
+
+
+/*------------RESPONSIVE 650PX--------------*/
+
+@media all and (max-width: 650px)
 {
-	text-align: center;
-	font-weight: bold;
-	padding-top: 30px;
-	color: #777;
+	header
+	{
+		height: 50px;
+		background-color: #efefef;
+		width: 100%;
+
+	}
+
+	.logo
+	{
+		position: absolute;
+		left: 7%;
+		top: 9px;
+		width: 30px;
+		
+	}
+
+	header h1
+	{
+		position: absolute;
+		float: left;
+		top: 10px;
+		left: 6%;
+		font-size : 20px;
+		margin-left: 45px;
+		
+	}
+
+
+	.logoMonCompte{
+		float: left;
+		margin-right: 8px;
+		margin-top: -11px;
+		width: 20px;
+		height: 24px;
+	}
+
+
+	header nav
+	{
+		position: absolute;
+		top: 20px;
+		right: 13%;
+
+	}
+
+	header nav ul li
+	{
+		float: left;
+		display: inline-block;
+		font-size: 7px;
+	}
+
+	header nav ul li a
+	{
+		text-transform: uppercase;
+		font-weight: bold;
+		margin-right: 9px;
+	}
+
+	.drapeau{
+		position: absolute;
+		right: 9%;
+		top: 18px;
+		width: 20px;
+	}
 }
-*/

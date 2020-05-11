@@ -1,6 +1,8 @@
+
 h2
 {
 	font-size: 15em;
+	margin-top: 3%;
 }
 .formulaire
 {
@@ -10,7 +12,7 @@ form
 {
 border : 5px #17e2cd solid;
 border-radius: 10px;
-background-color: #ddd;
+background-color: white;
 	/*margin-right : 5em;
 	margin-left: 5em;*/
 margin : auto;
@@ -19,29 +21,46 @@ margin-top: 16em;
 padding-left : 20em;
 padding-right: 5em;
 width : 700px;
+padding-top: 2%; 
 }
 label
 {
 	color : #505050;
+	padding-top: 5px;
+	
 }
-input,textarea
+
+input
 {
 	border: 2px solid #ddd;
 	border-radius: 3px;
-	background-color: rgb(243,241,240);
 	font-size: 1.2em;
-	margin-bottom: 0.5em;
-	margin-top: 0.5em;
+	margin-bottom: 5px;
+	margin-top: 10px;
 	font-family:"Calibri";
 	padding: 6px;
 	margin-right: 20px;
+	width: 60%;
+	
+	
 }
-input[type="submit"]:hover
+.description 
+{
+	display : inline;
+	color : red;
+	padding-left: 5px;
+}
+input[type="submit"]:hover /*colore le bouton d'envoi en turquoise au survol*/ 
 {
 	background-color: #17e2cd;
 	color : white;
 }
 input[type="submit"]
 {
-	margin-left:10em;
+	border : none;
+	background-color: white; 
+	font-size : 20px;
+	border: 2px solid #17e2cd ;
+	border-radius: 3px;
+	margin-bottom: 20px; 
 }

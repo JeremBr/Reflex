@@ -1,7 +1,8 @@
 <?php
     session_start();
-    $bdd = new PDO('mysql:host=localhost;dbname=reflex', 'root', 'root');
+    $bdd = new PDO('mysql:host=localhost;dbname=reflex', 'root', '');
     include 'function/cookie.php';
+    include 'function/numberUserLive.php';
 
 ?>
 

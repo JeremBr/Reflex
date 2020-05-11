@@ -1,7 +1,8 @@
 
 .titre
 {
-	margin-left : 350px;
+	/*margin-left : 350px;*/
+	text-align: center;
 }
 h2
 {
@@ -64,10 +65,20 @@ label
 	margin-top :50px;
 	padding-left : 590px;
 }
-.rebours
+.reco img
 {
-	margin-top :100px;
-	padding-left : 570px;
+	margin-top :40px;
+	padding-left : 160px; /*570px*/
+}
+
+.image
+{
+	display : flex;
+}
+.compte
+{
+	padding-left : 100px;
+	padding-top:40px;
 }
 
 

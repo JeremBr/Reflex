@@ -53,4 +53,12 @@ footer h1
 }
 
 
+@media all and (max-device-width: 480px)
+{
+	footer{
+		font-size : 50px;
+	}
+
+}
+
 
