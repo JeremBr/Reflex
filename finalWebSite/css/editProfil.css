@@ -2,6 +2,7 @@
 h2
 {
 	font-size: 15em;
+	margin-top: 3%;
 }
 .formulaire
 {
@@ -20,7 +21,7 @@ margin-top: 16em;
 padding-left : 20em;
 padding-right: 5em;
 width : 700px;
-padding-top: 10px; 
+padding-top: 2%; 
 }
 label
 {

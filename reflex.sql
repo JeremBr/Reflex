@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 30, 2020 at 10:50 AM
+-- Generation Time: May 11, 2020 at 02:09 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -25,6 +25,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `faq`
+--
+
+DROP TABLE IF EXISTS `faq`;
+CREATE TABLE IF NOT EXISTS `faq` (
+  `numArticle` int(2) NOT NULL,
+  `question` text NOT NULL,
+  `reponse` text NOT NULL,
+  PRIMARY KEY (`numArticle`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `faq`
+--
+
+INSERT INTO `faq` (`numArticle`, `question`, `reponse`) VALUES
+(1, 'Qui Sommes-nous ?', 'Infinite Measures est un installateur de solutions «clé en main» pour les centres d’évaluation psychotechniques. Nous développons les tests qui prouve que vous êtes capable de conduire!'),
+(2, 'A quoi servent les tests ?', 'Les tests que nous produisons permettent de déterminer l\'aptitude ou non d\'un conducteur à repasser le code après que ce dernier le lui ait été retiré.'),
+(3, 'Où puis-je consulter mes tests ?', 'Les tests sont disponible dans la rubrique «Mes résultats» dans votre espace personnel.'),
+(4, 'Qui peut voir mes résultats ?', 'Les seuls personnes pouvant avoir accès à vos résultats sont vous et les  gestionnaires des tests. Nous tenons à ce que ces infos restent confidentiels pour le  bien de nos clients.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `invitation`
 --
 
@@ -35,6 +59,36 @@ CREATE TABLE IF NOT EXISTS `invitation` (
   `temps` int(10) NOT NULL,
   PRIMARY KEY (`mail`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `invitation`
+--
+
+INSERT INTO `invitation` (`mail`, `token`, `temps`) VALUES
+('34youki@gmail.com', '95df2bc296d8eb3bc93676df44d48c7e4576b22c9603d26e5b0d7c344a8be6ac5a1505acbe5a57e7165833d939b06e4cfb8d7069cb676b8a549131a26461ddc1', 1588338030),
+('ghizghiz333@gmail.com', '506901f42b5933a15fd3993ef5ffeb9f0f0c7c24594509c3955e639dfdedc8ff4fc0c5f1ff5f3e54e2a990f05a42ae38e92d006f488b279523ab1c508dffdb9d', 1588338416),
+('jeremy.breton34@gmail.com', '91a324e2caf91dea0411076a779389dec4e28aca21215d38c663cd8c16e2388d25853c25fdc6831ad576bd34173c5c83e7a76e1d0883c2561b963296d6996df5', 1589070437);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `online`
+--
+
+DROP TABLE IF EXISTS `online`;
+CREATE TABLE IF NOT EXISTS `online` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `time` int(11) NOT NULL,
+  `ipUser` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `online`
+--
+
+INSERT INTO `online` (`id`, `time`, `ipUser`) VALUES
+(1, 1589161149, '::1');
 
 -- --------------------------------------------------------
 
@@ -84,14 +138,15 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `adresse` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idUtilisateur`),
   KEY `mail` (`mail`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`idUtilisateur`, `permission`, `mail`, `nom`, `prenom`, `genre`, `motDePasse`, `codePostale`, `adresse`) VALUES
-(33, 2, 'admin@a.a', 'admin', 'admin', 'Dieu', 'd033e22ae348aeb5660fc2140aec35850c4da997', NULL, NULL);
+(33, 2, 'admin@a.a', 'admin', 'admin', 'Dieu', 'd033e22ae348aeb5660fc2140aec35850c4da997', 75000, '5 rue Georges-Duroy'),
+(35, 1, 'gestionnaire@g.g', 'Gestio', 'nnaire', 'Femme', '893cf2f5edbc8c751c5f84db8d169a7b0db0348c', NULL, NULL);
 
 --
 -- Constraints for dumped tables

@@ -4,6 +4,7 @@ session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=reflex', 'root', '');
 
 include 'function/cookie.php';
+include 'function/numberUserLive.php';
 
  
 if(isset($_COOKIE['idUtilisateur']) && isset($_COOKIE['mdp'])) {
@@ -34,6 +35,20 @@ if(isset($_COOKIE['idUtilisateur']) && isset($_COOKIE['mdp'])) {
          $newmail = htmlspecialchars($_POST['newmail']);
          $insertmail = $bdd->prepare("UPDATE utilisateur SET mail = ? WHERE idUtilisateur = ?");
          $insertmail->execute(array($newmail, $_COOKIE['idUtilisateur']));
+         header('Location: monCompte.php');
+      }
+
+      if(isset($_POST['newadresse']) AND !empty($_POST['newadresse']) AND $_POST['newadresse'] != $user['adresse']) {
+         $newadresse = htmlspecialchars($_POST['newadresse']);
+         $insertadresse = $bdd->prepare("UPDATE utilisateur SET adresse = ? WHERE idUtilisateur = ?");
+         $insertadresse->execute(array($newadresse, $_COOKIE['idUtilisateur']));
+         header('Location: monCompte.php');
+      }
+
+      if(isset($_POST['newcode']) AND !empty($_POST['newcode']) AND $_POST['newcode'] != $user['codePostale']) {
+         $newcode = htmlspecialchars($_POST['newcode']);
+         $insertcode = $bdd->prepare("UPDATE utilisateur SET codePostale = ? WHERE idUtilisateur = ?");
+         $insertcode->execute(array($newcode, $_COOKIE['idUtilisateur']));
          header('Location: monCompte.php');
       }
 
@@ -86,11 +101,17 @@ if(isset($_COOKIE['idUtilisateur']) && isset($_COOKIE['mdp'])) {
                <label>Mail :</label><br/>
                <input type="text" name="newmail" placeholder="Mail" value="<?php echo $user['mail']; ?>" /><br /><br />
 
-               <label>Mot de passe :</label><p class="description">* 8 caractères dont un spécial</p><br/>
-               <input type="password" name="newmdp1" placeholder="Mot de passe"/><br /><br />
+               <label>Adresse :</label><br/>
+               <input type="text" name="newadresse" placeholder="Votre adresse" value="<?php echo $user['adresse']; ?>" /><br /><br />
+
+               <label>Code Postale :</label><br/>
+               <input type="text" name="newcode" placeholder="Votre code postale" value="<?php echo $user['codePostale']; ?>" /><br /><br />
+
+               <label>Nouveau mot de passe :</label><p class="description">* 8 caractères dont un spécial</p><br/>
+               <input type="password" name="newmdp1" placeholder="Nouveau mot de passe"/><br /><br />
 
                <label>Confirmation - mot de passe :</label><br/>
-               <input type="password" name="newmdp2" placeholder="Confirmation du mot de passe" /><br /><br />
+               <input type="password" name="newmdp2" placeholder="Confirmation du nouveau mot de passe" /><br /><br />
                
                <input type="submit" value="Mettre à jour mon profil !" />
             </form>
