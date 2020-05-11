@@ -2,6 +2,7 @@
     session_start();
     $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
     include 'function/cookie.php';
+    include 'function/numberUserLive.php';
 
     if(isset($_POST['forminscription'])) {
 

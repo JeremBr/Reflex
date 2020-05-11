@@ -1,11 +1,12 @@
 <?php
 
     $array = array("email" => "", "name" => "", "firstname" => "", "object" => "", "message" => "", "firstnameError" => "", "nameError" => "", "emailError" => "", "objectError" => "", "messageError" => "", "isSuccess" => false);
-    $emailTo = "InfiniteMeasures@mail.com";
+    //$emailTo = "InfiniteMeasures@mail.com";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
     { 
         $array["email"] = test_input($_POST["email"]);
+        $array["emailTo"] = test_input($_POST["emailTo"]);
         $array["name"] = test_input($_POST["name"]);
         $array["firstname"] = test_input($_POST["firstname"]);
         
@@ -35,15 +36,22 @@
             $emailText .= "Name: {$array['name']}\n";
         }
 
-        // if(!isEmail($array["email"])) 
-        // {
-        //     $array["emailError"] = "Veuillez rentrer un mail conforme.";
-        //     $array["isSuccess"] = false; 
-        // } 
-        // else
-        // {
-        //     $emailText .= "Email: {$array['email']}\n";
-        // }
+        if(!isEmail($array["email"])) 
+        {
+            $array["emailError"] = "Veuillez rentrer un mail conforme.";
+            $array["isSuccess"] = false; 
+        } 
+        
+
+        if(!isEmail($array["emailTo"])) 
+        {
+            $array["emailError"] = "Veuillez rentrer un mail conforme.";
+            $array["isSuccess"] = false; 
+        }
+        else
+        {
+            $emailText .= "Email: {$array['emailTo']}\n";
+        }
 
 
         if (empty($array["object"]))
@@ -69,7 +77,7 @@
         if($array["isSuccess"]) 
         {
             // $headers = "From: {$array['firstname']} {$array['name']} <{$array['email']}>\r\nReply-To: {$array['email']}";
-            $headers = "From: Infinite Measures <{$emailTo}>\r\nReply-To: {$emailTo}";
+            $headers = "From: Infinite Measures <{$array['emailTo']}>\r\nReply-To: {$array['emailTo']}";
             // mail($emailTo, "Un message de votre site", $emailText, $headers);
             mail($array['email'], $array["object"], $emailText, $headers);
         }

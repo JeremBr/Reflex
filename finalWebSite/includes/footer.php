@@ -12,7 +12,7 @@
 		<footer>
 			<div id="conteneur">
     			<div class="element1" title="piedPage">Aide et informations 
-    				<a style="text-decoration:none" href="FAQ.php" title="piedPage">FAQ</a>
+    				<a style="text-decoration:none" href="FAQ.php" title="piedPage">F.A.Q</a>
     				<a style="text-decoration:none" href="cgu.php" title="piedPage">CGU et Mentions légales</a>
     				<a style="text-decoration:none" href="nous_contacter.php" title="piedPage">Nous contacter</a>
     			</div>
