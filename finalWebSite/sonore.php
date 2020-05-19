@@ -4,6 +4,24 @@
     include 'function/cookie.php';
     include 'function/numberUserLive.php';
 
+
+    if(isset($_POST['idTest']) AND !empty($_POST['idTest'])){
+    	
+
+    	$resultat = rand(40,50); //intervalle à modifier
+
+
+    	$idTest = $_POST['idTest'];
+
+    	
+
+    	$insertSon = $bdd->prepare("UPDATE test SET refSonore = ? WHERE idTest = ?");
+        $insertSon->execute(array($resultat, $idTest));
+        
+    } else {
+    	header("Location: index.php");
+    }
+
 ?>
 
 <html>
@@ -36,8 +54,13 @@
 		    	</div>
 		    </div>
 
-			<div class="bouton"><p><a href="visuel.php" style="text-decoration:none">Réflexe visuel</a></p>
-			</div>
+			<!-- <div class="bouton"><p><a href="visuel.php" style="text-decoration:none">Réflexe visuel</a></p>
+			</div> -->
+
+			<form method="POST" action="visuel.php">
+
+				<button type="submit" class="bouton" name="idTest" value="<?= $idTest ?>">Réflexe visuel</button>
+			</form>
 
 			
 			<div class="barre">

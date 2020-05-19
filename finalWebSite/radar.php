@@ -1,6 +1,12 @@
 <?php // content="text/plain; charset=utf-8"
 require_once ('jpgraph/jpgraph.php');
 require_once ('jpgraph/jpgraph_radar.php');
+
+
+
+
+
+
  
 // Create the basic rtadar graph
 // $graph = new RadarGraph(300,200);
@@ -29,14 +35,14 @@ $graph->title->SetFont(FF_FONT1,FS_BOLD);
 // $graph->SetTitles(array("One","Two","Three","Four","Five","Sex","Seven","Eight","Nine","Ten"));
 $graph->SetTitles(array("Reconnaissance de tonalite","Rythme cardiaque","Temperature de la peau","Reflexe sonore","Reflexe visuel"));
 // Create the first radar plot        
-$plot = new RadarPlot(array(45,80,38,10,50));
+$plot = new RadarPlot(array(40,80,38,10,50));
 $plot->SetLegend("Goal");
 $plot->SetColor("red","lightred");
 $plot->SetFill(false);
 $plot->SetLineWeight(2);
  
 // Create the second radar plot
-$plot2 = new RadarPlot(array(30,80,38,30,31));
+$plot2 = new RadarPlot(array($_GET['rec'],$_GET['freq'],$_GET['temp'],$_GET['son'],$_GET['vis']));
 $plot2->SetLegend("Actual");
 $plot2->SetColor("blue","lightred");
  
