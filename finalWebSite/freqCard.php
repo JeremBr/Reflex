@@ -4,6 +4,29 @@
     include 'function/cookie.php';
     include 'function/numberUserLive.php';
 
+
+    if(isset($_POST['idTest']) AND !empty($_POST['idTest'])){
+    	
+
+    	$resultat = rand(40,140); //intervalle à modifier
+    	
+
+    	
+
+    	$idTest = $_POST['idTest'];
+
+    	// //FAUT METTRE UN INSERT POUR idTest
+
+    	$insertFreq = $bdd->prepare("UPDATE test SET freqCard = ? WHERE idTest = ?");
+        $insertFreq->execute(array($resultat, $idTest));
+
+
+
+    	//IL FAUT LUI ATTRIBUER DES VALEURS
+    } else {
+    	header("Location: index.php");
+    }
+
 ?>
 
 <html>
@@ -34,8 +57,13 @@
 		    	</div>
 		    </div>
 
-			<div class="bouton"><p><a href="temp.php" style="text-decoration:none">Mesure de la température superficielle de la peau</a></p>
-			</div>
+			<!-- <div class="bouton"><p><a href="temp.php" style="text-decoration:none">Mesure de la température superficielle de la peau</a></p>
+			</div> -->
+
+			<form method="POST" action="temp.php">
+
+				<button type="submit" class="bouton" name="idTest" value="<?= $idTest ?>">Mesure de la température superficielle de la peau</button>
+			</form>
 
 			
 			<div class="barre">

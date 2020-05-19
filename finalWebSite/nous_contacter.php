@@ -46,7 +46,7 @@
     			<br>
 
     		<a href="mailto:reflex@gmail.com"> Email : reflex@gmail.com</a><br/>
-    		<a class="contacter" href="mailUtilisateur.php?mailto=reflex@gmail.com">Contacter</a>
+    		<a class="contacter" href="mailUtilisateur.php?mailto=centre">Contacter</a>
 </div>
 
 	<!--PARTIE GAUCHE-->
@@ -60,7 +60,7 @@
     			<br>
 
     		<a href="mailto:reflex.admin@gmail.com"> Email : reflex.admin@gmail.com</a> <br/>
-    		<a class="contacter" href="mailUtilisateur.php?mailto=reflex.admin@gmail.com">Contacter</a>
+    		<a class="contacter" href="mailUtilisateur.php?mailto=admin">Contacter</a>
 		<br>
 	   	<br>
 
@@ -73,7 +73,7 @@
     			<br>
 
     		<a href="mailto:reflex.gestio@gmail.com"> Email : reflex.gestio@gmail.com</a><br/>
-    		<a class="contacter" href="mailUtilisateur.php?mailto=reflex.gestio@gmail.com">Contacter</a>
+    		<a class="contacter" href="mailUtilisateur.php?mailto=gestio">Contacter</a>
 
 
 		</div>
