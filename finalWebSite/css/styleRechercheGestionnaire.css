@@ -4,42 +4,67 @@ h3
 	font-size: 20px;
 	text-transform: uppercase;
 	margin-top: 3%;
-	margin-left: 12%;
+	margin-left: 7%;
 }
+
 .titre
 {
 	margin-left : 23%;
 }
-.form
+
+
+
+/*------------------------------------------------------*/
+
+
+
+
+.recherche
 {
 	margin : auto;
-	padding-left : 100px;
+	padding-left : 410px;
 	padding-bottom : 5px;
-	
 	width: 700px;
+ 
+}
 
-	/*
-	padding-top: 20px;
+
+label 
+{
+	font-family: "Lato";
+	font-size: 20px;
+	color : black;
+}
+.recherche button 
+{
+	font-family: "Lato";
+	font-size: 20px;
+	color : black;
 	border : 2px #17e2cd solid;
 	border-radius: 40px;
-	
 }
-input
+.recherche button:hover
 {
-	border: 1px solid #ddd;
-	border-radius: 10px;
-	
-    /*transition: all 0.3s ease-in 0s;*/
-  
+	background-color: rgb(160,223,231);
 }
+
+
+
+
+
+
+
+
+
 
 .sousTitre
 {
 	padding-left: 160px;
-	color : red;
+	color : #333;
 	font-family: "Lato";
 	font-size:25px;
 }
+
 
 .contenu
 {
@@ -54,29 +79,52 @@ input
 	margin-bottom: 5%;
 }
 
-label 
+
+
+
+
+
+
+
+
+form
 {
-	font-family: "Lato";
-	font-size: 20px;
-	color : /*rgb(48,82,231)*/ black;
+	display: inline-block;
 }
-button 
-{
-	font-family: "Lato";
-	font-size: 20px;
-	color : /*rgb(48,82,231)*/ black;
-	border : 2px #17e2cd solid;
-	border-radius: 40px;
-}
-button:hover
-{
-	background-color: rgb(160,223,231);
-}
+
 
 .resultats
 {
-	padding-left: 220px;
+	padding-left: 0px;
 }
+
+/*.resultats button
+{
+	padding-left:10px;
+	border : 2px purple solid;
+	border-radius: 20px;
+	width:200px;
+	background-color: white;
+	
+
+	color : purple;
+	font-size: 15px;
+	font-family: "Lato";
+	text-decoration:none;
+}
+
+.resultats button:hover
+{
+	background-color : purple;
+	color : white;
+}*/
+
+
+
+
+
+
+
 p
 {
 	margin-top : 20px;
@@ -85,21 +133,16 @@ p
 	border-radius: 20px;
 	width:200px;
 	display: inline-block;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
 
 }
 p:hover
 {
 	background-color : purple;
 }
-a
-{
-	color : purple;
-	font-size: 15px;
-	font-family: "Lato";
-	text-decoration:none;
-}
-a:hover
-{
-	color : white;
-}
+
+
+
 

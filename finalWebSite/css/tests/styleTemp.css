@@ -8,15 +8,22 @@ h2
 	font-size: 40px;
 	text-transform: uppercase;
 }
+
+
+
+
+
+
+
+
+form
+{
+	padding-left: 540px;
+}
 .bouton
 {
-	margin-top : 60px;
-	padding-top: 60px;
-	padding-left : 520px;
-}
-p
-{
-	/*border : 2px purple solid;*/
+	
+
 	border : 2px #17e2cd solid;
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
@@ -27,28 +34,27 @@ p
 	color : #17e2cd;
 	background-color : white;
 	width : 250px;
-	padding-left:80px;
+	padding-left:25px;
 	padding-top : 10px;
 	padding-bottom: 10px;
 	font-size:20px;
-	
+}
 
-}
-a
+.bouton:hover
 {
-	/*color:purple;*/
-	color : #17e2cd;
-}
-p:hover
-{
+
 	color: white;
-	/*background-color : purple;*/
 	background-color: #17e2cd;
 }
-a:hover
-{
-	color:white;
-}
+
+
+
+
+
+
+
+
+
 progress
 {
 	background-color : rgb(212,212,212);

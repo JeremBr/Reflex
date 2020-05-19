@@ -40,10 +40,19 @@
 
 						<p class="titre">Ecrivez votre mail </p>
 						<br/>
-					
+
 						<p><label for="email">Adresse mail du destinataire : <strong>*</strong> </label></p>
-						<p ><input type="email" name="email" id="email" size="50" value="<?php if(isset($_GET['mailto'])) { echo $_GET['mailto']; } ?>" required/>
-						</p><p class="comments"></p>
+                        <select name="email">
+                            <option value="jeremy.breton34@gmail.com" <?php if($_GET['mailto']=='centre') { echo 'selected'; } ?> >Centre</option>
+                            <option value="reflex.admin@gmail.com" <?php if($_GET['mailto']=='admin') { echo 'selected'; } ?> >Administrateurs</option>
+                            <option value="reflex.gestio@gmail.com" <?php if($_GET['mailto']=='gestio') { echo 'selected'; } ?> >Gestionnaires</option>
+                           
+                        </select>
+                        <br/><br/>
+					
+						<!-- <p><label for="email">Adresse mail du destinataire : <strong>*</strong> </label></p>
+						<p ><input type="email" name="email" id="email" size="50" value="<?php //if(isset($_GET['mailto'])) { echo $_GET['mailto']; } ?>" required/>
+						</p><p class="comments"></p> -->
 
 						<p><label for="email">Votre adresse mail : <strong>*</strong> </label></p>
 						<p ><input type="emailTo" name="emailTo" id="emailTo" size="50" required/>

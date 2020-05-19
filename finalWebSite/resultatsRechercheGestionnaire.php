@@ -6,10 +6,10 @@
     include 'function/numberUserLive.php';
 
 
-
+    // on recherche seulement les utilisateurs
 	if (isset($_POST['recherche']) AND !empty($_POST['recherche'])) {
 		$research = htmlspecialchars($_POST['recherche']);
-		$results = $bdd->query('SELECT * FROM utilisateur WHERE nom LIKE "' . $research . '%" OR prenom LIKE "' . $research . '%"'); 
+		$results = $bdd->query('SELECT * FROM utilisateur WHERE (permission = 0) AND (nom LIKE "' . $research . '%" OR prenom LIKE "' . $research . '%")'); 
 	}
 	
 
@@ -40,7 +40,7 @@
 
 			<div class="titre"><h3>Résultats de votre recherche</h3></div>
 			<form method="post" action="resultatsRechercheGestionnaire.php">
-				<div class="form">
+				<div class="recherche">
 					<label for="user-search">Rechercher un utilisateur : </label>
 					<input type="search" id="user-search" name="recherche" aria-label="Search through site content">
 					<button>Rechercher</button>
@@ -61,25 +61,44 @@
 									<div class="resultats">
 				                	
 				                	</div>
-				                	<div class="type">Type :  </div>
+				                	<!-- <div class="type">Type :  </div> -->
 									<div class="Genre">Genre : <?= $r['genre'] ?></div>
 									<div class="Nom">Nom : <?= $r['nom'] ?></div>
 									<div class="Prénom">Prénom : <?= $r['prenom'] ?></div>
-									<div class="Adresse">Adresse : </div>
+									<div class="Adresse">Adresse : <?= $r['adresse'] ?></div>
+									<div class="CodePostale">Code Postale : <?= $r['codePostale'] ?></div>
 									<div class="Adresse mail">Adresse mail : <?= $r['mail'] ?></div>
 
 
 									<div class="resultats">
-										<p class="tests">
-											<a href="reconnaissanceTonalite.php">Lancement de la série de tests</a>
-										</p>
 
-										<p class="envoiMail"><a href="envoyerMail.php">Envoyer un mail</a>
-										</p>
+										<p class="resultats">
+											<a href="listeResultats.php?userResults=<?= $r['idUtilisateur'] ?>">Consulter résultats</a>
+										</p> 
+
+										<p class="tests">
+											<a href="reconnaissanceTonalite.php?userTest=<?= $r['idUtilisateur'] ?>">Lancement de la série de tests</a>
+										</p> 
+
+										<!-- <form method="POST" action="listeResultats.php">
+                    						<button type="submit" class="results" name="userResults" value="<?= $r['idUtilisateur'] ?>">Consulter résultats</button>
+                						</form>
+										
+										<form method="POST" action="reconnaissanceTonalite.php">
+                    						<button type="submit" class="tests" name="userTest" value="<?= $r['idUtilisateur'] ?>">Lancement de la série de tests</button>
+                						</form>
+
+                						<form method="POST" action="envoyerMail.php">
+                    						<button type="submit" class="envoiMail" name="userMail" value="<?= $r['mail'] ?>">Envoyer un mail</button>
+                						</form> -->
+                						
+
+
+										<p class="envoiMail"><a href="envoyerMail.php?userMail=<?= $r['mail'] ?>">Envoyer un mail</a></p>
 										<br/>
 
 									</div>
-									</div>
+								</div>
 
 									
 

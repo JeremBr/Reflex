@@ -4,6 +4,39 @@
     include 'function/cookie.php';
     include 'function/numberUserLive.php';
 
+
+
+    if(isset($_GET['userTest']) AND !empty($_GET['userTest'])){
+    	// $userTest = int($_POST['userTest']);
+    	// $requser = $bdd->prepare("SELECT * FROM test");
+     //    $requser->execute(array($));
+
+
+    	
+    	$resultat = rand(80,100); //intervalle à modifier
+    	
+
+    	$insertToken = $bdd->prepare("INSERT INTO test(idUtilisateur, RecoTona) VALUES(?, ?)");
+        $insertToken->execute(array($_GET['userTest'], $resultat));
+
+        // $requser = $bdd->prepare("SELECT LAST(idTest) FROM test WHERE idUtilisateur=?");
+        // $requser->execute(array($_POST['userTest']));
+        // $user = $requser->fetch();
+
+
+        
+        $last_id = $bdd->lastInsertId();
+
+
+    	
+
+
+
+    	//IL FAUT LUI ATTRIBUER DES VALEURS
+    } else {
+    	header("Location: index.php");
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -33,8 +66,13 @@
 		    	</div>
 		    </div>
 
-			<div class="bouton"><p><a href="freqCard.php" style="text-decoration:none">Mesure du rythme cardiaque</a></p>
-			</div>
+			<!-- <div class="bouton"><p><a href="freqCard.php" style="text-decoration:none">Mesure du rythme cardiaque</a></p>
+			</div> -->
+
+			<form method="POST" action="freqCard.php">
+
+				<button type="submit" class="bouton" name="idTest" value="<?= $last_id ?>">Mesure du rythme cardiaque</button>
+			</form>
 
 			
 			<div class="barre">
