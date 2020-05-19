@@ -83,7 +83,7 @@ if(isset($_COOKIE['idUtilisateur']) AND $_COOKIE['idUtilisateur'] > 0) {
 
                             if($userinfo['permission'] == 0){
                                 ?>
-                                <li><a href="resultatsTest.php">Mes résultats</a></li>
+                                <li><a href="listeResultats.php?userResults=<?= $_COOKIE['idUtilisateur'] ?>">Mes résultats</a></li> <!-- Doit mettre page avec liste des diff resultats-->
                                 <li><a href="editionprofil.php">Editer mon profil</a></li>
                                 
 
@@ -93,7 +93,7 @@ if(isset($_COOKIE['idUtilisateur']) AND $_COOKIE['idUtilisateur'] > 0) {
                                 ?>
                                 <li><a href="envoyerMail.php">Envoyer un mail</a></li>
                                 <li><a href="inviteUtilisateur.php">Inviter un utilisateur</a></li>
-                                <li><a href="resultatsRechercheGestionnaire.php">Rechercher un utilisateur</a></li>
+                                <li><a href="resultatsRechercheGestionnaire.php">Rechercher un utilisateur</a></li> <!-- Doit pouvoir mettre page avec liste des diff resultats-->
                                 <li><a href="editionprofil.php">Editer mon profil</a></li>
 
                                 <?php

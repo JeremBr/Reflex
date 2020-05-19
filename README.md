@@ -15,6 +15,7 @@ You can find here all the code architecture of the Reflex's Product.
 - Finir syst mail admin/gestio
 - Attention dans MailUtilisateur qu'on ne puisse envoyer mail qu'aux 3
 - GERER FAQ
+- GERER CGU
 
 
 PLUS TARD :
