@@ -4,6 +4,25 @@
     include 'function/cookie.php';
     include 'function/numberUserLive.php';
 
+
+
+    if(isset($_POST['idTest']) AND !empty($_POST['idTest'])){
+    	
+
+    	$resultat = rand(36,42); //intervalle à modifier
+
+
+    	$idTest = $_POST['idTest'];
+
+    	
+
+    	$insertTemp = $bdd->prepare("UPDATE test SET temperature = ? WHERE idTest = ?");
+        $insertTemp->execute(array($resultat, $idTest));
+
+    } else {
+    	header("Location: index.php");
+    }
+
 ?>
 
 <html>
@@ -39,8 +58,13 @@
 		   </div>
 			</div>
 
-			<div class="bouton"><p><a href="sonore.php" style="text-decoration:none">Réflexe sonore</a></p>
-			</div>
+			<!-- <div class="bouton"><p><a href="sonore.php" style="text-decoration:none">Réflexe sonore</a></p>
+			</div> -->
+
+			<form method="POST" action="sonore.php">
+
+				<button type="submit" class="bouton" name="idTest" value="<?= $idTest ?>">Réflexe sonore</button>
+			</form>
 
 			
 			<div class="barre">

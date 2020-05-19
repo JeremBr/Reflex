@@ -4,6 +4,19 @@
     include 'function/cookie.php';
     include 'function/numberUserLive.php';
 
+
+
+    if(isset($_POST['idTest']) AND !empty($_POST['idTest'])){
+    	
+
+    	$requser = $bdd->prepare("SELECT * FROM test WHERE idTest=? ");
+        $requser->execute(array($_POST['idTest']));
+        $yo = $requser->fetch();
+        
+    } else {
+    	header("Location: index.php");
+    }
+
 ?>
 
 <html>
@@ -31,24 +44,39 @@
 			</tr>
 
 			<tr>
-				<td>30<br/></td>
-				<td>80<br/></td>
-				<td>38<br/></td>
-				<td>30<br/></td>
-				<td>31<br/></td>
+				<td> <?= $yo['RecoTona']; ?><br/></td>
+				<td> <?= $yo['freqCard']; ?><br/></td>
+				<td> <?= $yo['temperature']; ?><br/></td>
+				<td> <?= $yo['refSonore']; ?><br/></td>
+				<td> <?= $yo['refVisuel']; ?><br/></td>
 
 
 			</tr>
 
 		</table>
 		
-	<img class="graph" src="radar.php">
+	<img class="graph" src="radar.php?rec=<?= $yo['RecoTona']; ?>&freq=<?= $yo['freqCard']; ?>&temp=<?= $yo['temperature']; ?>&son=<?= $yo['refSonore']; ?>&vis=<?= $yo['refVisuel']; ?>">
 
-	<div class="commentaire">
+	<!-- <div class="commentaire">
 		<p><label for="comGestionnaire"> Commentaires du gestionnaire : </label></p>
 			<p ><textarea name="comGestionnaire" id="comGestionnaire" size="50" rows="10" cols="50" ></textarea> </p>
-	</div>
+	</div> -->
 
+
+	<!-- <form method="post" action="">
+			
+			<textarea type="text" name="message" placeholder="MESSAGE"></textarea>
+			<div class="commentaire">
+				<p><label for="comGestionnaire"> Commentaires du gestionnaire : </label></p>
+				<p ><textarea name="message" id="comGestionnaire" size="50" rows="10" cols="50" ></textarea> </p>
+			</div>
+			<br/>
+			<input type="submit" value="Envoyer" />
+	</form> -->
+
+
+	<!-- Faire un bouton qui mettra le commentaire du test
+ -->
 	<?php include("includes/footer.php"); ?>
 
 

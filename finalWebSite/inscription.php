@@ -16,52 +16,58 @@
 
 
       if(!empty($_POST['choix']) AND !empty($_POST['nom']) AND!empty($_POST['prenom']) AND !empty($_POST['mdp']) AND !empty($_POST['mdp2'])) {
+         if(isset($_POST['cgu'])){
 
-         $genre = htmlspecialchars($_POST['choix']);
+            $genre = htmlspecialchars($_POST['choix']);
          
-         $mdp = sha1($_POST['mdp']);
-         $mdp2 = sha1($_POST['mdp2']);
+            $mdp = sha1($_POST['mdp']);
+            $mdp2 = sha1($_POST['mdp2']);
 
 
-         $nomlength = strlen($nom);
-         $prenomlength = strlen($prenom);
+            $nomlength = strlen($nom);
+            $prenomlength = strlen($prenom);
 
-         if($prenomlength <= 50) {
-            if($nomlength <= 50){
+            if($prenomlength <= 50) {
+               if($nomlength <= 50){
 
-               
-               $timeInvit = $_SESSION['temps'];
-               $time = time();
+                  
+                  $timeInvit = $_SESSION['temps'];
+                  $time = time();
 
-               if( ($time - $timeInvit) < (24*3600) ){
+                  if( ($time - $timeInvit) < (24*3600) ){
 
-                  if($mdp == $mdp2){
+                     if($mdp == $mdp2){
 
-                     $insertmbr = $bdd->prepare("INSERT INTO utilisateur(genre, prenom, nom, mail, motDePasse) VALUES(?,?,?,?,?)");
-                     $insertmbr->execute(array($genre,$prenom,$nom,$_SESSION['mail'],$mdp));
+                        $insertmbr = $bdd->prepare("INSERT INTO utilisateur(genre, prenom, nom, mail, motDePasse) VALUES(?,?,?,?,?)");
+                        $insertmbr->execute(array($genre,$prenom,$nom,$_SESSION['mail'],$mdp));
 
-                     $delUser = $bdd->prepare("DELETE FROM invitation WHERE mail = ?");
-                     $delUser->execute(array($_SESSION['mail']));
+                        $delUser = $bdd->prepare("DELETE FROM invitation WHERE mail = ?");
+                        $delUser->execute(array($_SESSION['mail']));
 
-                     $erreur = "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>";
+                        $erreur = "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>";
+                     } else {
+                        $erreur = "Vos mots de passes ne correspondent pas !";
+                     }
+                  
+
                   } else {
-                     $erreur = "Vos mots de passes ne correspondent pas !";
+                     $erreur = "Vous n'êtes plus autorisé à vous inscrire !";
                   }
-               
-
+                  
+                               
+                        
                } else {
-                  $erreur = "Vous n'êtes plus autorisé à vous inscrire !";
+                  $erreur = "Votre nom ne doit pas dépasser 50 caractères !";
                }
                
-                            
-                     
             } else {
-               $erreur = "Votre nom ne doit pas dépasser 50 caractères !";
+               $erreur = "Votre prenom ne doit pas dépasser 50 caractères !";
             }
-            
+
          } else {
-            $erreur = "Votre prenom ne doit pas dépasser 50 caractères !";
+            $erreur = "Vous n'avez pas accepté les conditions générales d'utilisation";
          }
+         
 
       } else {
          $erreur = "Tous les champs doivent être complétés !";

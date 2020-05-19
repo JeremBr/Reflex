@@ -5,6 +5,15 @@
     include 'function/access.php';
     include 'function/numberUserLive.php';
 
+
+    if(isset($_GET['userMail']) AND !empty($_GET['userMail'])){
+
+    	$userMail = $_GET['userMail'];
+
+    } else {
+    	header("Location: monCompte.php");
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +53,7 @@
 								<br/> -->
 							
 						<p><label for="email">Adresse mail du destinataire : <strong>*</strong> </label></p>
-						<p ><input type="email" name="email" id="email" size="45" required/>
+						<p ><input type="email" name="email" id="email" value="<?php if(isset($userMail)) { echo $userMail; } ?>" size="45" required/>
 						</p><p class="comments"></p>
 
 						<p><label for="object">Objet du message : <strong>*</strong></label></p>
