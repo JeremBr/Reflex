@@ -27,7 +27,8 @@
 
 						    
 						if($mdp1 == $mdp2) {
-						    $mdp1 = sha1($_POST['motPasse']);
+						    
+						    $mdp1 = hash('sha256', $_POST['motPasse']);
 
 						    $insertmdp = $bdd->prepare("UPDATE utilisateur SET motDePasse = ? WHERE mail = ?");
 						    $insertmdp->execute(array($mdp1, $invit['mail']));
