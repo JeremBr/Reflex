@@ -3,6 +3,9 @@
 	if(isset($_GET['supprime']) AND !empty($_GET['supprime'])){
 		$supprime = (int) $_GET['supprime'];
 
+		$delTest = $bdd->prepare('DELETE FROM test WHERE idUtilisateur = ?');
+		$delTest->execute(array($supprime));
+
 		$req = $bdd->prepare('DELETE FROM utilisateur WHERE idUtilisateur = ?');
 		$req->execute(array($supprime));
 	}
