@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 19, 2020 at 01:45 PM
+-- Generation Time: May 21, 2020 at 08:29 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -60,13 +60,6 @@ CREATE TABLE IF NOT EXISTS `invitation` (
   PRIMARY KEY (`mail`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `invitation`
---
-
-INSERT INTO `invitation` (`mail`, `token`, `temps`) VALUES
-('ghizghiz333@gmail.com', '506901f42b5933a15fd3993ef5ffeb9f0f0c7c24594509c3955e639dfdedc8ff4fc0c5f1ff5f3e54e2a990f05a42ae38e92d006f488b279523ab1c508dffdb9d', 1588338416);
-
 -- --------------------------------------------------------
 
 --
@@ -86,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `online` (
 --
 
 INSERT INTO `online` (`id`, `time`, `ipUser`) VALUES
-(1, 1589895159, '::1');
+(1, 1590092288, '::1');
 
 -- --------------------------------------------------------
 
@@ -101,6 +94,13 @@ CREATE TABLE IF NOT EXISTS `oublie` (
   `temps` int(10) NOT NULL,
   PRIMARY KEY (`mail`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `oublie`
+--
+
+INSERT INTO `oublie` (`mail`, `token`, `temps`) VALUES
+('jeremy.breton34@gmail.com', 'bfc8368a6fa4ef5e261a11fcb346f7cb564ea077fb2d56f722bf8f78f71204cd6457d02b3b3673cc63be2892ab3d1b81f06be5c3e611180a8c29545e51f76199', 1590085149);
 
 -- --------------------------------------------------------
 
@@ -123,22 +123,6 @@ CREATE TABLE IF NOT EXISTS `test` (
   KEY `idUtilisateur` (`idUtilisateur`)
 ) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `test`
---
-
-INSERT INTO `test` (`idTest`, `date`, `idUtilisateur`, `comment`, `RecoTona`, `freqCard`, `temperature`, `refSonore`, `refVisuel`) VALUES
-(49, '2020-05-17 10:06:06', 33, NULL, 94, 95, 36, 41, 42),
-(50, '2020-05-17 10:07:26', 33, NULL, 80, 97, 40, 43, 35),
-(51, '2020-05-17 10:10:30', 33, NULL, 87, 121, 42, 41, 43),
-(52, '2020-05-18 20:35:12', 33, NULL, 100, NULL, NULL, NULL, NULL),
-(53, '2020-05-18 21:20:49', 35, NULL, 92, 89, 37, 43, 50),
-(54, '2020-05-18 21:48:13', 40, NULL, 88, 127, 38, 42, 30),
-(55, '2020-05-19 08:50:52', 40, NULL, 86, 120, 42, 44, 47),
-(56, '2020-05-19 09:04:11', 40, NULL, 85, 102, 37, 41, 43),
-(57, '2020-05-19 12:50:15', 40, NULL, 86, NULL, NULL, NULL, NULL),
-(58, '2020-05-19 13:11:49', 40, NULL, 93, 108, 36, 46, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -153,22 +137,21 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `nom` varchar(50) NOT NULL,
   `prenom` varchar(50) NOT NULL,
   `genre` varchar(50) NOT NULL,
-  `motDePasse` varchar(50) NOT NULL,
+  `motDePasse` varchar(128) NOT NULL,
   `codePostale` int(5) DEFAULT NULL,
   `adresse` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idUtilisateur`),
   KEY `mail` (`mail`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`idUtilisateur`, `permission`, `mail`, `nom`, `prenom`, `genre`, `motDePasse`, `codePostale`, `adresse`) VALUES
-(33, 2, 'admin@a.a', 'admin', 'admin', 'Dieu', 'd033e22ae348aeb5660fc2140aec35850c4da997', 75000, '5 rue Georges-Duroy'),
-(35, 1, 'gestionnaire@g.g', 'Gestio', 'nnaire', 'Femme', '893cf2f5edbc8c751c5f84db8d169a7b0db0348c', NULL, NULL),
-(40, 0, 'jeremy.breton34@gmail.com', 'Breton', 'JÃ©rÃ©my', 'Homme', 'fc966032263a566c21c36a9bde2d8dec5e7b15d8', NULL, NULL),
-(42, 0, '34youki@gmail.com', 'test', 'test', 'Femme', 'd009588e44424bfb9192d01316bbb7a74370a017', NULL, NULL);
+(1, 2, 'admin@a.a', 'admin', 'admin', 'Homme', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 75000, '1 rue Georges-Duroy'),
+(2, 1, 'gestionnaire@g.g', 'gestio', 'gestio', 'Femme', 'f340e6820faa25216612579cca03588f1578f6eab6d7c509f246bf6180600ab1', NULL, NULL),
+(44, 0, 'jeremy.breton34@gmail.com', 'JÃ©rÃ©my', 'JÃ©rÃ©my', 'Homme', '85139b56e271594fce7a6ee559107152138d289129bb5dd5f84ee9bc897d5ba9', 92130, '29-31 rue Victor Hugo');
 
 --
 -- Constraints for dumped tables
