@@ -30,6 +30,9 @@
 						    
 						    $mdp1 = hash('sha256', $_POST['motPasse']);
 
+						    $delToken = $bdd->prepare('DELETE FROM oublie WHERE token = ?');
+							$delToken->execute(array($_GET['pass']));
+
 						    $insertmdp = $bdd->prepare("UPDATE utilisateur SET motDePasse = ? WHERE mail = ?");
 						    $insertmdp->execute(array($mdp1, $invit['mail']));
 						    header('Location: monCompte.php');
