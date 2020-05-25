@@ -14,6 +14,10 @@ You can find here all the code architecture of the Reflex's Product.
 (avec javascript????)
 
 
+
+- Commentaire gestionnaire sur les tests
+- Page administrateur pour voir les stats des gens connectés etc..
+
 PLUS TARD :
 
 - Changer "Run your test" page d'accueil, en fonction de la personne qui est connecté
