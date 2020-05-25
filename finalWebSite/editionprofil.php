@@ -53,11 +53,14 @@ if(isset($_COOKIE['idUtilisateur']) && isset($_COOKIE['mdp'])) {
       }
 
       if(isset($_POST['newmdp1']) AND !empty($_POST['newmdp1']) AND isset($_POST['newmdp2']) AND !empty($_POST['newmdp2'])) {
-         $mdp1 = sha1($_POST['newmdp1']);
-         $mdp2 = sha1($_POST['newmdp2']);
+         $mdp1 = hash('sha256', $_POST['newmdp1']);
+         $mdp2 = hash('sha256', $_POST['newmdp2']);
          if($mdp1 == $mdp2) {
             $insertmdp = $bdd->prepare("UPDATE utilisateur SET motdepasse = ? WHERE idUtilisateur = ?");
             $insertmdp->execute(array($mdp1, $_COOKIE['idUtilisateur']));
+
+            setcookie('mdp', $mdp1, time() + (60*2));
+
             header('Location: monCompte.php');
          } else {
             $msg = "Vos deux mdp ne correspondent pas !";
@@ -87,33 +90,33 @@ if(isset($_COOKIE['idUtilisateur']) && isset($_COOKIE['mdp'])) {
 
 
       <div align="center">
-         <h2>Edition de mon profil</h2>
+         <h2><?php echo trad("Edition de mon profil","Edit profil")?></h2>
          <div align="left">
             <div class="formulaire">
 
             <form method="POST" action="" enctype="multipart/form-data">
-               <label>Nom :</label><br/>
-               <input type="text" name="newnom" placeholder="Nom" value="<?php echo $user['nom']; ?>" /><br /><br />
+               <label><?php echo trad("Nom :","Last name :")?></label><br/>
+               <input type="text" name="newnom" placeholder="<?php echo trad("Nom","Last name") ?>" value="<?php echo $user['nom']; ?>" /><br /><br />
 
-               <label>Prénom :</label><br/>
-               <input type="text" name="newprenom" placeholder="Préom" value="<?php echo $user['prenom']; ?>" /><br /><br />
+               <label><?php echo trad("Prénom :","First name :")?></label><br/>
+               <input type="text" name="newprenom" placeholder="<?php echo trad("Prénom","First name") ?>" value="<?php echo $user['prenom']; ?>" /><br /><br />
 
-               <label>Mail :</label><br/>
-               <input type="text" name="newmail" placeholder="Mail" value="<?php echo $user['mail']; ?>" /><br /><br />
+               <label><?php echo trad("Mail :","Email :")?></label><br/>
+               <input type="text" name="newmail" placeholder="<?php echo trad("Mail","Email") ?>" value="<?php echo $user['mail']; ?>" /><br /><br />
 
-               <label>Adresse :</label><br/>
-               <input type="text" name="newadresse" placeholder="Votre adresse" value="<?php echo $user['adresse']; ?>" /><br /><br />
+               <label><?php echo trad("Adresse :","Adress :")?></label><br/>
+               <input type="text" name="newadresse" placeholder="<?php echo trad("Votre adresse","Your adress") ?>" value="<?php echo $user['adresse']; ?>" /><br /><br />
 
-               <label>Code Postale :</label><br/>
-               <input type="text" name="newcode" placeholder="Votre code postale" value="<?php echo $user['codePostale']; ?>" /><br /><br />
+               <label><?php echo trad("Code postale :","Postal code :")?></label><br/>
+               <input type="text" name="newcode" placeholder="<?php echo trad("Votre code postale","Your postal code") ?>" value="<?php echo $user['codePostale']; ?>" /><br /><br />
 
-               <label>Nouveau mot de passe :</label><p class="description">* 8 caractères dont un spécial</p><br/>
-               <input type="password" name="newmdp1" placeholder="Nouveau mot de passe"/><br /><br />
+               <label><?php echo trad("Nouveau mot de passe :","New password :")?></label><p class="description"><?php echo trad("* 8 caractères dont un spécial","* 8 characters including a special one") ?></p><br/>
+               <input type="password" name="newmdp1" placeholder="<?php echo trad("Nouveau mot de passe","New password") ?>"/><br /><br />
 
-               <label>Confirmation - mot de passe :</label><br/>
-               <input type="password" name="newmdp2" placeholder="Confirmation du nouveau mot de passe" /><br /><br />
+               <label><?php echo trad("Confirmation – mot de passe :","Password - confirmation :")?></label><br/>
+               <input type="password" name="newmdp2" placeholder="<?php echo trad("Confirmation du nouveau mot de passe","Password confirmation") ?>" /><br /><br />
                
-               <input type="submit" value="Mettre à jour mon profil !" />
+               <input type="submit" value="<?php echo trad("Mettre à jour mon profil","Update profil") ?>" />
             </form>
             <?php if(isset($msg)) { echo $msg; } ?>
          </div>
