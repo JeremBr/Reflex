@@ -26,7 +26,7 @@
             <h1><?php echo trad("A propos","About")?></h1>
               
            <br/>
-               <h4>"<?php echo trad(" Qui sommes nous ? "," Who are we ? ")?>"</h4><br/><br/>
+               <h4><?php echo trad(" Qui sommes nous ? "," Who are we ? ")?></h4><br/><br/>
                <article><?php echo trad("  Infinite Measures est un installateur de solutions «clé en main» pour les centres d’évaluation psychotechniques. Nous développons les tests qui prouve que vous êtes capable de conduire!"," Infinite Measures is a «turnkey» solution installer for psychotechnical assessment centers. We develop tests that prove you are capable of driving! ")?>
                 <br/> 
             </article><br/><br/>

@@ -15,7 +15,7 @@
 		<meta charset="utf-8">
 		<link href="css/style.css" rel="stylesheet">
 
-		<title>Page Administrateur</title>
+		<title><?php echo trad("Page Administrateur","Administrator page")?></title>
 	</head>
 
 	<body>

@@ -1,3 +1,5 @@
+<?php include("includes/header.php"); ?>
+
 <?php
 session_start();
  
@@ -29,15 +31,15 @@ if(isset($_POST['formconnexion'])) {
             //header("Location: monCompte.php?idUtilisateur=".$_SESSION['idUtilisateur']);
             header("Location: monCompte.php");
          } else {
-            $erreur = "Mauvais mail ou mot de passe !";
+            $erreur = trad("Mauvais mail ou mot de passe !","Wrong email or password !");
          }
 
       } else {
-         $erreur = "Veuillez saisir votre mot de passe !";
+         $erreur = trad("Veuillez saisir votre mot de passe !","Please enter a password !");
       }
       
    } else {
-      $erreur = "Veuillez saisir votre mail !";
+      $erreur = trad("Veuillez saisir votre mail !","Please enter your email address !");
    }
 }
 ?>
@@ -57,8 +59,6 @@ if(isset($_POST['formconnexion'])) {
 
    </head>
    <body>
-
-      <?php include("includes/header.php"); ?>
 
       
       <section id="login-box">

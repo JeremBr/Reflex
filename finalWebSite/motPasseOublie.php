@@ -1,4 +1,6 @@
 <?php
+include("includes/header.php");
+
     session_start();
     $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
     include 'function/cookie.php';
@@ -19,18 +21,18 @@
                 if($mailexist == 1) {
 
                 	include "function/sendPassword.php";
-                    $erreur = "L'invitation a bien été envoyée !";
+                    $erreur = trad("L'invitation a bien été envoyée !","The invitation has been sent !");
 
                 }else{
-                	$erreur = "L'adresse mail saisie n'existe pas.";
+                	$erreur = trad("L'adresse mail saisie n'existe pas.","The entered email address does not exist");
                 }
 
     		} else {
-    			$erreur = "Veuillez saisir une adresse mail valide !";
+    			$erreur = trad("Veuillez saisir une adresse mail valide !","Please enter a valid email address !");
     		}
 
     	} else {
-    		$erreur = "Veuillez entrer une adresse mail !";
+    		$erreur = trad("Veuillez entrer une adresse mail !","Please enter an email address !");
     	}
 
 
@@ -43,7 +45,7 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<title>Mot de passe oublié ? </title>
+		<title><?php echo trad("Mot de passe oublié ? ","Forgot passwsord ? ")?></title>
 		
 		<link href="css/style.css" rel="stylesheet">
 		<link href="css/styleMp.css" rel="stylesheet">
@@ -51,16 +53,14 @@
 
 	<body>
 
-		<?php include("includes/header.php"); ?>
-
-		<div class="titre"><h3>Mot de passe oublié ?</h3></div>
+		<div class="titre"><h3><?php echo trad("Mot de passe oublié ? ","Forgot passwsord ? ")?></h3></div>
 		<div class="formu">
 			<form method="post" action="motPasseOublie.php">
 				
 				<div id="mp">
 
-					<p class="champs"> * champs obligatoires</p>
-					<p><label for="mail">Adresse mail du compte : <strong>*</strong> </label>  </p><! attribut for doit être le même que l'id du label/input auquel il est rattaché> 
+					<p class="champs"><?php echo trad("* champs obligatoires","* Required fields")?></p>
+					<p><label for="mail"><?php echo trad("Adresse mail du compte : ","Account email address : ")?><strong>*</strong> </label>  </p><! attribut for doit être le même que l'id du label/input auquel il est rattaché> 
 					<?php
 			            if(isset($erreur)) {
 			               echo '<font color="red">'.$erreur."</font>";
