@@ -1,5 +1,6 @@
 <?php
-   
+include("includes/header.php");
+
    session_start();
 
    $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
@@ -125,8 +126,6 @@
       <link href="css/inscription.css" rel="stylesheet">
    </head>
    <body>
-
-      <?php include("includes/header.php"); ?>
 
       <section id="login-box">
 

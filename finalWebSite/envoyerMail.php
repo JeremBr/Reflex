@@ -20,7 +20,7 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<title>Envoyer un mail</title>
+		<title><?php echo trad("Envoyer un mail","Send an email")?></title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -40,7 +40,7 @@
 			if(($access == 1) OR ($access == 2)){
 
 				?>
-				<h2>Ecrivez votre mail </h2>
+				<h2><?php echo trad("Ecrivez votre mail ","Write your email ")?></h2>
 				<div class="formulaire">
 					<form id="contact-form" method="post" action="" role="form">
 							
@@ -52,15 +52,15 @@
 								<!-- <p class="titre">Ecrivez votre mail </p>
 								<br/> -->
 							
-						<p><label for="email">Adresse mail du destinataire : <strong>*</strong> </label></p>
+						<p><label for="email"><?php echo trad("Adresse mail du destinataire : ","Recipient email : ")?><strong>*</strong> </label></p>
 						<p ><input type="email" name="email" id="email" value="<?php if(isset($userMail)) { echo $userMail; } ?>" size="45" required/>
 						</p><p class="comments"></p>
 
-						<p><label for="object">Objet du message : <strong>*</strong></label></p>
+						<p><label for="object"><?php echo trad("Objet du message : ","Message object : ")?><strong>*</strong></label></p>
 						<p ><input type="text" name="object" id="object" size="45" required/></p>
 						<p class="comments"></p>
 
-						<p><label for="message"> Votre message : <strong>*</strong></label></p>
+						<p><label for="message"><?php echo trad("Votre message : ","Your message : ")?><strong>*</strong></label></p>
 						<p ><textarea type="msg" name="message" id="message" size="50" rows="10" cols="45" required></textarea> </p>
 						<p class="comments"></p>
 
@@ -70,7 +70,7 @@
 							</div>
 
 							<p class="champs">
-								* champs obligatoires
+								<?php echo trad("* champs obligatoires","* Required fields")?>
 							</p>
 						
 					

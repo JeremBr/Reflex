@@ -1,4 +1,5 @@
 <?php
+include("includes/header.php");
 session_start();
  
 $bdd = new PDO('mysql:host=localhost;dbname=reflex', 'root', '');
@@ -60,7 +61,7 @@ if(isset($_COOKIE['idUtilisateur']) && isset($_COOKIE['mdp'])) {
             $insertmdp->execute(array($mdp1, $_COOKIE['idUtilisateur']));
             header('Location: monCompte.php');
          } else {
-            $msg = "Vos deux mdp ne correspondent pas !";
+            $msg = trad("Vos deux mots de passe ne correspondent pas !","Your two passwords don't match !");
          }
       }
 
@@ -82,8 +83,6 @@ if(isset($_COOKIE['idUtilisateur']) && isset($_COOKIE['mdp'])) {
         
    </head>
    <body>
-
-      <?php include("includes/header.php"); ?>
 
 
       <div align="center">
