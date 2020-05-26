@@ -54,7 +54,7 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<title>Liste des tests</title>
+		<title><?php echo trad("Liste des tests","Test list")?></title>
 		<link rel="stylesheet" href="css/styleRechercheGestionnaire.css" />
 	</head>
 <body>
