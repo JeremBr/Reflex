@@ -1,11 +1,11 @@
 <?php
-include("includes/header.php");
 session_start();
  
 $bdd = new PDO('mysql:host=localhost;dbname=reflex', 'root', '');
 
 include 'function/cookie.php';
 include 'function/numberUserLive.php';
+include("includes/header.php");
 
  
 if(isset($_COOKIE['idUtilisateur']) && isset($_COOKIE['mdp'])) {

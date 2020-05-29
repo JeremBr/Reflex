@@ -1,10 +1,9 @@
-<?php include("includes/header.php"); ?>
-
 <?php
 session_start();
  
 $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
 include 'function/numberUserLive.php';
+include("includes/header.php");
  
 if(isset($_POST['formconnexion'])) {
 
