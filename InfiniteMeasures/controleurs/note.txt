@@ -1,0 +1,3 @@
+- code PHP
+- Intelligence du site
+- Receptionne les actions de l'utilisateur et implémente la logique de l'UI

@@ -1,0 +1,58 @@
+section p{
+    color: #000;
+}
+
+
+section
+{
+	margin: 50px 200px;
+    border-width:3px;
+    border-style:solid;
+    border-color:#17e2cd;
+    padding: 50px;
+    background-color: #ddd;
+}
+
+section h4{
+
+    font-size: 21px;
+    border-bottom: 4px solid #17e2cd;
+    display: inline-block;
+     color: #505050
+}
+
+section h1
+{
+	
+    color: #505050;
+    font-size: 3em;
+
+    margin-bottom: 1em;
+    
+    font-weight: bold;
+
+    border-bottom: 6px solid #17e2cd;
+    display: inline-block;
+
+}
+
+
+@media all and (max-device-width: 480px)
+{
+
+    section{
+        margin: 50px 100px;
+    }
+    
+    section article{
+	font-size : 40px;
+    }
+
+    section h4{
+        font-size: 50px;
+    }
+
+    section h1{
+        font-size: 90px;
+    }
+}

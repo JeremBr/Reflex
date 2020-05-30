@@ -1,0 +1,130 @@
+* /*selectionne tous les elements*/
+{
+    margin: 0;
+    padding: 0;
+
+}
+.form
+{
+    margin : auto;
+    padding-left : 20%;
+    padding-bottom : 1%;
+    width: 700px;
+    
+}
+
+
+/* modification de la barre denavigation à gauche*/
+.menuAdmin {
+    margin-right: 10px;
+}
+
+.menuAdmin ul{
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    background-color: #333333;
+    width: 120px;
+    margin-bottom: 30px;
+}
+
+.menuAdmin li a{
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    border-bottom: 1px solid #cccccc;
+    font-size: 20px;
+}
+
+.menuAdmin li :hover{
+    background-color: rgb(121, 121, 121);
+}
+
+.menuAdmin li :active{
+    background-color: rgb(180, 180, 180);
+}
+
+/* modification du bloc information compte*/
+.mesInfos{
+    position: relative;
+    top: -50px;
+}
+.mesInfos ul{
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+.mesInfos h1{
+    font-size: 40px;
+}
+
+.mesInfos ul li {
+    font-size: 20px;
+}
+
+/* modification de la barre de recherche*/
+.barreDeRecherche label{
+    font-size: 130%;
+    margin-right: 5px;
+
+}
+
+.barreDeRecherche{
+    margin-left: 45%;
+    font-size: 25px;
+    width: 500px;
+}
+
+#milieuPage{
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    width: 500px;
+}
+
+
+
+
+
+
+/* pour le Header */
+
+
+header
+{
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #444;
+}
+
+
+h1
+{
+    font-family: 'Crete Round', serif;
+    font-size: 45px;
+    color: #444;
+}
+
+
+
+
+a
+{
+    text-decoration: none;
+    color: #444;
+}
+
+
+.wrapper
+{
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
