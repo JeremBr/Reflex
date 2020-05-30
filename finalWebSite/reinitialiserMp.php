@@ -3,6 +3,7 @@
     $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
     include 'function/cookie.php';
     include('function/numberUserLive.php');
+    include("includes/header.php");
     
 
     if( isset($_GET['pass']) && !empty($_GET['pass']) ){
@@ -37,13 +38,13 @@
 						    $insertmdp->execute(array($mdp1, $invit['mail']));
 						    header('Location: monCompte.php');
 						} else {
-						    $msg = "Vos deux mdp ne correspondent pas !";
+						    $msg = trad("Vos deux mots de passe ne correspondent pas !","Your two passwords do not match !");
 						}
 						
 
 
 		            } else {
-		            	$msg = "Le temps pour la réintialisation de mot de passe a expiré";
+		            	$msg = trad("Le temps pour la réintialisation de mot de passe a expiré","The time for password reset has expired");
 		            }
 		        }
 	            
@@ -62,29 +63,27 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<title>Réinitialisation de votre mot de passe </title>
+		<title><?= trad("Réinitialisation de votre mot de passe","Reset password") ?></title>
 		<link rel="stylesheet" href="css/styleReMp.css" />
 	</head>
 
 	<body>
 
-	<?php include("includes/header.php"); ?>
-
-	<div class="titre"><h3>Réinitialisez votre mot de passe</h3></div>
+	<div class="titre"><h3><?= trad("Réinitialisation de votre mot de passe","Reset password") ?></h3></div>
 	
 	
 		<form method="post" action="reinitialiserMp.php?pass=<?php echo $_GET['pass']?>">
 			
 
-				<p class="champs"> * champs obligatoires</p>
-				<p><label for="mp">Mot de passe : <strong>*</strong> </label>  </p> 
-				<p><input type="password" placeholder="Votre nouveau mot de passe" name="motPasse" id="mp" size="50" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+)).*$" required/> </p>
+				<p class="champs"><?= trad(" * champs obligatoires","* Required fields") ?></p>
+				<p><label for="mp"><?= trad("Mot de passe : ","Password : ") ?><strong>*</strong> </label>  </p> 
+				<p><input type="password" placeholder="<?= trad("Votre nouveau mot de passe : ","Your new password : ") ?>" name="motPasse" id="mp" size="50" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+)).*$" required/> </p>
 				
 				
-				<p><label for="Cmp"> Confirmation du mot de passe : <strong>*</strong> </label>  </p>
-				<p><input type="password" placeholder="Confirmez votre mdp" name="CmotPasse" id="Cmp" size="50" required/> </p>
+				<p><label for="Cmp"><?= trad(" Confirmation du mot de passe :","Password confirmation : ") ?><strong>*</strong> </label>  </p>
+				<p><input type="password" placeholder="<?= trad("Confirmez votre mot de passe","Confirm your password") ?>" name="CmotPasse" id="Cmp" size="50" required/> </p>
 
-				<p class="envoi"><input class ="boutton"type="submit"  value="Réinitialiser le mot de passe"/></p>
+				<p class="envoi"><input class ="boutton"type="submit"  value="<?= trad("Réinitialiser le mot de passe","Reset password") ?>"/></p>
 
 				<?php if(isset($msg)) { echo $msg; } ?>
 

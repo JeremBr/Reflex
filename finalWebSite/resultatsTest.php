@@ -31,16 +31,16 @@
 
 	<?php include("includes/header.php"); ?>
 
-	<div class="titre"><h2>Résultats de votre test</h2></div>
+	<div class="titre"><h2><?= trad("Résultats de votre test","Test results") ?></h2></div>
 
 		<table>
 
 			<tr>
-				<th>Reconnaissance de tonalité (score)</th>
-				<th>Rythme cardiaque (en bpm)</th>
-				<th>Température de la peau (en degré)
-				<th>Réflexe sonore (temps en )</th>
-				<th>Réflexe visuel (temps en )</th>
+				<th><?= trad("Reconnaissance de tonalité (score)","Tone recognition (score)") ?></th>
+				<th><?= trad("Rythme cardiaque (en bpm)","Heartbeat (in bpm)") ?></th>
+				<th><?= trad("Température de la peau (en degré)","Skin temperature (in degree celsius") ?></th>
+				<th><?= trad("Réflexe sonore (temps en )","Sound reflex (time in )") ?></th>
+				<th><?= trad("Réflexe visuel (temps en )","Visual reflex (time in )") ?></th>
 			</tr>
 
 			<tr>
