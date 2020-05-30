@@ -36,7 +36,7 @@
 
 	<?php include("includes/header.php"); ?>
 
-	<div class="titre"><h2>Réflexe visuel</h2></div>
+	<div class="titre"><h2><?= trad("Réflexe visuel","Visual reflex") ?></h2></div>
 
 		<div class="contenu">
 			
@@ -59,13 +59,13 @@
 
 			<form method="POST" action="resultatsTest.php">
 
-				<button type="submit" class="bouton" name="idTest" value="<?= $idTest ?>">Envoie des résultats</button>
+				<button type="submit" class="bouton" name="idTest" value="<?= $idTest ?>"><?= trad("Envoie des résultats","Send results") ?></button>
 			</form>
 
 			
 			<div class="barre">
-			<progress id="barreProgression" max="100" value="100">5/5 épreuves effectuées </progress><br/><br/>
-			<label for="barreProgression">5/5 épreuves effectuées <br/><br/> Vous avez fini votre test ! </label>
+			<progress id="barreProgression" max="100" value="100"><?= trad("5/5 épreuves effectuées","5/5 tests performed") ?></progress><br/><br/>
+			<label for="barreProgression"><?= trad("5/5 épreuves effectuées","5/5 tests performed") ?><br/><br/> <?= trad("Vous avez fini votre test !","You have finished your test !") ?> </label>
 		    </div>
 		    
 			
