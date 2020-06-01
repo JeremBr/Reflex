@@ -1,0 +1,51 @@
+h2
+{
+	color : #333;
+	font-size: 40px;
+	text-transform: uppercase;
+}
+.titre
+{
+	margin-left : 400px;
+}
+
+table
+{
+	margin-top : 100px;
+	margin-left : 2%;
+	border-collapse: collapse;
+}
+
+.graph
+{
+	margin-left: 20%;
+	margin-top: 5%;
+}
+
+td, th /* Mettre une bordure sur les td ET les th */
+{
+    border: 1px solid black;
+}
+.commentaire
+{
+	margin : auto;
+	padding-left: 100px;
+	padding-top: 20px;
+	padding-bottom : 50px;
+	margin-top: 80px; 
+	margin-bottom: 5%;
+	width: 700px;
+	border : 2px #17e2cd solid;
+	border-radius: 40px;
+}
+label
+{
+	font-size: 20px;
+	font-family : "Lato";
+	color : red;
+}
+textarea
+{
+	border: 1px solid #ddd;
+	border-radius: 10px;
+}

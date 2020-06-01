@@ -1,0 +1,90 @@
+
+.titre
+{
+	/*margin-left : 350px;*/
+	text-align: center;
+}
+h2
+{
+	color : #333;
+	font-size: 40px;
+	text-transform: uppercase;
+}
+
+
+form
+{
+	padding-left: 540px;
+}
+.bouton
+{
+	
+
+	border : 2px #17e2cd solid;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 90px;
+	border-top-right-radius: 90px;
+	/*border-right : 18px solid #17e2cd;*/
+	/*color: purple;*/
+	color : #17e2cd;
+	background-color : white;
+	width : 250px;
+	padding-left:25px;
+	padding-top : 10px;
+	padding-bottom: 10px;
+	font-size:20px;
+}
+
+.bouton:hover
+{
+
+	color: white;
+	background-color: #17e2cd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+progress
+{
+	background-color : rgb(212,212,212);
+}
+label
+{
+	font-family: "Lato";
+	font-size: 20px;
+}
+.barre
+{
+	margin-top :50px;
+	padding-left : 590px;
+}
+.reco img
+{
+	margin-top :40px;
+	padding-left : 160px; /*570px*/
+}
+
+.image
+{
+	display : flex;
+}
+.compte
+{
+	padding-left : 100px;
+	padding-top:40px;
+}
+
+
+
+
+

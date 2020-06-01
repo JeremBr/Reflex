@@ -41,7 +41,7 @@
 
 	<?php include("includes/header.php"); ?>
 
-	<div class="titre"><h2>Mesure du rythme cardiaque</h2></div>
+	<div class="titre"><h2><?php echo trad("Mesure du rythme cardiaque","Heartbeat measurement")?></h2></div>
 
 		<div class="contenu">
 
@@ -50,7 +50,8 @@
 				<div class="compte">
 					<div class="rebours"><img src="img/compteRebours.jpg" alt="compteRebours" title="Compte à rebours"/> 
 		    		</div>
-		    		<div id="compte_a_rebours"></div>
+		    		<div id="texte"></div>
+		    		<div id="compte_a_rebours"><a href="#" onclick="rebours(30,90)">Démarrer</a></div>
 		    		
 		    	</div>
 		    	<div class="reco"><img src="img/test5.png" alt="mesure du rythme cardiaque" title="mesure du rythme cardiaque"/> 
@@ -62,13 +63,13 @@
 
 			<form method="POST" action="temp.php">
 
-				<button type="submit" class="bouton" name="idTest" value="<?= $idTest ?>">Mesure de la température superficielle de la peau</button>
+				<button type="submit" class="bouton" name="idTest" value="<?= $idTest ?>"><?php echo trad("Mesure de la température superficielle de la peau","Skin surface measurement")?></button>
 			</form>
 
 			
 			<div class="barre">
-			<progress id="barreProgression" max="100" value="40">2/5 épreuves effectuées </progress><br/><br/>
-			<label for="barreProgression">2/5 épreuves effectuées </label>
+			<progress id="barreProgression" max="100" value="40"><?php echo trad("2/5 épreuves effectuées ","2/5 tests performed")?></progress><br/><br/>
+			<label for="barreProgression"><?php echo trad("2/5 épreuves effectuées ","2/5 tests performed")?></label>
 		    </div>
 			
 
