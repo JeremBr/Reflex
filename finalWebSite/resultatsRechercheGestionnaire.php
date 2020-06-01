@@ -38,10 +38,10 @@
 			?>
 
 
-			<div class="titre"><h3>Résultats de votre recherche</h3></div>
+			<div class="titre"><h3><?= trad("Résultats de votre recherche","Research results") ?></h3></div>
 			<form method="post" action="resultatsRechercheGestionnaire.php">
 				<div class="recherche">
-					<label for="user-search">Rechercher un utilisateur : </label>
+					<label for="user-search"><?= trad("Rechercher un utilisateur","Resaerch a user") ?></label>
 					<input type="search" id="user-search" name="recherche" aria-label="Search through site content">
 					<button>Rechercher</button>
 				</div>
@@ -57,27 +57,27 @@
 				        while ($r = $results->fetch()) { 
 
 				            ?>  <div class="contenu">
-							    <div class="sousTitre">Informations utilisateur : <?= $r['idUtilisateur'] ?></div><br/><br/>
+							    <div class="sousTitre"><?= trad("Informations utilisateur : ","User info : ") ?><?= $r['idUtilisateur'] ?></div><br/><br/>
 									<div class="resultats">
 				                	
 				                	</div>
 				                	<!-- <div class="type">Type :  </div> -->
-									<div class="Genre">Genre : <?= $r['genre'] ?></div>
-									<div class="Nom">Nom : <?= $r['nom'] ?></div>
-									<div class="Prénom">Prénom : <?= $r['prenom'] ?></div>
-									<div class="Adresse">Adresse : <?= $r['adresse'] ?></div>
+									<div class="Genre"><?= trad("Genre : ","Gender : ") ?><?= $r['genre'] ?></div>
+									<div class="Nom"><?= trad("Nom : ","Last name : ") ?><?= $r['nom'] ?></div>
+									<div class="Prénom"><?= trad("Prénom : ","First name : ") ?><?= $r['prenom'] ?></div>
+									<div class="Adresse"><?= trad("Adresse : ","Address : ") ?><?= $r['adresse'] ?></div>
 									<div class="CodePostale">Code Postale : <?= $r['codePostale'] ?></div>
-									<div class="Adresse mail">Adresse mail : <?= $r['mail'] ?></div>
+									<div class="Adresse mail"><?= trad("Adresse mail : ","Email address : ") ?><?= $r['mail'] ?></div>
 
 
 									<div class="resultats">
 
 										<p class="resultats">
-											<a href="listeResultats.php?userResults=<?= $r['idUtilisateur'] ?>">Consulter résultats</a>
+											<a href="listeResultats.php?userResults=<?= $r['idUtilisateur'] ?>"><?= trad("Consulter résultats","Look at the results") ?></a>
 										</p> 
 
 										<p class="tests">
-											<a href="reconnaissanceTonalite.php?userTest=<?= $r['idUtilisateur'] ?>">Lancement de la série de tests</a>
+											<a href="reconnaissanceTonalite.php?userTest=<?= $r['idUtilisateur'] ?>"><?= trad("Lancement de la série de tests","Test launcher") ?></a>
 										</p> 
 
 										<!-- <form method="POST" action="listeResultats.php">
@@ -94,7 +94,7 @@
                 						
 
 
-										<p class="envoiMail"><a href="envoyerMail.php?userMail=<?= $r['mail'] ?>">Envoyer un mail</a></p>
+										<p class="envoiMail"><a href="envoyerMail.php?userMail=<?= $r['mail'] ?>"><?= trad("Envoyer un mail","Send an email") ?></a></p>
 										<br/>
 
 									</div>
