@@ -46,6 +46,7 @@
 		<title>Reconnaissance de tonalité</title>
 		<link rel="stylesheet" href="css/tests/styleReco.css" />
 		<script type="text/javascript" src="js/rebours.js"></script>
+
 	</head>
 
 	<body>
@@ -60,7 +61,9 @@
 				<div class="compte">
 					<div class="rebours"><img src="img/compteRebours.jpg" alt="compteRebours" title="Compte à rebours"/> 
 		    		</div>
-		    		<div id="compte_a_rebours"></div>
+		    		<div id="texte"></div>
+		    		<div id="compte_a_rebours"><a href="#" onclick="rebours(30,90)">Démarrer</a></div>
+		    		
 		    	</div>
 				<div class="reco"><img src="img/test8.png" alt="Reconnaissance de tonalite" title="Reconnaissance de tonalite"/> 
 		    	</div>

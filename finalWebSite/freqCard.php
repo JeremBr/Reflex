@@ -50,7 +50,8 @@
 				<div class="compte">
 					<div class="rebours"><img src="img/compteRebours.jpg" alt="compteRebours" title="Compte à rebours"/> 
 		    		</div>
-		    		<div id="compte_a_rebours"></div>
+		    		<div id="texte"></div>
+		    		<div id="compte_a_rebours"><a href="#" onclick="rebours(30,90)">Démarrer</a></div>
 		    		
 		    	</div>
 		    	<div class="reco"><img src="img/test5.png" alt="mesure du rythme cardiaque" title="mesure du rythme cardiaque"/> 
