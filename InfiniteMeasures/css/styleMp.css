@@ -1,0 +1,70 @@
+form
+{
+	/*background-color : rgb(243,241,240);*/
+	margin : auto;
+	padding-left : 300px;
+	margin-top: 10px; 
+	margin-bottom: 100px;
+	width: 700px;
+	border : 2px #17e2cd solid;
+	border-radius: 10px;
+	
+}
+
+p
+{
+	margin-top : 20px;
+	margin-bottom: 20px;
+	font-family: "Lato";
+	font-size: 20px;
+	color : rgb(48,82,231);
+	
+
+}
+.champs
+{
+	margin-left:450px;
+	font-size:15px;
+	color : red;
+}
+label strong
+{
+	color : red;
+}
+
+
+.envoi{
+	width: 30%;
+	background: none;
+	border: 2px solid #17e2cd;
+	color: #444;
+	padding: 5px;
+	font-size: 13px;
+	font-family: "Lato";
+	cursor: pointer;
+	/*margin: 12px 0;  mettre 10% */
+	margin-top : 20px;
+	margin-bottom : 10px;
+}
+
+.envoi:hover{
+	background: #17e2cd;
+}
+
+
+h3
+{
+	font-family: "Lato";
+	color : #333;
+	font-size: 40px;
+	text-transform: uppercase;
+}
+.titre
+{
+	margin: 5% 0 1% 33% ;
+}
+
+.formu
+{
+	padding-left:12%;
+}

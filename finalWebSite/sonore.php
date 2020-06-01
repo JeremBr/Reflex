@@ -37,14 +37,14 @@
 
 	<?php include("includes/header.php"); ?>
 
-	<div class="titre"><h2>Réflexe sonore</h2></div>
+	<div class="titre"><h2><?= trad("Réflexe sonore","Sound reflex") ?></h2></div>
 
 		<div class="contenu">
 			
 			<div class="image">
 			
 				<div class="compte">
-					<div class="rebours"><img src="img/compteRebours.jpg" alt="compteRebours" title="Compte à rebours"/> 
+					<div class="rebours"><img src="img/compteRebours.jpg" alt="compteRebours" title="<?= trad("Compte à rebours","Countdown") ?>"/> 
 		    		</div>
 		    		<div id="cadre">
 		    			<div id="compte_a_rebours"></div>
@@ -59,13 +59,13 @@
 
 			<form method="POST" action="visuel.php">
 
-				<button type="submit" class="bouton" name="idTest" value="<?= $idTest ?>">Réflexe visuel</button>
+				<button type="submit" class="bouton" name="idTest" value="<?= $idTest ?>"><?= trad("Réflexe visuel","Visual reflex") ?></button>
 			</form>
 
 			
 			<div class="barre">
-			<progress id="barreProgression" max="100" value="80">4/5 épreuves effectuées </progress><br/><br/>
-			<label for="barreProgression">4/5 épreuves effectuées </label>
+			<progress id="barreProgression" max="100" value="80"><?= trad("4/5 épreuves effectuées","4/5 tests performed") ?></progress><br/><br/>
+			<label for="barreProgression"><?= trad("4/5 épreuves effectuées","4/5 tests performed") ?></label>
 		    </div>
 			
 
