@@ -19,7 +19,10 @@
 				
 
 				<form>
-	
+
+	  <!--PARTIE DROITE et GAUCHE-->
+	 <div id="milieu">	
+
 	  <!--PARTIE DROITE-->
     <div id="droite">
 
@@ -62,7 +65,7 @@
 
 
 		</div>
-					
+	 </div>			
 				</form>
 			</div>
 		</section>
