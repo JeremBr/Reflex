@@ -27,10 +27,10 @@
 
 		<section id="contact">
 			<div class="wrapper">
-				<h3>Nous contacter</h3>
+				<h3><?= trad("Nous contacter","Contact us") ?></h3>
 
 
-				<strong><div class="faq"> Consultez la <U><a href="FAQ.php" >F.A.Q,</a></U> votre question a peut-être déjà été posée </strong></div>
+				<strong><div class="faq"><?= trad("Consulter la","Check up the") ?><U><a href="FAQ.php" >F.A.Q,</a></U> <?= trad("votre question a peut-être déjà été posée","Your question might have already been asked") ?></strong></div>
 				
 
 				<form>
@@ -38,42 +38,42 @@
 	  <!--PARTIE DROITE-->
     <div id="droite">
 
-    <strong>Accueil du centre</strong> 
+    <strong><?= trad("Accueil du centre","Reception center") ?></strong> 
    		<br>
    		<br>
 
-    		<a href="tel:+33142223344">Téléphone : 01 42 22 33 44</a>
+    		<a href="tel:+33142223344"><?= trad("Téléphone : 01 42 22 33 44","Phone number : 01 42 22 33 44") ?></a>
     			<br>
 
-    		<a href="mailto:reflex@gmail.com"> Email : reflex@gmail.com</a><br/>
-    		<a class="contacter" href="mailUtilisateur.php?mailto=centre">Contacter</a>
+    		<a href="mailto:reflex@gmail.com"> <?= trad("Mail : reflex@gmail.com","Email : reflex@gmail.com") ?></a><br/>
+    		<a class="contacter" href="mailUtilisateur.php?mailto=centre"><?= trad("Contacter","Contact") ?></a>
 </div>
 
 	<!--PARTIE GAUCHE-->
 	    <div id="gauche">
 		
-	<strong>Administrateurs</strong>
+	<strong><?= trad("Administrateurs","Administrators") ?></strong>
 		<br>
    		<br>
 
-			<a href="tel:+33642223344">Téléphone : 06 42 22 33 44</a>
+			<a href="tel:+33642223344"><?= trad("Téléphone : 06 42 22 33 44","Phone number : 06 42 22 33 44") ?></a>
     			<br>
 
-    		<a href="mailto:reflex.admin@gmail.com"> Email : reflex.admin@gmail.com</a> <br/>
-    		<a class="contacter" href="mailUtilisateur.php?mailto=admin">Contacter</a>
+    		<a href="mailto:reflex.admin@gmail.com"> <?= trad("Mail : reflex.admin@gmail.com","Email : reflex.admin@gmail.com") ?></a> <br/>
+    		<a class="contacter" href="mailUtilisateur.php?mailto=admin"><?= trad("Contacter","Contact") ?></a>
 		<br>
 	   	<br>
 
 
-	<strong>Gestionnaires</strong>
+	<strong><?= trad("Gestionnaires","Managers") ?></strong>
 		<br>
 	   	<br>
 
-			<a href="tel:+33642226678">Téléphone : 06 42 22 66 78</a>
+			<a href="tel:+33642226678"><?= trad("Téléphone : 06 42 22 66 78","Phone number : 06 42 22 66 78") ?></a>
     			<br>
 
-    		<a href="mailto:reflex.gestio@gmail.com"> Email : reflex.gestio@gmail.com</a><br/>
-    		<a class="contacter" href="mailUtilisateur.php?mailto=gestio">Contacter</a>
+    		<a href="mailto:reflex.gestio@gmail.com"><?= trad("Mail : reflex.gestio@gmail.com","Email : reflex.gestio@gmail.com") ?></a><br/>
+    		<a class="contacter" href="mailUtilisateur.php?mailto=gestio"><?= trad("Contacter","Contact") ?></a>
 
 
 		</div>

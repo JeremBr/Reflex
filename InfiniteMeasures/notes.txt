@@ -1,0 +1,8 @@
+- des fichiers "contrôleurs" par domaine:
+	- 1 pour les utilisateurs, 1 pour les capteurs
+	- Recup les données dans la BDD grâce aux fonctions du modèle
+	- identifie la vue à afficher et lui envoie les variables
+
+- un ou plusieurs fichiers "Modèles" avec les requêtes SQL
+
+- un fichier "vue" par page à afficher

@@ -11,7 +11,7 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<title>Envoyer un mail</title>
+		<title><?php echo trad("Envoyer un mail","Send an email")?></title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -38,10 +38,10 @@
 
 					<div class="corps">
 
-						<p class="titre">Ecrivez votre mail </p>
+						<p class="titre"><?php echo trad("Ecrivez votre mail","Write your email")?></p>
 						<br/>
 
-						<p><label for="email">Adresse mail du destinataire : <strong>*</strong> </label></p>
+						<p><label for="email"><?php echo trad("Adresse mail du destinataire : ","Recipient email address : ")?><strong>*</strong> </label></p>
                         <select name="email">
                             <option value="jeremy.breton34@gmail.com" <?php if($_GET['mailto']=='centre') { echo 'selected'; } ?> >Centre</option>
                             <option value="reflex.admin@gmail.com" <?php if($_GET['mailto']=='admin') { echo 'selected'; } ?> >Administrateurs</option>
@@ -54,23 +54,23 @@
 						<p ><input type="email" name="email" id="email" size="50" value="<?php //if(isset($_GET['mailto'])) { echo $_GET['mailto']; } ?>" required/>
 						</p><p class="comments"></p> -->
 
-						<p><label for="email">Votre adresse mail : <strong>*</strong> </label></p>
+						<p><label for="email"><?php echo trad("Votre adresse mail : ","Your email address : ")?><strong>*</strong> </label></p>
 						<p ><input type="emailTo" name="emailTo" id="emailTo" size="50" required/>
 						</p><p class="comments"></p>
 
-						<p><label for="name">Votre nom : <strong>*</strong></label></p>
+						<p><label for="name"><?php echo trad("Votre nom : ","Your last name : ")?><strong>*</strong></label></p>
 						<p ><input type="text" name="name" id="nameemail" size="50" required/></p>
 						<p class="comments"></p>
 
-						<p><label for="firstname">Votre prénom : <strong>*</strong></label></p>
+						<p><label for="firstname"><?php echo trad("Votre prénom : ","Your first name : ")?><strong>*</strong></label></p>
 						<p ><input type="text" name="firstname" id="firstname" size="50" required/></p>
 						<p class="comments"></p>
 
-						<p><label for="object">Objet du message : <strong>*</strong></label></p>
+						<p><label for="object"><?php echo trad("Objet du message : ","Email subject : ")?><strong>*</strong></label></p>
 						<p ><input type="text" name="object" id="object" size="50" required/></p>
 						<p class="comments"></p>
 
-						<p><label for="message"> Votre message : <strong>*</strong></label></p>
+						<p><label for="message"><?php echo trad("Votre message : ","Your message : ")?><strong>*</strong></label></p>
 						<p ><textarea type="msg" name="message" id="message" size="50" rows="10" cols="50" required></textarea> </p>
 						<p class="comments"></p>
 
@@ -80,7 +80,7 @@
 					</div>
 
 					<p class="champs">
-						* champs obligatoires
+						<?php echo trad("* champs obligatoires","* required fields")?>
 					</p>
 				
 			

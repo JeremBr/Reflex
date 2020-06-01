@@ -1,0 +1,64 @@
+footer
+{
+	border : 2px grey solid;
+	/* border-radius: 10px; */
+	background-color: #444;
+	
+	padding-top:0px;
+	font-size : 30px;
+}
+#conteneur
+{
+	padding-top: 0.8em;
+	padding-bottom: 0.8em;
+	display : flex;
+	justify-content: space-around;
+}
+.element1
+{
+	
+	display : flex;
+	flex-direction: column;
+	color : orange;
+}
+.element2
+{
+	
+	display : flex;
+	flex-direction: column;
+	color : orange;
+}
+a[title="piedPage"]
+{
+	padding-top: 0.5em;
+	color : white;
+	font-size:0.8em;
+}
+
+footer h1
+{
+	color: #fff;
+	text-align: center;
+	padding-top: 30px;
+}
+
+.copyright
+{
+	text-align: center;
+	font-weight: bold;
+	padding-top: 3%;
+	color: #777;
+	padding-bottom: 5%;
+	font-size : 15px;
+}
+
+
+@media all and (max-device-width: 480px)
+{
+	footer{
+		font-size : 50px;
+	}
+
+}
+
+

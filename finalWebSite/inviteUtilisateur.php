@@ -42,20 +42,20 @@
                     if($mailexist == 0) {
                     	
                     	include "function/sendToken.php";
-                    	$erreur = "L'invitation a bien été envoyée !";
+                    	$erreur = trad("L'invitation a bien été envoyée !","The invitation has been sent !");
 
                     } else {
-                    	$erreur = "Adresse mail déjà enregistrée !";
+                    	$erreur = trad("Adresse mail déjà enregistrée !","Email address already saved !");
                     }
 
 
 				} else {
-					$erreur = "L'adresse mail saisie n'est pas valide !";
+					$erreur = trad("L'adresse mail saisie n'est pas valide !","Invalid email address !");
 				}
 
 
 			} else {
-				$erreur = "Veuillez rentrer une adresse mail !";
+				$erreur = trad("Veuillez rentrer une adresse mail !","Please enter an email address !");
 			}
 
 
@@ -66,7 +66,7 @@
 
 		<div class="formulaire">
 			<form method="POST" action="">
-				<p><label for="mail">Adresse mail du destinataire : <strong>*</strong> </label></p>
+				<p><label for="mail"><?php echo trad("Adresse mail du destinataire : ","Recipient email address : ")?><strong>*</strong> </label></p>
 				<p><input type="mail" name="mail" id="mail" size="50" required/></p>
 				<input class="btn" type="submit" name="forminscription" value="Envoyer" />
 			</form>

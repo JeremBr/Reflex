@@ -43,7 +43,7 @@
 
 
 
-			<div class="titre"><h3>Résultat(s) de votre recherche</h3></div>
+			<div class="titre"><h3><?= trad("Résultat(s) de votre recherche","Research results") ?></h3></div>
 				
 
 					<?php 
@@ -55,16 +55,16 @@
 				                while ($r = $results->fetch()) { 
 
 				                	?> <div class="contenu">
-											<div class="sousTitre">Informations utilisateur : <?= $r['idUtilisateur'] ?></div><br/><br/>
+											<div class="sousTitre"><?= trad("Informations utilisateur : ","User info : ") ?><?= $r['idUtilisateur'] ?></div><br/><br/>
 											<div class="resultats">
 				                	
 				                	</div>
 				                	<div class="type">Type :  </div>
-									<div class="Genre">Genre : <?= $r['genre'] ?></div>
-									<div class="Nom">Nom : <?= $r['nom'] ?></div>
-									<div class="Prénom">Prénom : <?= $r['prenom'] ?></div>
-									<div class="Adresse">Adresse : <?= $r['adresse'] ?></div>
-									<div class="Adresse mail">Adresse mail : <?= $r['mail'] ?></div>
+									<div class="Genre"><?= trad("Genre : ","Gender : ") ?><?= $r['genre'] ?></div>
+									<div class="Nom"><?= trad("Nom : ","Last name : ") ?><?= $r['nom'] ?></div>
+									<div class="Prénom"><?= trad("Prénom : ","First name : ") ?><?= $r['prenom'] ?></div>
+									<div class="Adresse"><?= trad("Adresse : ","Address : ") ?><?= $r['adresse'] ?></div>
+									<div class="Adresse mail"><?= trad("Adresse mail : ","Email address : ") ?> <?= $r['mail'] ?></div>
 
 
 									<div class="options">

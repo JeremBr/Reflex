@@ -1,0 +1,3 @@
+- code PHP, requêtes SQL
+- fonctions d'accès à la BDD
+- fonctions génériques

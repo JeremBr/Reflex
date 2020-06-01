@@ -57,9 +57,9 @@ if(isset($_COOKIE['idUtilisateur']) AND $_COOKIE['idUtilisateur'] > 0) {
         
                     <form method="post" action="resultatsRechercheAdministrateur.php">
                         <div class="form">
-                            <label for="user-search">Rechercher un utilisateur : </label>
+                            <label for="user-search"><?php echo trad("Rechercher un utilisateur :","Look up a user :")?></label>
                             <input type="search" id="user-search" name="recherche" aria-label="Search through site content">
-                            <button>Rechercher</button>
+                            <button><?php echo trad("Rechercher","Look up")?></button>
                         </div>
                             
                     </form>
@@ -83,33 +83,33 @@ if(isset($_COOKIE['idUtilisateur']) AND $_COOKIE['idUtilisateur'] > 0) {
 
                             if($userinfo['permission'] == 0){
                                 ?>
-                                <li><a href="listeResultats.php?userResults=<?= $_COOKIE['idUtilisateur'] ?>">Mes résultats</a></li> <!-- Doit mettre page avec liste des diff resultats-->
-                                <li><a href="editionprofil.php">Editer mon profil</a></li>
+                                <li><a href="listeResultats.php?userResults=<?= $_COOKIE['idUtilisateur'] ?>"><?php echo trad("Mes résulats","My results")?></a></li> <!-- Doit mettre page avec liste des diff resultats-->
+                                <li><a href="editionprofil.php"><?php echo trad("Editer mon profil","Edit my profil")?></a></li>
                                 
 
                                 <?php
 
                             } else if($userinfo['permission'] == 1){
                                 ?>
-                                <li><a href="envoyerMail.php">Envoyer un mail</a></li>
-                                <li><a href="inviteUtilisateur.php">Inviter un utilisateur</a></li>
-                                <li><a href="resultatsRechercheGestionnaire.php">Rechercher un utilisateur</a></li> <!-- Doit pouvoir mettre page avec liste des diff resultats-->
-                                <li><a href="editionprofil.php">Editer mon profil</a></li>
+                                <li><a href="envoyerMail.php"><?php echo trad("Envoyer un mail","Send an email")?></a></li>
+                                <li><a href="inviteUtilisateur.php"><?php echo trad("Inviter un utilisateur","Invite a user")?></a></li>
+                                <li><a href="resultatsRechercheGestionnaire.php"><?php echo trad("Rechercher un utilisateur","Look up a user")?></a></li> <!-- Doit pouvoir mettre page avec liste des diff resultats-->
+                                <li><a href="editionprofil.php"><?php echo trad("Editer mon profil","Update profil")?></a></li>
 
                                 <?php
                             } else if($userinfo['permission'] ==2){
                                 ?>
-                                <li><a href="envoyerMail.php">Envoyer un mail</a></li>
-                                <li><a href="inviteUtilisateur.php">Inviter un utilisateur</a></li>
-                                <li><a href="faq_modifier.php">Gérer la F.A.Q</a></li>
-                                <li><a href="editionprofil.php">Editer mon profil</a></li>
+                                <li><a href="envoyerMail.php"><?php echo trad("Envoyer un mail","Send an email")?></a></li>
+                                <li><a href="inviteUtilisateur.php"><?php echo trad("Inviter un utilisateur","Invite a user")?></a></li>
+                                <li><a href="faq_modifier.php"><?php echo trad("Gérer la F.A.Q","Change F.A.Q")?></a></li>
+                                <li><a href="editionprofil.php"><?php echo trad("Editer mon profil","Update profil")?></a></li>
 
                                 <?php
                             }
                     ?>
                    
 
-                    <li><a href="deconnexion.php">Déconnexion</a></li>
+                    <li><a href="deconnexion.php"><?php echo trad("Déconnexion","Log out")?></a></li>
                     <?php
                     }
                     ?>
@@ -118,15 +118,15 @@ if(isset($_COOKIE['idUtilisateur']) AND $_COOKIE['idUtilisateur'] > 0) {
         </nav>
 
         <section class="mesInfos">
-            <h1>Vos informations</h1>
+            <h1><?php echo trad("Vos informations","Your informations")?></h1>
             </br>
             <ul>
-                <li>Genre : <?php echo $userinfo['genre']; ?></li><br>
-                <li>Nom : <?php echo $userinfo['nom']; ?> </li><br>
-                <li>Prénom : <?php echo $userinfo['prenom']; ?></li><br>
-                <li>Adresse : <?php echo $userinfo['adresse']; ?></li><br>
-                <li>Code Postale : <?php echo $userinfo['codePostale']; ?></li><br>
-                <li>Adresse mail : <?php echo $userinfo['mail']; ?></li>
+                <li><?php echo trad("Genre :","Gender :")?><?php echo $userinfo['genre']; ?></li><br>
+                <li><?php echo trad("Nom :","Last name :")?><?php echo $userinfo['nom']; ?> </li><br>
+                <li><?php echo trad("Prénom :","First name :")?><?php echo $userinfo['prenom']; ?></li><br>
+                <li><?php echo trad("Adresse :","Address :")?><?php echo $userinfo['adresse']; ?></li><br>
+                <li><?php echo trad("Code postale :","Postal code :")?><?php echo $userinfo['codePostale']; ?></li><br>
+                <li><?php echo trad("Adresse mail :","Email address :")?><?php echo $userinfo['mail']; ?></li>
 
             </ul>
         </section>

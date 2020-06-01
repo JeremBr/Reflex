@@ -3,6 +3,7 @@ session_start();
  
 $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
 include 'function/numberUserLive.php';
+include("includes/header.php");
  
 if(isset($_POST['formconnexion'])) {
 
@@ -10,7 +11,7 @@ if(isset($_POST['formconnexion'])) {
       if(!empty($_POST['mdpconnect'])){
 
          $mailconnect = htmlspecialchars($_POST['mailconnect']);
-         $mdpconnect = sha1($_POST['mdpconnect']);
+         $mdpconnect = hash('sha256', $_POST['mdpconnect']);
 
          $requser = $bdd->prepare("SELECT * FROM utilisateur WHERE mail = ? AND motDePasse = ?");
          $requser->execute(array($mailconnect, $mdpconnect));
@@ -29,15 +30,15 @@ if(isset($_POST['formconnexion'])) {
             //header("Location: monCompte.php?idUtilisateur=".$_SESSION['idUtilisateur']);
             header("Location: monCompte.php");
          } else {
-            $erreur = "Mauvais mail ou mot de passe !";
+            $erreur = trad("Mauvais mail ou mot de passe !","Wrong email or password !");
          }
 
       } else {
-         $erreur = "Veuillez saisir votre mot de passe !";
+         $erreur = trad("Veuillez saisir votre mot de passe !","Please enter a password !");
       }
       
    } else {
-      $erreur = "Veuillez saisir votre mail !";
+      $erreur = trad("Veuillez saisir votre mail !","Please enter your email address !");
    }
 }
 ?>
@@ -58,25 +59,23 @@ if(isset($_POST['formconnexion'])) {
    </head>
    <body>
 
-      <?php include("includes/header.php"); ?>
-
       
       <section id="login-box">
          
          <div class="wrapper2">
-            <h2>Connexion</h2>
+            <h2><?php echo trad("Connexion","Log in")?></h2>
             <br /><br />
             <form method="POST" action="">
                <br /><br />
                <div class="textbox">
-                  <input type="email" name="mailconnect" placeholder="Mail" /> <!-- mettre mail si ya cookie ou autre -->
+                  <input type="email" name="mailconnect" placeholder="<?php echo trad("Mail","Email address")?>" /> <!-- mettre mail si ya cookie ou autre -->
                </div>
                <div class="textbox">
-                  <input type="password" name="mdpconnect" placeholder="Mot de passe" />
+                  <input type="password" name="mdpconnect" placeholder="<?php echo trad("Mot de passe","Password")?>" />
                </div>
 
                <br /><br />
-               <input class="btn" type="submit" name="formconnexion" value="Se connecter !" />
+               <input class="btn" type="submit" name="formconnexion" value="<?php echo trad("Se connecter !","Log in !")?>" />
             </form>
 
             <?php
@@ -89,7 +88,7 @@ if(isset($_POST['formconnexion'])) {
       </section>
 
       <div class="test">
-      <a href="motPasseOublie.php">Mot de passe oublié ?</a>
+      <a href="motPasseOublie.php"><?php echo trad("Mot de passe oublié ?","Forgot password")?></a>
       </div>
 
       <?php include("includes/footer.php"); ?>
