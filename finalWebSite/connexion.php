@@ -11,7 +11,7 @@ if(isset($_POST['formconnexion'])) {
       if(!empty($_POST['mdpconnect'])){
 
          $mailconnect = htmlspecialchars($_POST['mailconnect']);
-         $mdpconnect = sha1($_POST['mdpconnect']);
+         $mdpconnect = hash('sha256', $_POST['mdpconnect']);
 
          $requser = $bdd->prepare("SELECT * FROM utilisateur WHERE mail = ? AND motDePasse = ?");
          $requser->execute(array($mailconnect, $mdpconnect));

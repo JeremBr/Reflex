@@ -18,9 +18,12 @@
          if(isset($_POST['cgu'])){
 
             $genre = htmlspecialchars($_POST['choix']);
+
+            $mdp = hash("sha256", $_POST['mdp']);
+            $mdp2 = hash("sha256", $_POST['mdp2']);
          
-            $mdp = sha1($_POST['mdp']);
-            $mdp2 = sha1($_POST['mdp2']);
+            // $mdp = sha1($_POST['mdp']);
+            // $mdp2 = sha1($_POST['mdp2']);
 
 
             $nomlength = strlen($nom);

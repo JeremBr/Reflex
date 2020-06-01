@@ -54,11 +54,14 @@ if(isset($_COOKIE['idUtilisateur']) && isset($_COOKIE['mdp'])) {
       }
 
       if(isset($_POST['newmdp1']) AND !empty($_POST['newmdp1']) AND isset($_POST['newmdp2']) AND !empty($_POST['newmdp2'])) {
-         $mdp1 = sha1($_POST['newmdp1']);
-         $mdp2 = sha1($_POST['newmdp2']);
+         $mdp1 = hash('sha256', $_POST['newmdp1']);
+         $mdp2 = hash('sha256', $_POST['newmdp2']);
          if($mdp1 == $mdp2) {
             $insertmdp = $bdd->prepare("UPDATE utilisateur SET motdepasse = ? WHERE idUtilisateur = ?");
             $insertmdp->execute(array($mdp1, $_COOKIE['idUtilisateur']));
+
+            setcookie('mdp', $mdp1, time() + (60*2));
+
             header('Location: monCompte.php');
          } else {
             $msg = trad("Vos deux mots de passe ne correspondent pas !","Your two passwords don't match !");
