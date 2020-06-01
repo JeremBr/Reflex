@@ -61,7 +61,7 @@
 
 	<?php include("includes/header.php"); ?>
 
-	<div class="sousTitre">Tests de l'utilisateur numéro : <?= $id ?></div>
+	<div class="sousTitre"><?= trad("Tests de l'utilisateur numéro : ","Test of user number : ") . $id ?></div>
 
 	<?php 
 		if (isset($results)) {
@@ -72,7 +72,7 @@
 		        while ($r = $results->fetch()) { 
 
 		            ?>  <div class="contenu">
-					    <div class="sousTitre">Test numéro : <?= $r['idTest'] ?></div><br/><br/>
+					    <div class="sousTitre"><?= trad("Test numéro : ","Test number : ") . $r['idTest'] ?></div><br/><br/>
 							<div class="resultats">
 		                	
 		                	</div>
@@ -84,7 +84,7 @@
 							<div class="resultats">
 
 								<form method="POST" action="resultatsTest.php">
-            						<button type="submit" class="results" name="idTest" value="<?= $r['idTest'] ?>">Consulter le test</button>
+            						<button type="submit" class="results" name="idTest" value="<?= $r['idTest'] ?>"><?= trad("Consulter le test","Consult test") ?></button>
         						</form>
 								
 

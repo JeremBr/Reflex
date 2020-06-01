@@ -1,11 +1,9 @@
 <?php
-include("includes/header.php");
-
    session_start();
 
    $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
    include 'function/numberUserLive.php';
-
+   include("includes/header.php");
 
 
    /* ICI ON INSCRIT LUTILISATEUR SI LE FORMULAIRE A ETE CORRECTEMENT REMPLIE */
@@ -48,33 +46,33 @@ include("includes/header.php");
                         $delUser = $bdd->prepare("DELETE FROM invitation WHERE mail = ?");
                         $delUser->execute(array($_SESSION['mail']));
 
-                        $erreur = "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>";
+                        $erreur = trad("Votre compte a bien été créé ! ","Your account has been ! ") . "<a href=\"connexion.php\">Me connecter</a>";
                      } else {
-                        $erreur = "Vos mots de passes ne correspondent pas !";
+                        $erreur = trad("Vos mots de passes ne correspondent pas !","Your passwords do not match");
                      }
                   
 
                   } else {
-                     $erreur = "Vous n'êtes plus autorisé à vous inscrire !";
+                     $erreur = trad("Vous n'êtes plus autorisé à vous inscrire !","You cannot sign up anymore !");
                   }
                   
                                
                         
                } else {
-                  $erreur = "Votre nom ne doit pas dépasser 50 caractères !";
+                  $erreur = trad("Votre nom ne doit pas dépasser 50 caractères !","Your last name must have 50 characters max !");
                }
                
             } else {
-               $erreur = "Votre prenom ne doit pas dépasser 50 caractères !";
+               $erreur = trad("Votre prenom ne doit pas dépasser 50 caractères !","Your first name must have 50 characters max !");
             }
 
          } else {
-            $erreur = "Vous n'avez pas accepté les conditions générales d'utilisation";
+            $erreur = trad("Vous n'avez pas accepté les conditions générales d'utilisation","Please accept the general conditions");
          }
          
 
       } else {
-         $erreur = "Tous les champs doivent être complétés !";
+         $erreur = trad("Tous les champs doivent être complétés !","Not all fields have been completed");
       }
    }
 
@@ -132,9 +130,9 @@ include("includes/header.php");
 
       <section id="login-box">
 
-         <h2>Inscription</h2>
+         <h2><?php echo trad("Inscription","Sign up")?></h2>
          
-         <div class="champsRequis">* tous les champs sont requis</div>
+         <div class="champsRequis"><?php echo trad("* tous les champs sont requis","* all fields are required")?></div>
          <form method="POST" action="">
             <br /><br />
 
@@ -143,11 +141,11 @@ include("includes/header.php");
                <div class="textbox">
                   <tr>
                      <td>
-                        <p class="genre">Genre : </p>
+                        <p class="genre"><?php echo trad("Genre : ","Gender : ")?></p>
                         <select name="choix">
-                            <option value="Femme">Femme</option>
-                            <option value="Homme">Homme</option>
-                            <option value="Autre">Autre</option>
+                            <option value="Femme"><?php echo trad("Femme","Female")?></option>
+                            <option value="Homme"><?php echo trad("Homme","Male")?></option>
+                            <option value="Autre"><?php echo trad("Autre","Other")?></option>
                            
                         </select>
                         
@@ -168,7 +166,7 @@ include("includes/header.php");
                   <tr>
                      
                      <td>
-                        <p class="description">* 8 caractères dont un spécial sont requis</p>
+                        <p class="description"><?php echo trad("* 8 caractères dont un spécial sont requis","* 8 characters including a special one are required")?></p>
                         <input type="password" placeholder="Mot de passe" id="mdp" name="mdp" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+)).*$" required>
                         
                      </td>
@@ -177,8 +175,8 @@ include("includes/header.php");
                     
                      <td>
                         <input type="password" placeholder="Confirmez mot de passe" id="mdp2" name="mdp2" /><br/><br/>
-                        <p class="lien"><a href="cgu.php">Veuillez consulter les conditions générales d'utilisation</a></p><br/>
-                        <input type="checkbox" name="cgu" id="cgu"/><label for="cgu"> J'accepte ces conditions générales d'utilisation</label>
+                        <p class="lien"><a href="cgu.php"><?php echo trad("Veuillez consulter les conditions générales d'utilisation","Please accept the general conditions")?></a></p><br/>
+                        <input type="checkbox" name="cgu" id="cgu"/><label for="cgu"> <?php echo trad("J'accepte ces conditions générales d'utilisation","I accept the general conditions")?></label>
                      </td>
                   </tr>
                   
@@ -190,7 +188,7 @@ include("includes/header.php");
                   
                   <td align="center">
                      <br />
-                     <input class="btn" type="submit" name="forminscription" value="Je m'inscris" />
+                     <input class="btn" type="submit" name="forminscription" value="<?php echo trad("Je m'inscris","Sign up")?>" />
                   </td>
                </tr>
          </form>
