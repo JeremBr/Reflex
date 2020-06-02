@@ -15,7 +15,7 @@ function()
 
     var compte_a_rebours = document.getElementById("compte_a_rebours");
     compte_a_rebours.style.color = "red";
-    compte_a_rebours.style.marginLeft = "20px";
+    compte_a_rebours.style.pointerEvents ="none";
     compte_a_rebours.style.padding = "20px";
     compte_a_rebours.style.fontSize = "40px";
     compte_a_rebours.style.border = "2px #333 solid";
@@ -67,7 +67,6 @@ function()
         compte_a_rebours.style.color = "red";
         compte_a_rebours.style.marginLeft = "20px";
         compte_a_rebours.style.padding = "20px";
-    
         compte_a_rebours.style.fontSize = "40px";
         compte_a_rebours.style.border = "2px #333 solid";
         console.log(compteur1);

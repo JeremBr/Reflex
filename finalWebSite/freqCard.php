@@ -33,8 +33,9 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Mesure du rythme cardiaque</title>
-		<link rel="stylesheet" href="css/tests/styleReco.css" />
+		<link rel="stylesheet" href="css/tests/styleTest.css" />
 		<script type="text/javascript" src="js/rebours.js"></script>
+		<script src="js/help.js"></script>
 	</head>
 
 	<body>
@@ -43,40 +44,35 @@
 
 	<div class="titre"><h2><?php echo trad("Mesure du rythme cardiaque","Heartbeat measurement")?></h2></div>
 
-		<div class="contenu">
-
+	<section class="conteneur1">
+		<section class="conteneur2">
+				
 			<div class="image">
+				<img src="img/test5.png" alt="mesure du rythme cardiaque" title="<?=trad("Mesure du rythme cardiaque","Heart rate measurement")?>"/>
+			</div>
+
+			<div class="rebours"><img src="img/compteRebours.jpg" alt="compteRebours" title="<?=trad("Compte à rebours","Countdown")?>"/></div>
+
+			<div id="texte"></div>
+
+			<button type="button" class="boutonRebours" id="compte_a_rebours" onclick="rebours(30,90)"><?= trad("Démarrer","Start") ?></button>
+
+			<button type="button" class="boutonHelp" name="idHelp" onclick ="helpCard()"><?= trad("Aide","Help") ?></button>
 			
-				<div class="compte">
-					<div class="rebours"><img src="img/compteRebours.jpg" alt="compteRebours" title="Compte à rebours"/> 
-		    		</div>
-		    		<div id="texte"></div>
-		    		<div id="compte_a_rebours"><a href="#" onclick="rebours(30,90)">Démarrer</a></div>
-		    		
-		    	</div>
-		    	<div class="reco"><img src="img/test5.png" alt="mesure du rythme cardiaque" title="mesure du rythme cardiaque"/> 
-		    	</div>
-		    </div>
-
-			<!-- <div class="bouton"><p><a href="temp.php" style="text-decoration:none">Mesure de la température superficielle de la peau</a></p>
-			</div> -->
-
 			<form method="POST" action="temp.php">
-
-				<button type="submit" class="bouton" name="idTest" value="<?= $idTest ?>"><?php echo trad("Mesure de la température superficielle de la peau","Skin surface measurement")?></button>
+				<button type="submit" class="boutonSubmit" name="idTest" value="<?= $idTest ?>"><?= trad("Mesure de la température superficielle de la peau","Skin surface measurement") ?></button>
 			</form>
 
-			
 			<div class="barre">
-			<progress id="barreProgression" max="100" value="40"><?php echo trad("2/5 épreuves effectuées ","2/5 tests performed")?></progress><br/><br/>
-			<label for="barreProgression"><?php echo trad("2/5 épreuves effectuées ","2/5 tests performed")?></label>
-		    </div>
-			
+				<progress id="barreProgression" max="100" value="40"><?= trad("2/5 épreuves effectuées ","2/5 tests performed") ?></progress><br/><br/>
+			</div>
 
-		</div>
+			<label for="barreProgression"><?= trad("2/5 épreuves effectuées ","2/5 tests performed") ?></label>
+			
+		</section>
+	</section>
 
 	<?php include("includes/footer.php"); ?>
-
 
 	</body>
 	
