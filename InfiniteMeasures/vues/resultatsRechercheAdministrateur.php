@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<base href="/infiniteMeasures/">
 		<meta charset="utf-8"/>
 		<title>Résultats de votre recherche</title>
 		<link rel="stylesheet" href="css/styleResultatsAdmin.css" />

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<base href="/infiniteMeasures/">
 		<meta charset="utf-8"/>
 		<title>Bas de page</title>
 		<link href="css/footer.css" rel="stylesheet">
@@ -17,7 +18,7 @@
     				<a style="text-decoration:none" href="contacter" title="piedPage"><?php echo trad("Nous contacter","Contact us")?></a>
     			</div>
     			<div class="element2"><?php echo trad("À propos de nous","About us")?>
-					<a style="text-decoration:none" href="A-Propos" title="piedPage"><?php echo trad("À propos","About")?></a> 
+					<a style="text-decoration:none" href="APropos" title="piedPage"><?php echo trad("À propos","About")?></a> 
 				</div>
 			</div>
 
