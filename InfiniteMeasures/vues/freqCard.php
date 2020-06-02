@@ -1,10 +1,5 @@
 <?php
-    session_start();
-    $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
-    include 'function/cookie.php';
-    include 'function/numberUserLive.php';
-
-
+    
     if(isset($_POST['idTest']) AND !empty($_POST['idTest'])){
     	
 
@@ -24,13 +19,14 @@
 
     	//IL FAUT LUI ATTRIBUER DES VALEURS
     } else {
-    	header("Location: index.php");
+    	header("Location: compte");
     }
 
 ?>
 
 <html>
 	<head>
+		<base href="/infiniteMeasures/">
 		<meta charset="utf-8"/>
 		<title>Mesure du rythme cardiaque</title>
 		<link rel="stylesheet" href="css/tests/styleTest.css" />
@@ -40,7 +36,6 @@
 
 	<body>
 
-	<?php include("includes/header.php"); ?>
 
 	<div class="titre"><h2><?php echo trad("Mesure du rythme cardiaque","Heartbeat measurement")?></h2></div>
 
@@ -59,7 +54,7 @@
 
 			<button type="button" class="boutonHelp" name="idHelp" onclick ="helpCard()"><?= trad("Aide","Help") ?></button>
 			
-			<form method="POST" action="temp.php">
+			<form method="POST" action="test/temp">
 				<button type="submit" class="boutonSubmit" name="idTest" value="<?= $idTest ?>"><?= trad("Mesure de la température superficielle de la peau","Skin surface measurement") ?></button>
 			</form>
 
@@ -72,7 +67,6 @@
 		</section>
 	</section>
 
-	<?php include("includes/footer.php"); ?>
 
 	</body>
 	

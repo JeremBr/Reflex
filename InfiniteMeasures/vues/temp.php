@@ -1,10 +1,5 @@
 <?php
-    session_start();
-    $bdd = new PDO('mysql:host=localhost;dbname=reflex', 'root', '');
-    include 'function/cookie.php';
-    include 'function/numberUserLive.php';
-
-
+    
 
     if(isset($_POST['idTest']) AND !empty($_POST['idTest'])){
     	
@@ -20,13 +15,14 @@
         $insertTemp->execute(array($resultat, $idTest));
 
     } else {
-    	header("Location: index.php");
+    	header("Location: accueil");
     }
 
 ?>
 
 <html>
 	<head>
+		<base href="/infiniteMeasures/">
 		<meta charset="utf-8"/>
 		<title>Mesure de la température</title>
 		<link rel="stylesheet" href="css/tests/styleTest.css" />
@@ -36,7 +32,7 @@
 
 	<body>
 
-	<?php include("includes/header.php"); ?>
+	
 
 	<div class="titre"><h2><?= trad("Mesure de la température","Temperature measurement") ?></h2></div>
 
@@ -55,7 +51,7 @@
 
 			<button type="button" class="boutonHelp" name="idHelp" onclick ="helpTemp()"><?= trad("Aide","Help") ?></button>
 			
-			<form method="POST" action="sonore.php">
+			<form method="POST" action="test/sonore">
 				<button type="submit" class="boutonSubmit" name="idTest" value="<?= $idTest ?>"><?= trad("Réflexe sonore","Sound reflex") ?></button>
 			</form>
 
@@ -68,7 +64,11 @@
 		</section>
 	</section>
 
-	<?php include("includes/footer.php"); ?>
+	
+
+
 
 	</body>
+
+	
 </html>	
