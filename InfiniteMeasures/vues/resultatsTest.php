@@ -1,10 +1,5 @@
 <?php
-    session_start();
-    $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
-    include 'function/cookie.php';
-    include 'function/numberUserLive.php';
-
-
+    
 
     if(isset($_POST['idTest']) AND !empty($_POST['idTest'])){
     	
@@ -14,13 +9,14 @@
         $yo = $requser->fetch();
         
     } else {
-    	header("Location: index.php");
+    	header("Location: accueil");
     }
 
 ?>
 
 <html>
 	<head>
+		<base href="/infiniteMeasures/">
 		<meta charset="utf-8"/>
 		<title>Résultats de votre test</title>
 		<link rel="stylesheet" href="css/styleResultatsTests.css" />
@@ -29,7 +25,7 @@
 
 	<body>
 
-		<?php include("includes/header.php"); ?>
+	
 
 		<section class="conteneur">
 			
@@ -57,30 +53,11 @@
 				
 			<img class="graph" src="radar.php?rec=<?= $yo['RecoTona']; ?>&freq=<?= $yo['freqCard']; ?>&temp=<?= $yo['temperature']; ?>&son=<?= $yo['refSonore']; ?>&vis=<?= $yo['refVisuel']; ?>">
 
-			<!-- <div class="commentaire">
-				<p><label for="comGestionnaire"> Commentaires du gestionnaire : </label></p>
-					<p ><textarea name="comGestionnaire" id="comGestionnaire" size="50" rows="10" cols="50" ></textarea> </p>
-			</div> -->
-
-
-			<!-- <form method="post" action="">
-					
-					<textarea type="text" name="message" placeholder="MESSAGE"></textarea>
-					<div class="commentaire">
-						<p><label for="comGestionnaire"> Commentaires du gestionnaire : </label></p>
-						<p ><textarea name="message" id="comGestionnaire" size="50" rows="10" cols="50" ></textarea> </p>
-					</div>
-					<br/>
-					<input type="submit" value="Envoyer" />
-			</form> -->
-
-
-			<!-- Faire un bouton qui mettra le commentaire du test
-			-->
+			
 
 		</section>
 
-		<?php include("includes/footer.php"); ?>
+
 
 	</body>
 </html>	

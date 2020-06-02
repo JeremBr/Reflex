@@ -1,8 +1,4 @@
 <?php
-    session_start();
-    $bdd = new PDO('mysql:host=localhost;dbname=reflex', 'root', '');
-    include 'function/cookie.php';
-    include 'function/numberUserLive.php';
 
     if(isset($_POST['idTest']) AND !empty($_POST['idTest'])){
     	
@@ -25,19 +21,16 @@
 
 <html>
 	<head>
+		<base href="/infiniteMeasures/">
 		<meta charset="utf-8"/>
 		<title>Réflexe visuel</title>
 		<link rel="stylesheet" href="css/tests/styleTest.css" />
 		<script type="text/javascript" src="js/rebours.js"></script>
-		<script src="js/help.js"></script>
 	</head>
 
 	<body>
 
-	<?php include("includes/header.php"); ?>
-
-	<div class="titre"><h2><?= trad("Réflexe visuel","Visual reflex") ?></h2></div>
-
+	
 
 	<section class="conteneur1">
 		<section class="conteneur2">
@@ -54,7 +47,7 @@
 
 			<button type="button" class="boutonHelp" name="idHelp" onclick ="helpVisuel()"><?= trad("Aide","Help") ?></button>
 			
-			<form method="POST" action="resultatsTest.php">
+			<form method="POST" action="test/resultats">
 				<button type="submit" class="boutonSubmit" name="idTest" value="<?= $idTest ?>"><?= trad("Envoie des résultats","Send results") ?></button>
 			</form>
 
@@ -67,7 +60,8 @@
 		</section>
 	</section>
 
-	<?php include("includes/footer.php"); ?>
+
 
 	</body>
+	
 </html>	
