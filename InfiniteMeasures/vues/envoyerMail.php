@@ -1,29 +1,18 @@
-<?php
-    
-
-    if(isset($_GET['userMail']) AND !empty($_GET['userMail'])){
-
-    	$userMail = $_GET['userMail'];
-
-    } else {
-    	// header("Location: compte");
-    }
-
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
+		<base href="/infiniteMeasures/">
 		<meta charset="utf-8"/>
 		<title><?php echo trad("Envoyer un mail","Send an email")?></title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- ça il faut l'enlever -->
 
 		<link rel="stylesheet" href="css/styleE2.css" />
 
-		<script src="js/script.js"></script>
+		<script src="./js/script.js"></script>
 	</head>
 
 	<body>

@@ -1,25 +1,33 @@
-h2
+.titre
+{
+	text-align: center;
+}
+
+.h2
 {
 	color : #333;
 	font-size: 40px;
 	text-transform: uppercase;
+	padding-top: 30px;
 }
-.titre
-{
-	margin-left : 400px;
+
+.conteneur{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 30px;
 }
 
 table
 {
-	margin-top : 100px;
-	margin-left : 2%;
+	margin-top : 30px;
 	border-collapse: collapse;
 }
 
 .graph
 {
-	margin-left: 20%;
-	margin-top: 5%;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 td, th /* Mettre une bordure sur les td ET les th */
