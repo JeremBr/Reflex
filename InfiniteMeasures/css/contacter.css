@@ -63,21 +63,19 @@ input[type="text"]
 /* NOUS CONTACTER */
 
 
+#milieu
+{
+	display: flex;
+	justify-content: center;
+}
 
 #gauche {
 	width: 40%;
-	height: 300%;
-	float: left;
-	
 }
 
 #droite {
-	width: 60%;
-	height: 300%;
-	float: left;
-	
+	width: 36%;
 }
-
 
 strong
 {

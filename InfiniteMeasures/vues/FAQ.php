@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<base href="/infiniteMeasures/">
 		<meta charset="utf-8"/>
 		<title>FAQ</title>
 		<link href="css/style.css" rel="stylesheet">

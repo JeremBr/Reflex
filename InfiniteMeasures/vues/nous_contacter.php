@@ -1,8 +1,7 @@
-
-
 <!DOCTYPE html>
 <html>
 	<head>
+		<base href="/infiniteMeasures/">
 		<meta charset="utf-8">
 		<link href="css/contacter.css" rel="stylesheet">
 
@@ -19,7 +18,10 @@
 				
 
 				<form>
-	
+
+	  <!--PARTIE DROITE et GAUCHE-->
+	 <div id="milieu">	
+
 	  <!--PARTIE DROITE-->
     <div id="droite">
 
@@ -31,8 +33,8 @@
     			<br>
 
     		<a href="mailto:reflex@gmail.com"> Email : reflex@gmail.com</a><br/>
-    		<a class="contacter" href="mailUtilisateur.php?mailto=centre">Contacter</a>
-</div>
+    		<a class="contacter" href="utilisateurs/mailContacter?mailto=centre">Contacter</a>
+	</div>
 
 	<!--PARTIE GAUCHE-->
 	    <div id="gauche">
@@ -45,7 +47,7 @@
     			<br>
 
     		<a href="mailto:reflex.admin@gmail.com"> Email : reflex.admin@gmail.com</a> <br/>
-    		<a class="contacter" href="mailUtilisateur.php?mailto=admin">Contacter</a>
+    		<a class="contacter" href="utilisateurs/mailContacter?mailto=admin">Contacter</a>
 		<br>
 	   	<br>
 
@@ -58,11 +60,11 @@
     			<br>
 
     		<a href="mailto:reflex.gestio@gmail.com"> Email : reflex.gestio@gmail.com</a><br/>
-    		<a class="contacter" href="mailUtilisateur.php?mailto=gestio">Contacter</a>
+    		<a class="contacter" href="utilisateurs/mailContacter?mailto=gestio">Contacter</a>
 
 
 		</div>
-					
+	 </div>			
 				</form>
 			</div>
 		</section>

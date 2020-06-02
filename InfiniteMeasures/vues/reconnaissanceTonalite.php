@@ -1,29 +1,23 @@
 <?php
-    session_start();
-    $bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
-    include 'function/cookie.php';
-    include 'function/numberUserLive.php';
-    include("includes/header.php");
+    
 
-    if(isset($_GET['userTest']) AND !empty($_GET['userTest'])){
-    	// $userTest = int($_POST['userTest']);
-    	// $requser = $bdd->prepare("SELECT * FROM test");
-     	// $requser->execute(array($));
+    if(isset($_GET['id']) AND !empty($_GET['id'])){
+    	
+
     	
     	$resultat = rand(80,100); //intervalle à modifier
     	
-    	$insertToken = $bdd->prepare("INSERT INTO test(idUtilisateur, RecoTona) VALUES(?, ?)");
-        $insertToken->execute(array($_GET['userTest'], $resultat));
 
-        // $requser = $bdd->prepare("SELECT LAST(idTest) FROM test WHERE idUtilisateur=?");
-        // $requser->execute(array($_POST['userTest']));
-        // $user = $requser->fetch();
+    	$insertToken = $bdd->prepare("INSERT INTO test(idUtilisateur, RecoTona) VALUES(?, ?)");
+        $insertToken->execute(array($_GET['id'], $resultat));
+
+
         
         $last_id = $bdd->lastInsertId();
 
     	//IL FAUT LUI ATTRIBUER DES VALEURS
     } else {
-    	header("Location: index.php");
+    	header("Location: accueil");
     }
 
 ?>
@@ -31,14 +25,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<base href="/infiniteMeasures/">
 		<meta charset="utf-8"/>
 		<title><?= trad("Reconnaissance de tonalité","Tone recognition") ?></title>
 		<link rel="stylesheet" href="css/tests/styleTest.css" />
 		<script type="text/javascript" src="js/rebours.js"></script>
 		<script src="js/help.js"></script>
+
 	</head>
 
 	<body>
+
 
 	<div class="titre"><h2><?= trad("Reconnaissance de tonalité","Tone recognition") ?></h2></div>
 
@@ -57,7 +54,7 @@
 
 			<button type="button" class="boutonHelp" name="idHelp" onclick ="helpReco()"><?= trad("Aide","Help") ?></button>
 			
-			<form method="POST" action="freqCard.php">
+			<form method="POST" action="test/freqCard">
 				<button type="submit" class="boutonSubmit" name="idTest" value="<?= $last_id ?>"><?= trad("Mesure du rythme cardiaque","Heartbeat measurement") ?></button>
 			</form>
 
@@ -70,7 +67,8 @@
 		</section>
 	</section>
 
-	<?php include("includes/footer.php"); ?>
+
 
 	</body>
+
 </html>	

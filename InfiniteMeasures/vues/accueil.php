@@ -1,12 +1,14 @@
-
 <!DOCTYPE html>
 <html>
+
 	<head>
+		<base href="/infiniteMeasures/">
 		<meta charset="utf-8">
 		<link href="css/style.css" rel="stylesheet">
-		
 		<title>Reflex</title>
 	</head>
+
+
 	<body>
 
 		<section id="main-image">
@@ -20,6 +22,7 @@
 				
 			</div>
 		</section>
+		
 
 		<section id="steps">
 			<div class="wrapper">
