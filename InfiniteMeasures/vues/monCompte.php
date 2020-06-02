@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <base href="/infiniteMeasures/">
         <meta charset="utf-8" />
-        
-        
         
         <link href="css/monCompte.css" rel="stylesheet">
         <title>Mon compte</title>
@@ -47,7 +46,7 @@
 
                             if($userinfo['permission'] == 0){
                                 ?>
-                                <li><a href="listeResultats.php?userResults=<?= $_COOKIE['idUtilisateur'] ?>"><?php echo trad("Mes résulats","My results")?></a></li> <!-- Doit mettre page avec liste des diff resultats-->
+                                <li><a href="test/listeResultats/<?= $_COOKIE['idUtilisateur'] ?>"><?php echo trad("Mes résulats","My results")?></a></li> <!-- Doit mettre page avec liste des diff resultats-->
                                 <li><a href="modifierProfil"><?php echo trad("Editer mon profil","Edit my profil")?></a></li>
                                 
 
@@ -57,7 +56,7 @@
                                 ?>
                                 <li><a href="mail"><?php echo trad("Envoyer un mail","Send an email")?></a></li>
                                 <li><a href="inviter"><?php echo trad("Inviter un utilisateur","Invite a user")?></a></li>
-                                <li><a href="resultatsRechercheGestionnaire.php"><?php echo trad("Rechercher un utilisateur","Find user")?></a></li> <!-- Doit pouvoir mettre page avec liste des diff resultats-->
+                                <li><a href="rechercheGestionnaire"><?php echo trad("Rechercher un utilisateur","Find user")?></a></li> <!-- Doit pouvoir mettre page avec liste des diff resultats-->
                                 <li><a href="modifierProfil"><?php echo trad("Editer mon profil","Update profil")?></a></li>
 
                                 <?php

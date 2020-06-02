@@ -7,14 +7,15 @@
 
 
 // si la fonction n'est pas définie, on choisit d'afficher l'accueil
-if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
+if (!isset($_GET['url']) || empty($_GET['url'])) {
     $function = "accueil";
 } else {
-    $function = $_GET['fonction'];
+    $function = $_GET['url'];
 }
 
 switch ($function) {
     
+
     case 'accueil':
         $vue = "accueil";
         break;
@@ -30,6 +31,15 @@ switch ($function) {
         break;
 
 
+    case 'inscription':
+        $vue = "inscription";
+        include ('controleurInscription.php');
+        break;
+
+
+
+
+
 
 
     case 'modifierProfil':
@@ -43,17 +53,64 @@ switch ($function) {
 
     case 'inviter':
         $vue = "inviteUtilisateur";
+        include ('controleurInvite.php');
         break;
 
+
+    case 'motDePasseOublié':
+        $vue = "motPasseOublie";
+        include('controleurMdpOublie.php');
+        break;
+
+    case 'reintialiserMotDePasse':
+        $vue = "reintiliaserMp";
+        include('controleurReintialiser.php');
+        break;
+
+
+
+
+
+
+
+
     case 'mail':
+        if(isset($_GET['userMail']) AND !empty($_GET['userMail'])){
+            $userMail = $_GET['userMail'];
+        }
         $vue = "envoyerMail";
         break;
 
+    case 'mailContacter':
+        $vue = "mailUtilisateur";
+        break;
 
+
+
+
+
+
+
+    case 'administration':
+        $vue = "adminPage";
+        break;
 
     case 'rechercheAdmin':
         $vue = "resultatsRechercheAdministrateur";
         break;
+
+    case 'rechercheGestionnaire':
+        $vue = "resultatsRechercheGestionnaire";
+        include ('./modele/rechercheUtilis.php');
+        break;
+
+
+
+
+
+
+
+
 
 
 
@@ -69,9 +126,16 @@ switch ($function) {
         $vue = "nous_contacter";
         break;
 
-    case 'A-Propos':
+    case 'APropos':
         $vue = "APropos";
         break;
+
+
+
+
+
+
+
 
 
     case 'deconnexion':
