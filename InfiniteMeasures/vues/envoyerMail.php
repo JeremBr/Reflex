@@ -7,12 +7,8 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <!-- ça il faut l'enlever -->
-
 		<link rel="stylesheet" href="css/styleE2.css" />
-
-		<script src="./js/script.js"></script>
+		
 	</head>
 
 	<body>
@@ -27,11 +23,10 @@
 
 					<div class="corps">
 
-						<!-- <p class="titre">Ecrivez votre mail </p>
-						<br/> -->
+						
 					
 				<p><label for="email"><?php echo trad("Adresse mail du destinataire : ","Recipient email : ")?><strong>*</strong> </label></p>
-				<p ><input type="email" name="email" id="email" value="<?php if(isset($userMail)) { echo $userMail; } ?>" size="45" required/>
+				<p ><input type="emailTo" name="emailTo" id="emailTo" value="<?php if(isset($userMail)) { echo $userMail; } ?>" size="45" required/>
 				</p><p class="comments"></p>
 
 				<p><label for="object"><?php echo trad("Objet du message : ","Message object : ")?><strong>*</strong></label></p>

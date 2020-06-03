@@ -108,6 +108,8 @@ switch ($function) {
                     $userMail = $_GET['userMail'];
                 }
                 $vue = "envoyerMail";
+                include ('controleurCompte.php');
+                include('./modele/mail.php');
             } else {
                 header("Location: compte");
             }
@@ -119,6 +121,7 @@ switch ($function) {
 
     case 'mailContacter':
         $vue = "mailUtilisateur";
+        include('./modele/contact.php');
         break;
 
 
