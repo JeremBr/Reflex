@@ -42,7 +42,7 @@
             ?>
          </div>
 
-      <div class="test">
+      <div class="oublie">
          <a href="motDePasseOublie"><?php echo trad("Mot de passe oublié ?","Forgot password")?></a>
       </div>
 

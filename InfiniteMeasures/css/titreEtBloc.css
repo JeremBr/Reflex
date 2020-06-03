@@ -21,6 +21,7 @@ h2
     align-items: center;
     width: 1000px;
     border : 2px #5cbed6 solid;
+    border-radius: 5px;
 	padding-bottom: 30px;
 	background-color: #efefef;
 }
