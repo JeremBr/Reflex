@@ -25,7 +25,7 @@
 
 	/* DEFINIT TEXTE A ENVOYER */
     $object = "Mot de passe oublié ?";
-    $emailText = "Veuillez cliquer sur le lien ci-dessous dans un délai de 24h pour récuperez votre mot de passe:\n\nhttp://localhost/finalWebSite/reinitialiserMp.php?pass=$token";
+    $emailText = "Veuillez cliquer sur le lien ci-dessous dans un délai de 24h pour récuperez votre mot de passe:\n\nhttp://localhost/infiniteMeasures/utilisateurs/reinitialiserMotDePasse?pass=$token";
 
     $emailTo = "InfiniteMeasures@mail.com";
     $headers = "From: Infinite Measures <{$emailTo}>\r\nReply-To: {$emailTo}";

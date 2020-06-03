@@ -1,9 +1,7 @@
-
-
 <!DOCTYPE html>
 <html>
 	<head>
-		<base href="/infiniteMeasures/">
+		<base href="/InfiniteMeasures/">
 		<meta charset="utf-8"/>
 		<title>Résultats de votre recherche</title>
 		<link rel="stylesheet" href="css/styleResultatsAdmin.css" />
@@ -16,11 +14,6 @@
 
 
 	<?php
-
-	if(isset($access)){
-		if($access == 2){
-
-			include 'modele/admin.php';
 			
 
 			if (isset($_POST['recherche'])) {
@@ -63,20 +56,20 @@
 										<?php 
 										if($r['permission'] == 0){
 											?>
-											<p class="upgrade"><a href="resultatsRechercheAdministrateur.php?upgrade=<?= $r['idUtilisateur'] ?>&research=<?= $research ?>" style="text-decoration:none">Upgrade</a></p>
+											<p class="upgrade"><a href="utilisateurs/rechercheAdmin?upgrade=<?= $r['idUtilisateur'] ?>&research=<?= $research ?>" style="text-decoration:none">Upgrade</a></p>
 										
 											<?php 
 										}else if($r['permission'] == 1){
 											?>
 
-											<p class="downgrade"><a href="resultatsRechercheAdministrateur.php?downgrade=<?= $r['idUtilisateur'] ?>&research=<?= $research ?>" style="text-decoration:none">Downgrade</a></p>
+											<p class="downgrade"><a href="utilisateurs/rechercheAdmin?downgrade=<?= $r['idUtilisateur'] ?>&research=<?= $research ?>" style="text-decoration:none">Downgrade</a></p>
 
 											<?php
 										}
 
 											?>
 										
-										<p class="supprime"><a href="resultatsRechercheAdministrateur.php?supprime=<?= $r['idUtilisateur'] ?>&research=<?= $research ?>" style="text-decoration:none">Supprimer</a></p>
+										<p class="supprime"><a href="utilisateurs/rechercheAdmin?supprime=<?= $r['idUtilisateur'] ?>&research=<?= $research ?>" style="text-decoration:none">Supprimer</a></p>
 									</div>
 									</div>
 
@@ -94,12 +87,7 @@
 				        }
 
 		
-		} else{
-			header("Location: compte");
-		}
-	} else {
-		header("Location: connexion");
-	}
+		
 	?>
 
 		

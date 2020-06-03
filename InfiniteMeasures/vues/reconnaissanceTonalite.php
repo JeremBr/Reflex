@@ -25,7 +25,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<base href="/infiniteMeasures/">
+		<base href="/InfiniteMeasures/">
 		<meta charset="utf-8"/>
 		<title><?= trad("Reconnaissance de tonalité","Tone recognition") ?></title>
 		<link rel="stylesheet" href="css/tests/styleTest.css" />

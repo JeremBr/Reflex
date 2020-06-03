@@ -29,7 +29,7 @@
 
     /* DEFINIT TEXTE A ENVOYER */
     $object = "Invitation inscription";
-    $emailText = "Bienvenue chez Infinite Measures $mail, veuillez cliquer sur le lien ci-dessous dans un délai de 24h pour vous inscrire:\n\nhttp://localhost/finalWebSite/inscription.php?inscription=$token";
+    $emailText = "Bienvenue chez Infinite Measures $mail, veuillez cliquer sur le lien ci-dessous dans un délai de 24h pour vous inscrire:\n\nhttp://localhost/infiniteMeasures/inscription.php?inscription=$token";
 
     $emailTo = "InfiniteMeasures@mail.com";
     $headers = "From: Infinite Measures <{$emailTo}>\r\nReply-To: {$emailTo}";
