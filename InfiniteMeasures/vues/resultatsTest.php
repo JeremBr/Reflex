@@ -16,7 +16,7 @@
 
 <html>
 	<head>
-		<base href="/infiniteMeasures/">
+		<base href="/InfiniteMeasures/">
 		<meta charset="utf-8"/>
 		<title>Résultats de votre test</title>
 		<link rel="stylesheet" href="css/styleResultatsTests.css" />

@@ -7,7 +7,7 @@ $(function () {
         
         $.ajax({
             type: 'POST',
-            url: 'function/contact.php',
+            url: 'modele/contact.php',
             data: postdata,
             dataType: 'json',
             success: function(json) {

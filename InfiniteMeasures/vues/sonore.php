@@ -23,7 +23,7 @@
 
 <html>
 	<head>
-		<base href="/infiniteMeasures/">
+		<base href="/InfiniteMeasures/">
 		<meta charset="utf-8"/>
 		<title>Réflexe sonore</title>
 		<link rel="stylesheet" href="css/tests/styleTest.css" />
