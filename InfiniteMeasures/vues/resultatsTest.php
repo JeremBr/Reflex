@@ -1,19 +1,4 @@
-<?php
-    
-
-    if(isset($_POST['idTest']) AND !empty($_POST['idTest'])){
-    	
-
-    	$requser = $bdd->prepare("SELECT * FROM test WHERE idTest=? ");
-        $requser->execute(array($_POST['idTest']));
-        $yo = $requser->fetch();
-        
-    } else {
-    	header("Location: accueil");
-    }
-
-?>
-
+<!DOCTYPE html>
 <html>
 	<head>
 		<base href="/InfiniteMeasures/">
@@ -42,20 +27,44 @@
 				</tr>
 
 				<tr>
-					<td> <?= $yo['RecoTona']; ?><br/></td>
-					<td> <?= $yo['freqCard']; ?><br/></td>
-					<td> <?= $yo['temperature']; ?><br/></td>
-					<td> <?= $yo['refSonore']; ?><br/></td>
-					<td> <?= $yo['refVisuel']; ?><br/></td>
+					<td> <?= $results['RecoTona']; ?><br/></td>
+					<td> <?= $results['freqCard']; ?><br/></td>
+					<td> <?= $results['temperature']; ?><br/></td>
+					<td> <?= $results['refSonore']; ?><br/></td>
+					<td> <?= $results['refVisuel']; ?><br/></td>
 				</tr>
 
 			</table>
+			<img class="graph" src="./img/FR.png">
 				
-			<img class="graph" src="radar.php?rec=<?= $yo['RecoTona']; ?>&freq=<?= $yo['freqCard']; ?>&temp=<?= $yo['temperature']; ?>&son=<?= $yo['refSonore']; ?>&vis=<?= $yo['refVisuel']; ?>">
+			<img class="graph" src="radar.php?rec=<?= $results['RecoTona']; ?>&freq=<?= $results['freqCard']; ?>&temp=<?= $results['temperature']; ?>&son=<?= $results['refSonore']; ?>&vis=<?= $results['refVisuel']; ?>">
 
+			<?php if(isset($access)){
+				if( ($access == 1) OR ($access == 2) ){
+
+			?>
+			<form method="POST" action="test/resultats" enctype="multipart/form-data">
+				<div class="commentaire">
+					<p><label for="comGestionnaire"> Commentaires du gestionnaire : </label></p>
+					<p ><textarea name="comGestionnaire" size="50" rows="10" cols="50" ><?= $results['comment']; ?></textarea> </p>
+				</div> 
+				<input type="submit" value="<?php echo trad("Envoyer","Update CGU") ?>" />
+			</form>
+
+			<?php 
+				}else if($access == 0){
+
+				} else {
+					header("Location: accueil");
+				}
+			} else {
+				header("Location: accueil");
+			}
+		?>
 			
 
 		</section>
+		
 
 
 
