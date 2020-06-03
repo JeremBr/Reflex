@@ -1,36 +1,20 @@
-.carré
-{
-	/*width:400px;
-	height:400px;
-	
-	position: absolute;
-	left: 37%;
-	top:45%;*/
-	margin: 50px 200px;
-    border-width:3px;
-    border-style:solid;
-    border-color:#17e2cd;
-    padding: 50px;
-    background-color: #ddd;
-
-}
-.carré h5  {
+.conteneur3 h5  {
 
 	 font-size: 18px;
-    border-bottom: 4px solid #17e2cd;
+    border-bottom: 2px solid #5cbed6;
     display: inline-block;
      color: #505050
 }
 
-.carré h1{
-	 color: #505050;
+.conteneur3 h1{
+	color: #505050;
     font-size: 30px;
 
     margin-bottom: 1em;
     
     font-weight: bold;
 
-    border-bottom: 6px solid #17e2cd;
+    border-bottom: 4px solid #5cbed6;
     display: inline-block;
 }
 .carré p {
@@ -41,20 +25,6 @@
 {
 	padding: 60px 0;
 	text-align: center;
-}
-
-#cgu h3
-{
-	
-	width: 300px;
-	text-transform: uppercase;
-	margin: 10px auto 10px auto; /* en bas 20px, à droite et à gauche auto*/
-	border-bottom: 2px solid #17e2cd;
-	padding-bottom: 20px;
-
-}
-.wrapper {
-	
 }
 
 

@@ -4,6 +4,7 @@
 		<base href="/InfiniteMeasures/">
 		<meta charset="utf-8">
 		<link href="css/contacter.css" rel="stylesheet">
+		<link href="css/titreEtBloc.css" rel="stylesheet">
 
 		<title>Reflex</title>
 	</head>
@@ -11,13 +12,16 @@
 
 		<section id="contact">
 			<div class="wrapper">
-				<h3>Nous contacter</h3>
+				<h2>Nous contacter</h2>
 
+		<section class="conteneur1">
+			<section class="conteneur2">
+				<div class="conteneur3">
 
 				<strong><div class="faq"> Consultez la <U><a href="FAQ" >F.A.Q,</a></U> votre question a peut-être déjà été posée </strong></div>
 				
 
-				<form>
+
 
 	  <!--PARTIE DROITE et GAUCHE-->
 	 <div id="milieu">	
@@ -65,10 +69,11 @@
 
 		</div>
 	 </div>			
-				</form>
 			</div>
 		</section>
-
+				</div>
+			</section>
+    	</section>
 
 <br>
 <br>
