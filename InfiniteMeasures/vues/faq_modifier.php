@@ -8,12 +8,16 @@
 		<link href="css/footer.css" rel="stylesheet">
       	<link href="css/header.css" rel="stylesheet">
       	<link href="css/styleFAQ.css" rel="stylesheet">
+      	<link href="css/titreEtBloc.css" rel="stylesheet">
 	</head>
 	<body>
 
 		<p> <h2>  Foire aux Questions </h2> </p>
 
 		<div class="faq">
+			<section class="conteneur1">
+			<section class="conteneur2">
+				<div class="conteneur3">
 			<form method="POST" action="utilisateurs/modifierFAQ" enctype="multipart/form-data">
 				<?php
 					$allFaq = $bdd->query('SELECT * FROM faq');
@@ -43,6 +47,10 @@
 
 				<input type="submit" value="<?php echo trad("Mettre à jour la FAQ","Update FAQ") ?>" />
             </form>
+
+            </div>
+			</section>
+    	</section>
 		</div>
 
 	</body>

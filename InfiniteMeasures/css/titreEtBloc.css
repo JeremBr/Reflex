@@ -1,0 +1,33 @@
+/* Cette page CSS permet d'homogénéiser le titre et le centre de page de toutes les pages "classiques" */
+
+h2
+{
+	margin-top: 50px;
+	text-decoration: 2px underline #5cbed6;
+	text-align: center;
+	margin: 30px;
+}
+
+.conteneur1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.conteneur2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1000px;
+    border : 2px #5cbed6 solid;
+    border-radius: 5px;
+	padding-bottom: 30px;
+	background-color: #efefef;
+}
+
+.conteneur3{
+    margin-top: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+}

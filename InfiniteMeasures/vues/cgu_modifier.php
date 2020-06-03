@@ -2,110 +2,55 @@
 <html>
 	<head>
 		<base href="/InfiniteMeasures/">
-		<meta charset="utf-8">
-		<link href="css/cgu.css" rel="stylesheet">
-		<title>Reflex</title>
+		<meta charset="utf-8"/>
+		<title>CGU</title>
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/footer.css" rel="stylesheet">
+      	<link href="css/header.css" rel="stylesheet">
+      	<link href="css/styleFAQ.css" rel="stylesheet">
+      	<link href="css/titreEtBloc.css" rel="stylesheet">
 	</head>
 	<body>
 
-				<section id="cgu">
-					<div class="wrapper">
-						<h3>Gérer la F.A.Q</h3>
-					</div>
-				</section>
+		<p> <h2>  Gérer la CGU </h2> </p>
+
+		<div class="faq">
+			<section class="conteneur1">
+			<section class="conteneur2">
+				<div class="conteneur3">
+			<form method="POST" action="utilisateurs/modifierCGU" enctype="multipart/form-data">
+				<?php
+					$allCgu = $bdd->query('SELECT * FROM cgu');
+					while($cgu = $allCgu->fetch())
+					{
+				?>		
 
 
-				<section id="reglement">
 					
-			<div class="rectangle">Réglement
-				
-				<input type=button  value=EditerCGU class="button1"/>
+					<p><textarea type="text" name="<?= $cgu['numArticle']; ?>" size="20" rows="1" cols="45" ><?= $cgu['article']; ?></textarea> </p><br/>
 
-				<input type=button  value=AjouterArticle class="button2"/>
+					
+					<p><textarea type="text" name="A<?= $cgu['numArticle']; ?>" size="20" rows="10" cols="45" ><?= $cgu['texte']; ?></textarea> </p>
+					<br/>
 
-				<input type=button  value=SupprimerArticle class="button3"/>
-
-			</div>
-			
-				</section>
-
-				
-				<div class="carré">
+					<p class="supprime"><a href="utilisateurs/modifierCGU?supprime=<?= $cgu['numArticle'] ?>" style="text-decoration:none">Supprimer</a></p>
+					<br/><br/><br/>
 
 
-				<H5>Article 1.1 :</H5> <H6>L'accès au Site est possible 24 heures sur 24, 7 jours sur 7, sauf en cas d'éventuelles pannes du Site ainsi que des interventions de maintenance nécessaires au bon fonctionnement du Site. </H6>
-				<input type="checkbox" >
-			
-		<br>
-
-
-			
-			
-			
-				<H5>Article 1.2 :</H5>  <H6>Le service clientèle est disponible par téléphone au 01 42 22 33 44 du lundi au vendredi de 9h00 à 18h00. </H6> 
-				<input type="checkbox" >
-			
-		<br>
-
-
-
-
-
-				<H5>Article 2 : </H5> <H6>Le compte ouvert par l’Utilisateur est personnel. L’Utilisateur est seul responsable de sa gestion et de son utilisation. Toute connexion effectuée dans le cadre de l’utilisation des Services sera réputée avoir été réalisée par l’Utilisateur et sous sa responsabilité exclusive. </H6>
-				<input type="checkbox" >
-			
-		<br>
-
-
-
-				<H5>Article 2.2 : </H5> <H6> L’Utilisateur demeure l’unique responsable de la protection du mot de passe qu’il utilise pour accéder aux Services ainsi que pour l’ensemble des actions nécessitant une authentification avec mot de passe sur le Site. </H6>
-				<input type="checkbox" >
-			
-		<br>
-				<H5>Article 3 : </H5> <H6> Les Utilisateurs sont informés que des traceurs (« Cookies ») sont utilisés lors de la consultation du Site. Les Utilisateurs sont invités à prendre connaissance de la Politique dédiée liée à la gestion des cookies. </H6>
-				<input type="checkbox" >
-
-
-		<br>
-
-				<H5>Article 4 : </H5> <H6> Les CGU sont soumises à la loi française.</H6>
-				<input type="checkbox" >
+					
 						
-				
+				<?php
+					}
+				?>
 
+				<p class="ajouter"><a href="utilisateurs/modifierCGU?ajouter=1" style="text-decoration:none">Ajouter</a></p>
 
-
+				<input type="submit" value="<?php echo trad("Mettre à jour la CGU","Update CGU") ?>" />
+            </form>
+           </div>
+			</section>
+    	</section>
 		</div>
-
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-
-	
-
 
 	</body>
 </html>

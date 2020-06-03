@@ -1,29 +1,4 @@
-<?php
-    
-    if(isset($_POST['idTest']) AND !empty($_POST['idTest'])){
-    	
-
-    	$resultat = rand(40,140); //intervalle à modifier
-    	
-
-    	
-
-    	$idTest = $_POST['idTest'];
-
-    	// //FAUT METTRE UN INSERT POUR idTest
-
-    	$insertFreq = $bdd->prepare("UPDATE test SET freqCard = ? WHERE idTest = ?");
-        $insertFreq->execute(array($resultat, $idTest));
-
-
-
-    	//IL FAUT LUI ATTRIBUER DES VALEURS
-    } else {
-    	header("Location: compte");
-    }
-
-?>
-
+<!DOCTYPE html>
 <html>
 	<head>
 		<base href="/InfiniteMeasures/">
