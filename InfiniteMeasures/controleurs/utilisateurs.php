@@ -30,7 +30,6 @@ switch ($function) {
         include ('controleurCompte.php');
         break;
 
-
     case 'inscription':
         $vue = "inscription";
         include ('controleurInscription.php');
@@ -38,7 +37,8 @@ switch ($function) {
 
 
 
-
+// si il y a des problemes sur certaines pages ayant un access, voir si il faut pas mettre le break apres le $vue, plutot qu'à la fin
+        // mais jpense pas
 
 
 
@@ -48,22 +48,49 @@ switch ($function) {
         break;
 
     case 'modifierFAQ':
-        $vue = "faq_modifier";
+        if(isset($access)){
+            if(($access == 1) OR ($access == 2)){ //JCROIS QUE CEST JUSTE 2
+                $vue = "faq_modifier";
+                include ('controleurFAQ.php');
+            } else {
+                header("Location: compte");
+            }
+        } else {
+            header("Location: connexion");
+        }
+
+        break;
+
+    case 'modifierCGU':
+        if(isset($access)){
+            if(($access == 1) OR ($access == 2)){ //JCROIS QUE CEST JUSTE 2
+                $vue = "cgu_modifier";
+                include ('controleurCGU.php');
+            } else {
+                header("Location: compte");
+            }
+        } else {
+            header("Location: connexion");
+        }
+
         break;
 
     case 'inviter':
-        $vue = "inviteUtilisateur";
-        include ('controleurInvite.php');
+        if((isset($access)) && ( ($access == 1) || ($access == 2) ) ){
+            $vue = "inviteUtilisateur";
+            include ('controleurInvite.php');
+        } else {
+            header("Location: compte");
+        }
         break;
 
-
-    case 'motDePasseOublié':
+    case 'motDePasseOublie':
         $vue = "motPasseOublie";
         include('controleurMdpOublie.php');
         break;
 
-    case 'reintialiserMotDePasse':
-        $vue = "reintiliaserMp";
+    case 'reinitialiserMotDePasse':
+        $vue = "reinitialiserMp";
         include('controleurReintialiser.php');
         break;
 
@@ -75,10 +102,19 @@ switch ($function) {
 
 
     case 'mail':
-        if(isset($_GET['userMail']) AND !empty($_GET['userMail'])){
-            $userMail = $_GET['userMail'];
+        if(isset($access)){
+            if(($access == 1) OR ($access == 2)){
+                if(isset($_GET['userMail']) AND !empty($_GET['userMail'])){
+                    $userMail = $_GET['userMail'];
+                }
+                $vue = "envoyerMail";
+            } else {
+                header("Location: compte");
+            }
+        } else {
+            header("Location: connexion");
         }
-        $vue = "envoyerMail";
+
         break;
 
     case 'mailContacter':
@@ -92,16 +128,42 @@ switch ($function) {
 
 
     case 'administration':
-        $vue = "adminPage";
+        if(isset($access)){
+            if($access == 2){
+                $vue = "adminPage";
+            } else {
+                header("Location: compte");
+            }
+        } else {
+            header("Location: accueil");
+        }
+
         break;
 
     case 'rechercheAdmin':
-        $vue = "resultatsRechercheAdministrateur";
+        if(isset($access)){
+            if($access == 2){
+                include './modele/admin.php';
+                $vue = "resultatsRechercheAdministrateur";
+            } else{
+                header("Location: compte");
+            }
+        } else {
+            header("Location: connexion");
+        }
         break;
 
     case 'rechercheGestionnaire':
-        $vue = "resultatsRechercheGestionnaire";
-        include ('./modele/rechercheUtilis.php');
+        if(isset($access)){
+            if(($access == 1) OR ($access == 2)){
+                $vue = "resultatsRechercheGestionnaire";
+                include ('./modele/rechercheUtilis.php');
+            } else{
+                header("Location: compte");
+            }
+        } else {
+            header("Location: connexion");
+        }
         break;
 
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <base href="/infiniteMeasures/">
+      <base href="/InfiniteMeasures/">
       <title>Reflex</title>
       <meta charset="utf-8">
       <link href="css/style.css" rel="stylesheet">
@@ -45,7 +45,6 @@
          </div>
       </div>
    </div>
-      *
       
    </body>
 </html>

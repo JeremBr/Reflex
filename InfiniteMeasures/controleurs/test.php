@@ -1,7 +1,5 @@
 <?php
 
-
-
 // on inclut le fichier modèle contenant les appels à la BDD
 // include('./modele/requetes.utilisateurs.php');
 
@@ -22,23 +20,43 @@ switch ($function) {
 
 
     case 'reconnaissanceTonalite':
-    	$vue = "reconnaissanceTonalite";
+    	if(isset($access) && ( ($access == 1) OR ($access == 2) ) ){
+            $vue = "reconnaissanceTonalite"; 
+        } else {
+            header("Location: accueil");
+        }
     	break;
 
     case 'freqCard':
-    	$vue = "freqCard";
+    	if(isset($access) && ( ($access == 1) OR ($access == 2) ) ){
+            $vue = "freqCard"; 
+        } else {
+            header("Location: accueil");
+        }
     	break;
 
     case 'temp':
-    	$vue = "temp";
+    	if(isset($access) && ( ($access == 1) OR ($access == 2) ) ){
+            $vue = "temp"; 
+        } else {
+            header("Location: accueil");
+        }
     	break;
 
     case 'sonore':
-    	$vue = "sonore";
+    	if(isset($access) && ( ($access == 1) OR ($access == 2) ) ){
+            $vue = "sonore"; 
+        } else {
+            header("Location: accueil");
+        }
     	break;
 
     case 'visuel':
-    	$vue = "visuel";
+    	if(isset($access) && ( ($access == 1) OR ($access == 2) ) ){
+            $vue = "visuel"; 
+        } else {
+            header("Location: accueil");
+        }
     	break;
 
 
@@ -46,12 +64,12 @@ switch ($function) {
 
 
 
-    case 'resultats':
+    case 'resultats': //voir si ya pas un soucis daccess
     	$vue = "resultatsTest";
     	break;
 
 
-    case 'listeResultats':
+    case 'listeResultats': //voir si ya pas un soucis daccess
         $vue = "listeResultats";
         break;
 

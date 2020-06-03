@@ -11,18 +11,13 @@ if(isset($_POST['formconnexion'])) {
          $requser = $bdd->prepare("SELECT * FROM utilisateur WHERE mail = ? AND motDePasse = ?");
          $requser->execute(array($mailconnect, $mdpconnect));
          $userexist = $requser->rowCount();
+         
          if($userexist == 1) {
             $userinfo = $requser->fetch();
 
-            //$_SESSION['idUtilisateur'] = $userinfo['idUtilisateur'];
-            //$_SESSION['mail'] = $userinfo['mail'];
-
             setcookie('idUtilisateur', $userinfo['idUtilisateur'], time() + (60*2));
-            //setcookie('mail', $userinfo['mail'], time() + (60*2));
             setcookie('mdp', $mdpconnect, time() + (60*2));
 
-
-            //header("Location: monCompte.php?idUtilisateur=".$_SESSION['idUtilisateur']);
             header("Location: compte");
          } else {
             $erreur = trad("Mauvais mail ou mot de passe !","Wrong email or password !");
