@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<base href="/infiniteMeasures/">
+	<base href="/InfiniteMeasures/">
 	
 	<link href="css/header.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
