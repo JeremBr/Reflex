@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
-		<base href="/infiniteMeasures/">
+		<base href="/InfiniteMeasures/">
 		<meta charset="utf-8">
 		<link href="css/style.css" rel="stylesheet">
 		<title>Reflex</title>

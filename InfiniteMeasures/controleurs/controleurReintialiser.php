@@ -2,8 +2,6 @@
     
     if( isset($_GET['pass']) && !empty($_GET['pass']) ){
 
-    	
-
 	        // on regarde si le token est le bon
 
 	        $reqOublie = $bdd->prepare("SELECT * FROM oublie WHERE token = ?");
@@ -20,7 +18,7 @@
 		            if(($time - $invit['temps']) < (24*3600)){
 
 						    
-						if($mdp1 == $mdp2) {
+						if($_POST['motPasse'] == $_POST['CmotPasse']) {
 						    
 						    $mdp1 = hash('sha256', $_POST['motPasse']);
 
@@ -29,7 +27,7 @@
 
 						    $insertmdp = $bdd->prepare("UPDATE utilisateur SET motDePasse = ? WHERE mail = ?");
 						    $insertmdp->execute(array($mdp1, $invit['mail']));
-						    header('Location: compte');
+						    header('Location: connexion');
 						} else {
 						    $msg = "Vos deux mdp ne correspondent pas !";
 						}

@@ -5,6 +5,10 @@ RewriteRule ^([a-zA-Z]*)$ index.php?url=$1 [NC,L]
 
 RewriteRule ^([a-zA-Z]*)/mailContacter$ index.php?cible=$1&url=mailContacter&%{QUERY_STRING} [NC,L]
 RewriteRule ^([a-zA-Z]*)/mail$ index.php?cible=$1&url=mail&%{QUERY_STRING} [NC,L]
+RewriteRule ^([a-zA-Z]*)/reinitialiserMotDePasse$ index.php?cible=$1&url=reinitialiserMotDePasse&%{QUERY_STRING} [NC,L]
+RewriteRule ^([a-zA-Z]*)/rechercheAdmin$ index.php?cible=$1&url=rechercheAdmin&%{QUERY_STRING} [NC,L]
+RewriteRule ^([a-zA-Z]*)/modifierFAQ$ index.php?cible=$1&url=modifierFAQ&%{QUERY_STRING} [NC,L]
+
 
 
 RewriteRule ^([a-zA-Z]*)/([a-zA-Z]*)$ index.php?cible=$1&url=$2 [NC,L]

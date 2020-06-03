@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <base href="/infiniteMeasures/">
+        <base href="/InfiniteMeasures/">
         <meta charset="utf-8" />
-        
         <link href="css/monCompte.css" rel="stylesheet">
         <title>Mon compte</title>
     </head>
 
     <body>
 
-        
 
         <?php
             if(isset($_COOKIE['idUtilisateur']) AND $userinfo['idUtilisateur'] == $_COOKIE['idUtilisateur']) {
@@ -46,7 +44,7 @@
 
                             if($userinfo['permission'] == 0){
                                 ?>
-                                <li><a href="test/listeResultats/<?= $_COOKIE['idUtilisateur'] ?>"><?php echo trad("Mes résulats","My results")?></a></li> <!-- Doit mettre page avec liste des diff resultats-->
+                                <li><a href="test/listeResultats/<?= $_COOKIE['idUtilisateur'] ?>"><?php echo trad("Mes résulats","My results")?></a></li>
                                 <li><a href="modifierProfil"><?php echo trad("Editer mon profil","Edit my profil")?></a></li>
                                 
 
