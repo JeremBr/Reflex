@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<base href="/infiniteMeasures/">
+		<base href="/InfiniteMeasures/">
 		<meta charset="utf-8"/>
 		<title>Réinitialisation de votre mot de passe </title>
 		<link rel="stylesheet" href="css/styleReMp.css" />
@@ -12,7 +12,7 @@
 	<div class="titre"><h3>Réinitialisez votre mot de passe</h3></div>
 	
 	
-		<form method="post" action="reinitialiserMp.php?pass=<?php echo $_GET['pass']?>">
+		<form method="post" action="utilisateurs/reinitialiserMotDePasse?pass=<?php echo $_GET['pass']?>">
 			
 
 				<p class="champs"> * champs obligatoires</p>

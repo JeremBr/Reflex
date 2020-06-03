@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <base href="/infiniteMeasures/">
+      <base href="/InfiniteMeasures/">
       <title>Reflex</title>
       <meta charset="utf-8">
       <link href="css/style.css" rel="stylesheet">
@@ -42,7 +42,7 @@
       </section>
 
       <div class="test">
-      <a href="motDePasseOublié"><?php echo trad("Mot de passe oublié ?","Forgot password")?></a>
+         <a href="motDePasseOublie"><?php echo trad("Mot de passe oublié ?","Forgot password")?></a>
       </div>
 
    </body>
