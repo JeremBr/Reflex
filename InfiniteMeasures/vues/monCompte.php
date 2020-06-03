@@ -82,12 +82,12 @@
             <h1><?php echo trad("Vos informations","Your informations")?></h1>
             </br>
             <ul>
-                <li><?php echo trad("Genre :","Gender :")?><?php echo $userinfo['genre']; ?></li><br>
-                <li><?php echo trad("Nom :","Last name :")?><?php echo $userinfo['nom']; ?> </li><br>
-                <li><?php echo trad("Prénom :","First name :")?><?php echo $userinfo['prenom']; ?></li><br>
-                <li><?php echo trad("Adresse :","Address :")?><?php echo $userinfo['adresse']; ?></li><br>
-                <li><?php echo trad("Code postale :","Postal code :")?><?php echo $userinfo['codePostale']; ?></li><br>
-                <li><?php echo trad("Adresse mail :","Email address :")?><?php echo $userinfo['mail']; ?></li>
+                <li><?php echo trad("Genre : ","Gender : ")?><?php echo $userinfo['genre']; ?></li><br>
+                <li><?php echo trad("Nom : ","Last name : ")?><?php echo $userinfo['nom']; ?> </li><br>
+                <li><?php echo trad("Prénom : ","First name : ")?><?php echo $userinfo['prenom']; ?></li><br>
+                <li><?php echo trad("Adresse : ","Address : ")?><?php echo $userinfo['adresse']; ?></li><br>
+                <li><?php echo trad("Code postale : ","Postal code : ")?><?php echo $userinfo['codePostale']; ?></li><br>
+                <li><?php echo trad("Adresse mail : ","Email address : ")?><?php echo $userinfo['mail']; ?></li>
 
             </ul>
         </section>
