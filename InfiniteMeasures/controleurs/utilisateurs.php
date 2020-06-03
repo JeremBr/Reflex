@@ -108,6 +108,8 @@ switch ($function) {
                     $userMail = $_GET['userMail'];
                 }
                 $vue = "envoyerMail";
+                include ('controleurCompte.php');
+                include('./modele/mail.php');
             } else {
                 header("Location: compte");
             }
@@ -119,6 +121,7 @@ switch ($function) {
 
     case 'mailContacter':
         $vue = "mailUtilisateur";
+        include('./modele/contact.php');
         break;
 
 
@@ -144,6 +147,7 @@ switch ($function) {
         if(isset($access)){
             if($access == 2){
                 include './modele/admin.php';
+                include('./modele/rechercheAdmin.php');
                 $vue = "resultatsRechercheAdministrateur";
             } else{
                 header("Location: compte");

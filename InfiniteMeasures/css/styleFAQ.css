@@ -1,53 +1,14 @@
-.faq
-{
-	width :700px;
-	margin: auto;
-	margin-top: 50px;
-	margin-bottom: 50px;
-	background-color: #ddd;
-	border : 2px  #17e2cd solid;
-	border-radius: 10px;
-	padding-left : 20px;
-	padding-right : 20px;
-
-
-
-}
-h2
-{
-margin-top: 50px;
-text-decoration: underline #17e2cd;
-padding-left: 31%;
-}
-
-.question1
-{
-	color : #000;
-	border-bottom: 3px solid #17e2cd;
-	display: inline-block;
-	font-size : 1.2em;
-	font-family: "Calibri";
-	padding-top: 30px;
-}
-.lastréponse
-{
-	font-size : 1.2em;
-	font-family: "Calibri";
-	padding-bottom: 30px;
-	
-}
-
-
 .question
 {
 	color : #000;
-	border-bottom: 3px solid #17e2cd;
+	border-bottom: 2px solid #5cbed6;
 	display: inline-block;
 	font-size : 1.2em;
 	font-family: "Calibri";
 	
 }
-.réponse
+
+.reponse
 {
 	color : #000;
 	font-size : 1.2em;
