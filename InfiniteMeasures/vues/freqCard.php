@@ -26,7 +26,7 @@
 
 <html>
 	<head>
-		<base href="/infiniteMeasures/">
+		<base href="/InfiniteMeasures/">
 		<meta charset="utf-8"/>
 		<title>Mesure du rythme cardiaque</title>
 		<link rel="stylesheet" href="css/tests/styleTest.css" />

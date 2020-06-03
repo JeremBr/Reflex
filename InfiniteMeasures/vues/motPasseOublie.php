@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<base href="/infiniteMeasures/">
+		<base href="/InfiniteMeasures/">
 		<meta charset="utf-8"/>
 		<title><?php echo trad("Mot de passe oublié ? ","Forgot passwsord ? ")?></title>
 		
@@ -27,15 +27,10 @@
 					<p><input type="email" name="mail" id="mail" size="50" required/> </p>
 
 
-					
-
 					<input class="envoi" type="submit" name="forminscription" value="Envoyer un mail de récupération"/>
 
 				</div>
-
 			</form>
-
-
 		</div>
 
 

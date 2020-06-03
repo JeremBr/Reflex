@@ -23,19 +23,19 @@
 					$results = $bdd->prepare('SELECT * FROM test WHERE idUtilisateur = ?');
 					$results->execute(array($id)); 
 				} else {
-					header("Location: monCompte.php");
+					header("Location: compte");
 				}
 				
 			} else {
-				header("Location: index.php");
+				header("Location: accueil");
 			}
 
 		} else {
-			header("Location: index.php");
+			header("Location: accueil");
 		}
 
 	} else {
-		header("Location: index.php");
+		header("Location: accueil");
 	}
 	
 
@@ -48,7 +48,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<base href="/infiniteMeasures/">
+		<base href="/InfiniteMeasures/">
 		<meta charset="utf-8"/>
 		<title><?php echo trad("Liste des tests","Test list")?></title>
 		<link rel="stylesheet" href="css/styleRechercheGestionnaire.css" />
@@ -89,8 +89,6 @@
 							
 
 					<?php 
-
-		                   
 		        }
 		                
 
@@ -98,7 +96,7 @@
 		        // echo 'Aucun résultat pour <em>' . $results . '</em>.<br /><br />';
 		    }
 		} else {
-			header("Location: index.php");
+			header("Location: accueil");
 		}
 
 	?>
