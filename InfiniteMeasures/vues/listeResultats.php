@@ -1,50 +1,3 @@
-<?php
-
-
-    //verifie si on a acces, puis qui a acces, utilisateur ne peut consulter que ses tests
-    if(isset($access)){
-
-		if(($access == 1) OR ($access == 2)){
-
-			if (isset($_GET['id']) AND !empty($_GET['id'])) {
-				$id=$_GET['id'];
-				$results = $bdd->prepare('SELECT * FROM test WHERE idUtilisateur = ?');
-				$results->execute(array($id)); 
-			}else {
-				header("Location: index.php");
-			}
-
-		} else if ($access == 0){
-
-			if (isset($_GET['id']) AND !empty($_GET['id'])) {
-				
-				if($_GET['id'] == $_COOKIE['idUtilisateur']){
-					$id=$_GET['id'];
-					$results = $bdd->prepare('SELECT * FROM test WHERE idUtilisateur = ?');
-					$results->execute(array($id)); 
-				} else {
-					header("Location: compte");
-				}
-				
-			} else {
-				header("Location: accueil");
-			}
-
-		} else {
-			header("Location: accueil");
-		}
-
-	} else {
-		header("Location: accueil");
-	}
-	
-
-
-
-?>
-
-
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -78,7 +31,7 @@
 
 							<div class="resultats">
 
-								<form method="POST" action="resultatsTest.php">
+								<form method="POST" action="test/resultats">
             						<button type="submit" class="results" name="idTest" value="<?= $r['idTest'] ?>"><?= trad("Consulter le test","Consult test") ?></button>
         						</form>
 								

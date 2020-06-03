@@ -1,24 +1,4 @@
-<?php
-
-    if(isset($_POST['idTest']) AND !empty($_POST['idTest'])){
-    	
-
-    	$resultat = rand(30,50); //intervalle à modifier
-
-
-    	$idTest = $_POST['idTest'];
-
-    	
-
-    	$insertSon = $bdd->prepare("UPDATE test SET refVisuel = ? WHERE idTest = ?");
-        $insertSon->execute(array($resultat, $idTest));
-        
-    } else {
-    	header("Location: index.php");
-    }
-
-?>
-
+<!DOCTYPE html>
 <html>
 	<head>
 		<base href="/InfiniteMeasures/">
