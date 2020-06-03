@@ -7,17 +7,22 @@
       <link href="css/style.css" rel="stylesheet">
       <link href="css/footer.css" rel="stylesheet">
       <link href="css/header.css" rel="stylesheet">
+      <link href="css/titreEtBloc.css" rel="stylesheet">
       <link href="css/login.css" rel="stylesheet">
+
 
 
    </head>
    <body>
 
       
-      <section id="login-box">
+
          
          <div class="wrapper2">
             <h2><?php echo trad("Connexion","Log in")?></h2>
+                  <section class="conteneur1">
+                  <section class="conteneur2">
+                              <div class="conteneur3">
             <br /><br />
             <form method="POST" action="">
                <br /><br />
@@ -39,11 +44,13 @@
             ?>
          </div>
 
-      </section>
-
       <div class="test">
          <a href="motDePasseOublie"><?php echo trad("Mot de passe oublié ?","Forgot password")?></a>
       </div>
+
+         </section>
+            </section>
+                     </div>
 
    </body>
 </html>
