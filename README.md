@@ -3,17 +3,8 @@
 You can find here all the code architecture of the Reflex's Product.
 
 
-(0) L'architecture MVC est en cours.
-
-(1) Utiliser AJAX
 
 ----------------------------------------------------------------------------
-
-- GERER FAQ
-- GERER CGU
-(avec javascript????)
-
-
 
 - Commentaire gestionnaire sur les tests
 - Page administrateur pour voir les stats des gens connectés etc..
