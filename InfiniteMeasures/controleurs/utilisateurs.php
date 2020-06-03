@@ -147,6 +147,7 @@ switch ($function) {
         if(isset($access)){
             if($access == 2){
                 include './modele/admin.php';
+                include('./modele/rechercheAdmin.php');
                 $vue = "resultatsRechercheAdministrateur";
             } else{
                 header("Location: compte");

@@ -8,7 +8,6 @@
 		<link href="css/footer.css" rel="stylesheet">
       	<link href="css/header.css" rel="stylesheet">
       	<link href="css/styleFAQ.css" rel="stylesheet">
-      	<link href="css/styleFAQ.css" rel="stylesheet">
       	<link href="css/titreEtBloc.css" rel="stylesheet">
 	</head>
 	<body>
