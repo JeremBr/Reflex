@@ -16,8 +16,6 @@
    <body>
 
       
-
-         
          <div class="wrapper2">
             <h2><?php echo trad("Connexion","Log in")?></h2>
                   <section class="conteneur1">
@@ -44,7 +42,7 @@
             ?>
          </div>
 
-      <div class="test">
+      <div class="oublie">
          <a href="motDePasseOublie"><?php echo trad("Mot de passe oublié ?","Forgot password")?></a>
       </div>
 

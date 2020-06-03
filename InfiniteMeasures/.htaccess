@@ -8,6 +8,7 @@ RewriteRule ^([a-zA-Z]*)/mail$ index.php?cible=$1&url=mail&%{QUERY_STRING} [NC,L
 RewriteRule ^([a-zA-Z]*)/reinitialiserMotDePasse$ index.php?cible=$1&url=reinitialiserMotDePasse&%{QUERY_STRING} [NC,L]
 RewriteRule ^([a-zA-Z]*)/rechercheAdmin$ index.php?cible=$1&url=rechercheAdmin&%{QUERY_STRING} [NC,L]
 RewriteRule ^([a-zA-Z]*)/modifierFAQ$ index.php?cible=$1&url=modifierFAQ&%{QUERY_STRING} [NC,L]
+RewriteRule ^([a-zA-Z]*)/modifierCGU$ index.php?cible=$1&url=modifierCGU&%{QUERY_STRING} [NC,L]
 
 
 
@@ -18,14 +19,6 @@ RewriteRule ^([a-zA-Z]*)/([a-zA-Z]*)/([0-9]+)$ index.php?cible=$1&url=$2&id=$3 [
 
 
 
-
-
-
-
-
-
-
-#RewriteRule ^([a-zA-Z]*)/([a-zA-Z]*)$ index.php?cible=$1&url=$2&%{QUERY_STRING} [NC,L]
 
 
 

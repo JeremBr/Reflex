@@ -6,7 +6,7 @@ margin-bottom: 5%;
 }
 
 .conteneur3{
-margin-top: -110px;
+margin-top: -100px;
 margin-bottom: -50px;
 }
 
@@ -14,7 +14,7 @@ margin-bottom: -50px;
 	width: 200%;
 	overflow: hidden;
 	font-size: 20px;
-	padding: 8px 0;
+	padding: 10px 0;
 	margin: 8px 0; /* mettre 8px 10% */
 	border-bottom: 1px solid #5cbed6;
 	margin-left: -50%;
@@ -39,17 +39,17 @@ margin-bottom: -50px;
 	padding: 5px;
 	font-size: 18px;
 	cursor: pointer;
-	margin: 12px 0 0 0; /* mettre 10% */
+	margin: 5px 0 0 0; /* mettre 10% */
 }
 
 .btn:hover{
 	background: #5cbed6;
 }
 
-.test
+.oublie
 {
 	text-align: center;
-	margin-top: 30px;
+	margin-top: 40px;
 	margin-left: 0.5%;
 
 }

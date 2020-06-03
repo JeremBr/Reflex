@@ -21,6 +21,7 @@ switch ($function) {
 
     case 'reconnaissanceTonalite':
     	if(isset($access) && ( ($access == 1) OR ($access == 2) ) ){
+            include('controleurReco.php');
             $vue = "reconnaissanceTonalite"; 
         } else {
             header("Location: accueil");
@@ -29,6 +30,7 @@ switch ($function) {
 
     case 'freqCard':
     	if(isset($access) && ( ($access == 1) OR ($access == 2) ) ){
+            include('controleurFreq.php');
             $vue = "freqCard"; 
         } else {
             header("Location: accueil");
@@ -37,6 +39,7 @@ switch ($function) {
 
     case 'temp':
     	if(isset($access) && ( ($access == 1) OR ($access == 2) ) ){
+            include('controleurTemp.php');
             $vue = "temp"; 
         } else {
             header("Location: accueil");
@@ -45,6 +48,7 @@ switch ($function) {
 
     case 'sonore':
     	if(isset($access) && ( ($access == 1) OR ($access == 2) ) ){
+            include('controleurSonore.php');
             $vue = "sonore"; 
         } else {
             header("Location: accueil");
@@ -53,6 +57,7 @@ switch ($function) {
 
     case 'visuel':
     	if(isset($access) && ( ($access == 1) OR ($access == 2) ) ){
+            include('controleurVis.php');
             $vue = "visuel"; 
         } else {
             header("Location: accueil");
@@ -61,15 +66,14 @@ switch ($function) {
 
 
 
-
-
-
     case 'resultats': //voir si ya pas un soucis daccess
+        include('controleurResultats.php');
     	$vue = "resultatsTest";
     	break;
 
 
     case 'listeResultats': //voir si ya pas un soucis daccess
+        include('controleurListResults.php');
         $vue = "listeResultats";
         break;
 

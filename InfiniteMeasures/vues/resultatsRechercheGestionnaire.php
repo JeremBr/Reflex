@@ -52,10 +52,6 @@
 										<a href="test/reconnaissanceTonalite/<?= $r['idUtilisateur'] ?>">Lancement de la série de tests</a>
 									</p> 
 
-									
-            						
-
-
 									<p class="envoiMail"><a href="utilisateurs/mail?userMail=<?= $r['mail'] ?>">Envoyer un mail</a></p>
 									<br/>
 
