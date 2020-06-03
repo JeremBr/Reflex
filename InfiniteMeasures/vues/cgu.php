@@ -7,6 +7,7 @@
 		<link href="css/cgu.css" rel="stylesheet">
 		<link href="css/footer.css" rel="stylesheet">
       	<link href="css/header.css" rel="stylesheet">
+      	<link href="css/titreEtBloc.css" rel="stylesheet">
 	
 		<title>Reflex</title>
 	</head>
@@ -14,12 +15,12 @@
 
 		<section id="cgu">
 			<div class="wrapper">
-				<h3><?php echo trad("Conditions Générales d'Utilisation","Edit Terms and Conditions")?></h3>
+				<h2><?php echo trad("Conditions Générales d'Utilisation","Edit Terms and Conditions")?></h2>
 			</div>
 	
-
-		
-		<div class="carré"> 
+		<section class="conteneur1">
+			<section class="conteneur2">
+				<div class="conteneur3">
 
 				<h1><?php echo trad("Réglement	","Rules	")?></h1> <br/>
 	
@@ -55,8 +56,9 @@
 
 
 
-		</div>
-	</div>
+				</div>
+			</section>
+    	</section>
 
 	
 		</section>
