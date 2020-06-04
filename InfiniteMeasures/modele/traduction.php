@@ -20,7 +20,22 @@ function getFlag(){
 	}
 }
 
-
+function tradGenre($fr){
+	if (isset($_COOKIE['langue']) && $_COOKIE['langue']=="en") {
+		if($fr=="Homme"){
+			return "Man";
+		}
+		if($fr=="Femme"){
+			return "Female";
+		}
+		else{
+			return "Other";
+		}
+	}
+	else{
+		return $fr;
+	}
+}
 
 ?>
 
