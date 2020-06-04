@@ -58,7 +58,11 @@
 
 			<?php 
 				}else if($access == 0){
-
+					?>
+					<p><label for="comGestionnaire"> Commentaires du gestionnaire : </label></p>
+					<br/>
+					<p ><textarea name="comGestionnaire" size="50" rows="10" cols="50" ><?= $results['comment']; ?></textarea> </p>
+					<?php
 				} else {
 					header("Location: accueil");
 				}
