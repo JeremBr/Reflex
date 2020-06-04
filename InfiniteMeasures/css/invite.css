@@ -1,6 +1,41 @@
-.formulaire
+p
 {
-	margin-top: 5%;
-	margin-left: 38%;
-	margin-bottom: 5%;
+	margin-top: -20px;
+	margin-bottom: 20px;
+	font-family: "Lato";
+	color : rgb(48,82,231);
+	text-align: center;
+}
+
+label{
+	font-size: 150%;
+}
+
+.inputMail
+{
+	width: 500px;
+	height: 30px;
+	margin-bottom: 20px;
+}
+
+.conteneur1
+{
+	margin-top: 60px;
+}
+
+.conteneur2{
+	width: 600px;
+	height: 220px;
+	margin-bottom: 7%;
+}
+
+.conteneur4
+{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn
+{
+	align-self: center;
 }

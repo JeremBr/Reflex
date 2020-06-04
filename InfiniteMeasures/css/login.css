@@ -20,19 +20,9 @@ margin-bottom: -50px;
 	margin-left: -50%;
 }
 
-.textbox input{
-	border: none;
-	outline: none;
-	background: none;
-	color: #444;
-	font-size: 18px;
-	width: 80%;
-	float: left;
-	margin: 0 10px;
-}
-
 .btn{
 	width: 100%;
+<<<<<<< Updated upstream
 	background: none;
 	border: 2px solid #5cbed6;
 	color: #444;
@@ -44,6 +34,8 @@ margin-bottom: -50px;
 
 .btn:hover{
 	background: #5cbed6;
+=======
+>>>>>>> Stashed changes
 }
 
 .oublie

@@ -4,7 +4,8 @@
 		<base href="/InfiniteMeasures/">
 		<meta charset="utf-8"/>
 		<title><?= trad("Reconnaissance de tonalité","Tone recognition") ?></title>
-		<link rel="stylesheet" href="css/tests/styleTest.css" />
+		<link rel="stylesheet" href="css/styleTest.css" />
+		<link rel="stylesheet" href="css/titreEtBloc.css" />
 		<script type="text/javascript" src="js/rebours.js"></script>
 		<script src="js/help.js"></script>
 
@@ -13,7 +14,7 @@
 	<body>
 
 
-	<div class="titre"><h2><?= trad("Reconnaissance de tonalité","Tone recognition") ?></h2></div>
+	<h2><?= trad("Reconnaissance de tonalité","Tone recognition") ?></h2>
 
 	<section class="conteneur1">
 		<section class="conteneur2">
