@@ -3,14 +3,15 @@
 	<head>
 		<base href="/InfiniteMeasures/">
 		<meta charset="utf-8"/>
-		<title>Réflexe visuel</title>
-		<link rel="stylesheet" href="css/tests/styleTest.css" />
+		<title><?=trad("Mesure à un stimulus visuel","Measurement to a visual stimulus")?></title>
+		<link rel="stylesheet" href="css/styleTest.css" />
+		<link rel="stylesheet" href="css/titreEtBloc.css" />
 		<script type="text/javascript" src="js/rebours.js"></script>
 	</head>
 
 	<body>
 
-	
+	<h2><?= trad("Mesure à un stimulus visuel","Measurement to a visual stimulus") ?></h2>
 
 	<section class="conteneur1">
 		<section class="conteneur2">
