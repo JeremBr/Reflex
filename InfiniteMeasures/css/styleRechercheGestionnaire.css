@@ -1,91 +1,39 @@
-h3
-{
-	color : #333;
-	font-size: 20px;
-	text-transform: uppercase;
-	margin-top: 3%;
-	margin-left: 7%;
-}
-
-.titre
-{
-	margin-left : 23%;
-}
-
-
-
-/*------------------------------------------------------*/
-
-
-
-
-.recherche
-{
-	margin : auto;
-	padding-left : 410px;
-	padding-bottom : 5px;
-	width: 700px;
- 
-}
-
-
 label 
 {
 	font-family: "Lato";
-	font-size: 20px;
-	color : black;
+	font-size: 30px;
+	color : #444;
 }
-.recherche button 
+
+.inputRecherche
 {
-	font-family: "Lato";
-	font-size: 20px;
-	color : black;
-	border : 2px #17e2cd solid;
-	border-radius: 40px;
+	font-size: 15px;
+	width: 313px;
+	height: 30px;
+	margin: 10px
 }
-.recherche button:hover
-{
-	background-color: rgb(160,223,231);
-}
-
-
-
-
-
-
-
-
-
 
 .sousTitre
 {
 	padding-left: 160px;
 	color : #333;
 	font-family: "Lato";
-	font-size:25px;
+	font-size: 25px;
 }
-
 
 .contenu
 {
 	margin : auto;
-	padding-left: 200px;
+	background-color: rgb(247, 247, 247);
+	padding-left: 70px;
+	padding-right: 40px;
 	padding-top: 20px;
 	padding-bottom : 50px;
 	margin-top: 2%; 
 	width: 700px;
-	border : 2px #17e2cd solid;
-	border-radius: 40px;
+	border : 2px #5cbed6 solid;
 	margin-bottom: 5%;
 }
-
-
-
-
-
-
-
-
 
 form
 {
@@ -98,40 +46,11 @@ form
 	padding-left: 0px;
 }
 
-/*.resultats button
-{
-	padding-left:10px;
-	border : 2px purple solid;
-	border-radius: 20px;
-	width:200px;
-	background-color: white;
-	
-
-	color : purple;
-	font-size: 15px;
-	font-family: "Lato";
-	text-decoration:none;
-}
-
-.resultats button:hover
-{
-	background-color : purple;
-	color : white;
-}*/
-
-
-
-
-
-
-
 p
 {
 	margin-top : 20px;
-	padding-left:10px;
 	border : 2px purple solid;
-	border-radius: 20px;
-	width:200px;
+	width:220px;
 	display: inline-block;
 	font-size: 13px;
 	font-weight: bold;
@@ -140,9 +59,12 @@ p
 }
 p:hover
 {
-	background-color : purple;
+	background-color : #965096;
 }
 
-
+.conteneur1
+{
+	margin-bottom: 125px;
+}
 
 

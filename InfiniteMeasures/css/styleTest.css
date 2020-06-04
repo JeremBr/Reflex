@@ -1,0 +1,65 @@
+.rebours{
+	margin-bottom: 20px;
+}
+
+.boutonRebours, .boutonHelp, .boutonSubmit
+{
+	background: none;
+    border: 2px solid #5cbed6;
+    color: #444;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 12px 0 0 0; /* mettre 10% */
+
+	width : 250px;
+	padding-top : 10px;
+	padding-bottom: 10px;
+}
+
+.boutonSubmit
+{
+	width : 465px;
+	padding-top : 20px;
+	padding-bottom: 20px;
+	border-bottom-right-radius: 90px;
+	border-top-right-radius: 90px;
+}
+
+.boutonHelp 
+{
+	margin-top: 30px;
+}
+
+.boutonSubmit:hover, .boutonHelp:hover, .boutonRebours:hover
+{
+	color: white;
+	background-color: #5cbed6;
+}
+
+.barre
+{
+	padding-top: 20px;
+	
+}
+
+progress
+{
+	background-color : #d4d4d4;
+	width: 250px;
+	height: 20px;
+}
+
+label
+{
+	font-family: "Lato";
+	font-size: 20px;
+	padding-bottom: 20px;
+}
+
+.image
+{
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
