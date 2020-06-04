@@ -34,12 +34,6 @@
                <br /><br />
                <input class="btn" type="submit" name="formconnexion" value="<?php echo trad("Se connecter !","Log in !")?>" />
             </form>
-
-            <?php
-            if(isset($erreur)) {
-               echo '<font color="red">'.$erreur."</font>";
-            }
-            ?>
          </div>
 
 
@@ -47,7 +41,12 @@
          <a href="motDePasseOublie"><?php echo trad("Mot de passe oublié ?","Forgot password ?")?></a>
 
       </div>
-
+         <?php
+            if(isset($erreur)) {
+               echo '<font color="red">'.$erreur."</font>";
+            }
+            
+            ?>
          </section>
             </section>
                      </div>
