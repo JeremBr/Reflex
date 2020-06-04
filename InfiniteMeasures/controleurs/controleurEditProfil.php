@@ -21,7 +21,7 @@ if(isset($_COOKIE['idUtilisateur']) && isset($_COOKIE['mdp'])) {
 
       if(isset($_POST['newprenom']) AND !empty($_POST['newprenom']) AND $_POST['newprenom'] != $user['prenom']) {
          $newprenom = htmlspecialchars($_POST['newprenom']);
-         $insertpseudo = $bdd->prepare("UPDATE utilisateur SET nom = ? WHERE idUtilisateur = ?");
+         $insertpseudo = $bdd->prepare("UPDATE utilisateur SET prenom = ? WHERE idUtilisateur = ?");
          $insertpseudo->execute(array($newprenom, $_COOKIE['idUtilisateur']));
          header('Location: compte');
       }

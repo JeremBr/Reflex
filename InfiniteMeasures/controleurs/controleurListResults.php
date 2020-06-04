@@ -20,7 +20,7 @@
 				
 				if($_GET['id'] == $_COOKIE['idUtilisateur']){
 					$id=$_GET['id'];
-					$results = $bdd->prepare('SELECT * FROM test WHERE idUtilisateur = ?');
+					$results = $bdd->prepare('SELECT * FROM test WHERE idUtilisateur = ? ORDER BY idTest DESC');
 					$results->execute(array($id)); 
 				} else {
 					header("Location: compte");
