@@ -1,6 +1,7 @@
 <?php // content="text/plain; charset=utf-8"
-require_once ('jpgraph/jpgraph.php');
-require_once ('jpgraph/jpgraph_radar.php');
+require_once("include_path_inc.php");
+require_once ('jpgraph.php');
+require_once ('jpgraph_radar.php');
 
 
 
@@ -46,7 +47,7 @@ $plot2 = new RadarPlot(array($_GET['rec'],$_GET['freq'],$_GET['temp'],$_GET['son
 $plot2->SetLegend("Actual");
 $plot2->SetColor("blue","lightred");
  
-// Add the plots to the graph
+// // Add the plots to the graph
 $graph->Add($plot2);
 $graph->Add($plot);
  
