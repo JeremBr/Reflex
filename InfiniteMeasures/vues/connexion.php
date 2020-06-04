@@ -42,8 +42,10 @@
             ?>
          </div>
 
+
       <div class="test">
          <a href="motDePasseOublie"><?php echo trad("Mot de passe oublié ?","Forgot password ?")?></a>
+
       </div>
 
          </section>

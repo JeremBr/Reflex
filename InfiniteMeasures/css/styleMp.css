@@ -5,6 +5,7 @@ p
 	font-family: "Lato";
 	color : rgb(48,82,231);
 	text-align: center;
+
 }
 
 label{
@@ -14,6 +15,7 @@ label{
 .saisie{
 	margin-left: 8%;
 }
+
 .conteneur2{
 	width: 600px;
 	height: 220px;
