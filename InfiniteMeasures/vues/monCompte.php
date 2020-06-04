@@ -68,7 +68,8 @@
                                 <li><a class="caseAdmin" href="modifierFAQ"><?php echo trad("Gérer la F.A.Q","Change F.A.Q")?></a></li>
                                 <li><a class="caseAdmin" href="modifierCGU"><?php echo trad("Gérer la C.G.U","Change T.O.U")?></a></li>
                                 <li><a class="caseAdmin" href="modifierProfil"><?php echo trad("Editer mon profil","Update profil")?></a></li>
-                                <li><a class="caseAdmin" href="deconnexion"><?php echo trad("Déconnexion","Log out")?></a></li> 
+                                <li><a class="caseAdmin" href="administration"><?php echo trad("Page Administrateur","Administrator page")?></a></li>
+                                <li><a class="caseAdmin" href="deconnexion"><?php echo trad("Déconnexion","Log out")?></a></li>
 
                                 <?php
                             }

@@ -1,0 +1,13 @@
+p{
+	text-align: center;
+
+}
+
+.texte1 p{
+	color: red;
+	margin-bottom: 20px;
+}
+
+.texte2 p{
+	color: black;
+}
