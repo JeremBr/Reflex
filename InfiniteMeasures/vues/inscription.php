@@ -6,17 +6,18 @@
       <link href="css/style.css" rel="stylesheet">
       <link href="css/header.css" rel="stylesheet">
       <link href="css/footer.css" rel="stylesheet">
+      <link href="css/titreEtBloc.css" rel="stylesheet">
       <link href="css/inscription.css" rel="stylesheet">
    </head>
    <body>
 
-      <section id="login-box">
-
          <h2><?php echo trad("Inscription","Sign up")?></h2>
          
-         <div class="champsRequis"><?php echo trad("* tous les champs sont requis","* all fields are required")?></div>
+            <section class="conteneur1">
+               <section class="conteneur2">
+                  <div class="conteneur3">
+
          <form method="POST" action="">
-            <br /><br />
 
             <table>
 
@@ -48,17 +49,16 @@
                   <tr>
                      
                      <td>
-                        <p class="description"><?php echo trad("* 8 caractères dont un spécial sont requis","* 8 characters including a special one are required")?></p>
                         <input type="password" placeholder="Mot de passe" id="mdp" name="mdp" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+)).*$" required>
-                        
+                        <p class="description"><?php echo trad("* 8 caractères dont un spécial sont requis","* 8 characters including a special one are required")?></p>
                      </td>
                   </tr>
                   <tr>
                     
                      <td>
                         <input type="password" placeholder="Confirmez mot de passe" id="mdp2" name="mdp2" /><br/><br/>
-                        <p class="lien"><a href="cgu.php"><?php echo trad("Veuillez consulter les conditions générales d'utilisation","Please accept the general conditions")?></a></p><br/>
-                        <input type="checkbox" name="cgu" id="cgu"/><label for="cgu"> <?php echo trad("J'accepte ces conditions générales d'utilisation","I accept the general conditions")?></label>
+                        <p class="lien"><a href="cgu.php"><?php echo trad("Veuillez consulter les conditions générales d'utilisation","Please accept the general conditions of use")?></a></p><br/>
+                        <input type="checkbox" name="cgu" id="cgu"/><label for="cgu"> <?php echo trad("J'accepte ces conditions générales d'utilisation","I accept the general conditions of use")?></label>
                      </td>
                   </tr>
                   
@@ -79,9 +79,9 @@
                echo '<font color="red">'.$erreur."</font>";
             }
          ?>
-
-      </section>
-
+                  </div>
+               </section>
+            </section>
       
    </body>
 </html>

@@ -39,3 +39,8 @@ label{
 {
 	align-self: center;
 }
+
+.erreur{
+	text-align: center;
+	margin-top: -10px;
+}
