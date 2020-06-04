@@ -12,7 +12,7 @@
 	<body>
 		
 
-		Page 1 - Actuellement <?php echo $user_nbr; ?> utilisateur<?php if($user_nbr != 1) { echo "s"; } ?> en ligne<br />
+		Page 1 - <?php echo trad("Actuellement","Right now")?> <?php echo $user_nbr; ?> <?php echo trad("utilisateur","users")?><?php if($user_nbr != 1) { echo "s"; } ?> <?php echo trad("en ligne","online")?><br />
 
 
 		

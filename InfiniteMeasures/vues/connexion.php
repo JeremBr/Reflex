@@ -2,7 +2,7 @@
 <html>
    <head>
       <base href="/InfiniteMeasures/">
-      <title>Reflex</title>
+      <title><?php echo trad("Connexion","Log in")?></title>
       <meta charset="utf-8">
       <link href="css/style.css" rel="stylesheet">
       <link href="css/footer.css" rel="stylesheet">

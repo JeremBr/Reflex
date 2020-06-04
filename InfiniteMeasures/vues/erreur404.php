@@ -4,4 +4,4 @@
 */
 ?>
 
-<p>Page demandée inexistante</p>
+<p><?php echo trad("Page demandée inexistante","Requested page does not exist")?></p>
