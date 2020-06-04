@@ -1,5 +1,7 @@
 <?php
 
+include("./modele/cookie.php");
+
 if(isset($_COOKIE['idUtilisateur']) && isset($_COOKIE['mdp'])) {
    $requser = $bdd->prepare("SELECT * FROM utilisateur WHERE idUtilisateur = ? AND motdepasse = ?");
    $requser->execute(array($_COOKIE['idUtilisateur'], $_COOKIE['mdp']));
@@ -10,21 +12,21 @@ if(isset($_COOKIE['idUtilisateur']) && isset($_COOKIE['mdp'])) {
 
       $user = $requser->fetch();
 
-      if(isset($_POST['newnom']) AND !empty($_POST['newnom']) AND $_POST['newnom'] != $user['pseudo']) {
+      if(isset($_POST['newnom']) AND !empty($_POST['newnom']) AND $_POST['newnom'] != $user['nom']) {
          $newnom = htmlspecialchars($_POST['newnom']);
          $insertpseudo = $bdd->prepare("UPDATE utilisateur SET nom = ? WHERE idUtilisateur = ?");
          $insertpseudo->execute(array($newnom, $_COOKIE['idUtilisateur']));
          header('Location: compte');
       }
 
-      if(isset($_POST['newprenom']) AND !empty($_POST['newprenom']) AND $_POST['newprenom'] != $user['pseudo']) {
+      if(isset($_POST['newprenom']) AND !empty($_POST['newprenom']) AND $_POST['newprenom'] != $user['prenom']) {
          $newprenom = htmlspecialchars($_POST['newprenom']);
          $insertpseudo = $bdd->prepare("UPDATE utilisateur SET nom = ? WHERE idUtilisateur = ?");
          $insertpseudo->execute(array($newprenom, $_COOKIE['idUtilisateur']));
          header('Location: compte');
       }
 
-      if(isset($_POST['newmail']) AND !empty($_POST['newmail']) AND $_POST['newmail'] != $user['mail']) {
+      if(isset($_POST['newmail']) AND !empty($_POST['newmail']) AND $_POST['newmail'] != $user['mail'] AND filter_var($_POST['newmail'], FILTER_VALIDATE_EMAIL)) {
          $newmail = htmlspecialchars($_POST['newmail']);
          $insertmail = $bdd->prepare("UPDATE utilisateur SET mail = ? WHERE idUtilisateur = ?");
          $insertmail->execute(array($newmail, $_COOKIE['idUtilisateur']));

@@ -3,16 +3,16 @@
 	<head>
 		<base href="/InfiniteMeasures/">
 		<meta charset="utf-8"/>
-		<title>CGU</title>
+		<title><?php echo trad("Gérer CGU","Manage CGU") ?></title>
 		<link href="css/style.css" rel="stylesheet">
 		<link href="css/footer.css" rel="stylesheet">
       	<link href="css/header.css" rel="stylesheet">
-      	<link href="css/styleFAQ.css" rel="stylesheet">
+      	<link href="css/StyleGererFaqCgu.css" rel="stylesheet">
       	<link href="css/titreEtBloc.css" rel="stylesheet">
 	</head>
 	<body>
 
-		<p> <h2>  Gérer la CGU </h2> </p>
+		<p> <h2><?php echo trad("Gérer la CGU","Manage the CGU") ?></h2> </p>
 
 		<div class="faq">
 			<section class="conteneur1">
@@ -33,7 +33,7 @@
 					<p><textarea type="text" name="A<?= $cgu['numArticle']; ?>" size="20" rows="10" cols="45" ><?= $cgu['texte']; ?></textarea> </p>
 					<br/>
 
-					<p class="supprime"><a href="utilisateurs/modifierCGU?supprime=<?= $cgu['numArticle'] ?>" style="text-decoration:none">Supprimer</a></p>
+					<p class="supprime"><a href="utilisateurs/modifierCGU?supprime=<?= $cgu['numArticle'] ?>" style="text-decoration:none"><?php echo trad("Supprimer","Delete") ?></a></p>
 					<br/><br/><br/>
 
 
@@ -43,9 +43,9 @@
 					}
 				?>
 
-				<p class="ajouter"><a href="utilisateurs/modifierCGU?ajouter=1" style="text-decoration:none">Ajouter</a></p>
+				<p class="ajouter"><a href="utilisateurs/modifierCGU?ajouter=1" style="text-decoration:none"><?php echo trad("Ajouter","Add") ?></a></p>
 
-				<input type="submit" value="<?php echo trad("Mettre à jour la CGU","Update CGU") ?>" />
+				<input type="submit" class="update" value="<?php echo trad("Mettre à jour la CGU","Update CGU") ?>" />
             </form>
            </div>
 			</section>

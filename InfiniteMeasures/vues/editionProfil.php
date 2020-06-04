@@ -3,7 +3,7 @@
    <head>
       <base href="/InfiniteMeasures/">
       <meta charset="utf-8">
-      <title>Reflex</title>
+      <title><?php echo trad("Edition de mon profil","Edit profil")?></title>
       <link href="css/titreEtBloc.css" rel="stylesheet">
       <link href="css/editProfil.css" rel="stylesheet">
       
@@ -35,7 +35,7 @@
                   <input type="text" name="newcode" placeholder="<?php echo trad("Votre code postale","Your postal code") ?>" value="<?php echo $user['codePostale']; ?>" /><br /><br />
 
                   <label><?php echo trad("Nouveau mot de passe :","New password :")?></label><p class="description"><?php echo trad("* 8 caractères dont un spécial","* 8 characters including a special one") ?></p><br/>
-                  <input type="password" name="newmdp1" placeholder="<?php echo trad("Nouveau mot de passe","New password") ?>"/><br /><br />
+                  <input type="password" name="newmdp1" pattern="(?=^.{8,}$)((?=.\d)|(?=.\W+)).*$" placeholder="<?php echo trad("Nouveau mot de passe","New password") ?>"/><br /><br />
                   
                   <label><?php echo trad("Confirmation – mot de passe :","Password - confirmation :")?></label><br/>
                   <input type="password" name="newmdp2" placeholder="<?php echo trad("Confirmation du nouveau mot de passe","Password confirmation") ?>" /><br /><br />
