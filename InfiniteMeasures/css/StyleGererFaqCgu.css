@@ -1,0 +1,57 @@
+.label
+{
+    font-family: "Calibri";
+    font-size : 5em;
+}
+
+.question
+{
+    color : #000;
+    text-decoration: 2px underline #5cbed6;
+	display: inline-block;	
+}
+
+.reponse
+{
+    text-decoration: 2px underline red;
+}
+
+textarea
+{
+    width: 505px;
+	border: 2px solid #ddd;
+	border-radius: 3px;
+	font-size: 1.2em;
+	margin-bottom: 1em;
+	margin-top: 0.5em;
+	font-family:"Calibri";
+	padding: 10px;
+	margin-right: 20px;
+}
+
+.update
+{
+    width: 505px;
+}
+
+.ajouter, .supprime
+{
+    width: 490px;
+}
+
+.ajouter, .supprime, .update
+{
+    text-align: center;
+    background: none;
+    border: 2px solid #5cbed6;
+    color: #444;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 12px 0 0 0; /* mettre 10% */
+}
+
+.ajouter:hover, .supprime:hover, .update:hover
+{
+    background: #5cbed6;
+}

@@ -57,7 +57,7 @@
 
 										?>
 									
-									<p class="supprime"><a href="utilisateurs/rechercheAdmin?supprime=<?= $r['idUtilisateur'] ?>&research=<?= $research ?>" style="text-decoration:none">Supprimer</a></p>
+									<p class="supprime"><a href="utilisateurs/rechercheAdmin?supprime=<?= $r['idUtilisateur'] ?>&research=<?= $research ?>" style="text-decoration:none"><?= trad("Supprimer","Delete") ?></a></p>
 
 							</section>
 						</div>

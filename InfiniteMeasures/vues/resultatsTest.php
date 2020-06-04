@@ -34,9 +34,8 @@
 				</tr>
 
 			</table>
-			<img class="graph" src="./img/FR.png">
 				
-			<img class="graph" src="radar.php?rec=<?= $results['RecoTona']; ?>&freq=<?= $results['freqCard']; ?>&temp=<?= $results['temperature']; ?>&son=<?= $results['refSonore']; ?>&vis=<?= $results['refVisuel']; ?>">
+			<img class="graph" src="http://localhost/InfiniteMeasures/jpgraph/radar.php?rec=<?= $results['RecoTona']; ?>&freq=<?= $results['freqCard']; ?>&temp=<?= $results['temperature']; ?>&son=<?= $results['refSonore']; ?>&vis=<?= $results['refVisuel']; ?>">
 
 			<?php if(isset($access)){
 				if( ($access == 1) OR ($access == 2) ){
