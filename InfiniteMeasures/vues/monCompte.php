@@ -89,7 +89,7 @@
             <h1><?php echo trad("Mon compte","My account")?></h1>
             </br>
             <ul>
-                <li><?php echo trad("Genre : ","Gender : ")?><?php echo $userinfo['genre']; ?></li><br>
+                <li><?php echo trad("Genre : ","Gender : ")?><?php echo tradGenre($userinfo['genre']); ?></li><br>
                 <li><?php echo trad("Nom : ","Last name : ")?><?php echo $userinfo['nom']; ?> </li><br>
                 <li><?php echo trad("Prénom : ","First name : ")?><?php echo $userinfo['prenom']; ?></li><br>
                 <li><?php echo trad("Adresse : ","Address : ")?><?php echo $userinfo['adresse']; ?></li><br>
