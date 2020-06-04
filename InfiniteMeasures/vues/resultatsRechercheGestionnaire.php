@@ -31,10 +31,6 @@
 
 						if($results->rowCount() > 0) {
 
-<<<<<<< Updated upstream
-									<p class="envoiMail"><a href="utilisateurs/mail?userMail=<?= $r['mail'] ?>">Envoyer un mail</a></p>
-									<br/>
-=======
 									
 							while ($r = $results->fetch()) { 
 
@@ -50,7 +46,7 @@
 							<div class="CodePostale"><?= trad("Code Postale","Postal Code") ?> : <?= $r['codePostale'] ?></div>
 							<div class="Adresse mail"><?= trad("Adresse mail","Mail address") ?> : <?= $r['mail'] ?></div>
 
->>>>>>> Stashed changes
+
 
 							<div class="resultats">
 
