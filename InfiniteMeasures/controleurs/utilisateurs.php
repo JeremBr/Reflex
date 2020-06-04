@@ -133,6 +133,7 @@ switch ($function) {
     case 'administration':
         if(isset($access)){
             if($access == 2){
+                include('./modele/statsAdmin.php');
                 $vue = "adminPage";
             } else {
                 header("Location: compte");
