@@ -3,7 +3,7 @@
    <head>
       <base href="/InfiniteMeasures/">
       <meta charset="utf-8">
-      <title>Reflex</title>
+      <title><?php echo trad("Edition de mon profil","Edit profil")?></title>
       <link href="css/titreEtBloc.css" rel="stylesheet">
       <link href="css/editProfil.css" rel="stylesheet">
       

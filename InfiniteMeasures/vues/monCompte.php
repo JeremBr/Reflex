@@ -5,7 +5,7 @@
         <meta charset="utf-8" />
         <link href="css/titreEtBloc.css" rel="stylesheet">
         <link href="css/monCompte.css" rel="stylesheet">
-        <title>Mon compte</title>
+        <title><?php echo trad("Mon compte","My account")?></title>
     </head>
 
     <body>
