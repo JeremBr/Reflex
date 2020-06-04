@@ -5,8 +5,8 @@
 		<meta charset="utf-8"/>
 		<title>Inviter un utilisateur</title>
 		<link href="css/style.css" rel="stylesheet">
-		<link href="css/invite.css" rel="stylesheet">
 		<link href="css/titreEtBloc.css" rel="stylesheet">
+		<link href="css/invite.css" rel="stylesheet">
 	</head>
 	
 	<body>
@@ -23,12 +23,19 @@
 						</div>
 					</form>
 
-					<?php
+
+					<?php						
 						if(isset($erreur)) {
+							?>
+							<div class="erreur">
+							<?php
 						echo '<font color="red">'.$erreur."</font>";
+							?>
+							</div>
+							<?php
 						}
 					?>
-					
+					</p>
 				</div>
 			</section>
     	</section>
