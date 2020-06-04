@@ -15,10 +15,11 @@ label
 
 .sousTitre
 {
-	padding-left: 160px;
 	color : #333;
 	font-family: "Lato";
 	font-size: 25px;
+	text-align: center;
+	margin-left: -50px;
 }
 
 .contenu
@@ -67,4 +68,21 @@ p:hover
 	margin-bottom: 125px;
 }
 
+.btn{
+	text-align: center;
+}
+.bouton{
+	text-align: center;
+	margin-left: 225px;
+	width: 200px;
+	
+}
 
+.date{
+	text-align: center;
+	margin-left: -50px;
+}
+
+.resultat{
+	font-size: 250%;
+}
