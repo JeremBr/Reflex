@@ -27,10 +27,10 @@
 
 						<p><label for="email"><?php echo trad("Adresse mail du destinataire : ","Recipient email address : ")?><strong>*</strong> </label></p>
                         <select name="email">
-                            <option value="jeremy.breton34@gmail.com" <?php if($_GET['mailto']=='centre') { echo 'selected'; } ?> >Centre</option>
+                            <option value="jeremy.breton34@gmail.com" <?php if($_GET['mailto']=='centre') { echo 'selected'; } ?> ><?php echo trad("Centre","Center")?></option>
                             <!-- le mail jeremy.breton c'est juste pour vérifier que ça marche bien -->
-                            <option value="reflex.admin@gmail.com" <?php if($_GET['mailto']=='admin') { echo 'selected'; } ?> >Administrateurs</option>
-                            <option value="reflex.gestio@gmail.com" <?php if($_GET['mailto']=='gestio') { echo 'selected'; } ?> >Gestionnaires</option>
+                            <option value="reflex.admin@gmail.com" <?php if($_GET['mailto']=='admin') { echo 'selected'; } ?> ><?php echo trad("Administrateurs","Administrators")?></option>
+                            <option value="reflex.gestio@gmail.com" <?php if($_GET['mailto']=='gestio') { echo 'selected'; } ?> ><?php echo trad("Gestionnaires","Managers")?></option>
                            
                         </select>
                         <br/><br/>

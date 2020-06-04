@@ -12,7 +12,7 @@
 	</head>
 	<body>
 
-		<h2>  Foire aux Questions </h2>
+		<h2><?php echo trad("Foire aux Questions","Frequently asked Questions") ?></h2>
 
 		<section class="conteneur1">
 			<section class="conteneur2">
@@ -26,7 +26,7 @@
 							
 							<p class="question"> Question : <?= $faq['question']; ?> </p>
 							<br/><br/>
-							<p class="reponse"> Réponse : </p>
+							<p class="reponse"> <?php echo trad("Réponse","Answer") ?> : </p>
 							<p> <?= $faq['reponse']; ?> <br/></p>
 							<br/>
 							
