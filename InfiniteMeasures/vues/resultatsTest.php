@@ -41,13 +41,20 @@
 				if( ($access == 1) OR ($access == 2) ){
 
 			?>
+
+			      <section class="conteneur1">
+                  <section class="conteneur2">
+                  <div class="conteneur3">
+
 			<form method="POST" action="test/resultats" enctype="multipart/form-data">
-				<div class="commentaire">
 					<p><label for="comGestionnaire"> Commentaires du gestionnaire : </label></p>
 					<p ><textarea name="comGestionnaire" size="50" rows="10" cols="50" ><?= $results['comment']; ?></textarea> </p>
-				</div> 
-				<input type="submit" value="<?php echo trad("Envoyer","Update CGU") ?>" />
+				<p><input class="btn" type="submit" value="<?php echo trad("Envoyer","Send") ?>" /></p>
 			</form>
+
+			        </div>
+        			</section>
+            		</section>
 
 			<?php 
 				}else if($access == 0){

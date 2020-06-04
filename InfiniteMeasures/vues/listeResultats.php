@@ -5,11 +5,12 @@
 		<meta charset="utf-8"/>
 		<title><?php echo trad("Liste des tests","Test list")?></title>
 		<link rel="stylesheet" href="css/styleRechercheGestionnaire.css" />
+		<link rel="stylesheet" href="css/titreEtBloc.css" />
 	</head>
 <body>
 
 
-	<div class="sousTitre"><?= trad("Tests de l'utilisateur numéro : ","Test of user number : ") . $id ?></div>
+	<h2 class="resultat"><?= trad("Tests de l'utilisateur numéro : ","Test of user number : ") . $id ?></h2>
 
 	<?php 
 		if (isset($results)) {
@@ -25,14 +26,14 @@
 		                	
 		                	</div>
 		                	<!-- <div class="type">Type :  </div> -->
-							<div class="Genre">Date : <?= $r['date'] ?></div>
+							<div class="date">Date : <?= $r['date'] ?></div>
 							
 
 
 							<div class="resultats">
 
 								<form method="POST" action="test/resultats">
-            						<button type="submit" class="results" name="idTest" value="<?= $r['idTest'] ?>"><?= trad("Consulter le test","Consult test") ?></button>
+            						<div class="bouton"><button class="btn"type="submit" class="results" name="idTest" value="<?= $r['idTest'] ?>"><?= trad("Consulter le test","Consult test") ?></button></div>
         						</form>
 								
 

@@ -29,7 +29,7 @@
 								<div class="sousTitre"><?= trad("Informations utilisateur","User informations") ?> : <?= $r['idUtilisateur'] ?></div><br/><br/>
 								<div class="resultats"></div>
 								<div class="type"><?= trad("Type","Type") ?> : </div>
-								<div class="Genre"><?= trad("Genre","Gender") ?> : <?= $r['genre'] ?></div>
+								<div class="Genre"><?= trad("Genre","Gender") ?> : <?= tradGenre($r['genre']) ?></div>
 								<div class="Nom"><?= trad("Nom","Name") ?> : <?= $r['nom'] ?></div>
 								<div class="Prénom"><?= trad("Prénom","Surname") ?> : <?= $r['prenom'] ?></div>
 								<div class="Adresse"><?= trad("Adresse","Address") ?> : <?= $r['adresse'] ?></div>
