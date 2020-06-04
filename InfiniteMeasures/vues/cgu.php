@@ -9,7 +9,7 @@
       	<link href="css/header.css" rel="stylesheet">
       	<link href="css/titreEtBloc.css" rel="stylesheet">
 	
-		<title>Reflex</title>
+		<title><?php echo trad("Conditions Générales d'Utilisation","Edit Terms and Conditions")?></title>
 	</head>
 	<body>
 

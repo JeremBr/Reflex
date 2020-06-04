@@ -59,11 +59,10 @@
 			} else {
 				header("Location: accueil");
 			}
-<<<<<<< Updated upstream
+
 		?>
-=======
-			?>
->>>>>>> Stashed changes
+
+
 			
 
 		</section>

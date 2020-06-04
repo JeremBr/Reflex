@@ -4,66 +4,84 @@
     padding: 0;
 
 }
-.form
+form
 {
-    margin : auto;
-    padding-left : 20%;
-    padding-bottom : 1%;
-    width: 700px;
-    
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: -40px;
 }
 
 
 /* modification de la barre denavigation à gauche*/
-.menuAdmin {
-    margin-right: 10px;
-}
+
 
 .menuAdmin ul{
     padding: 0px;
     margin: 0px;
     list-style-type: none;
-    background-color: #333333;
-    width: 120px;
-    margin-bottom: 30px;
+    background-color: #efefef;
+    width: 250px;
+    margin-top: -18px;
+
 }
 
-.menuAdmin li a{
+.caseGestionnaire{
     display: block;
     text-decoration: none;
-    color: #ffffff;
-    width: 120px;
-    height: 50px;
-    text-align: center;
-    border-bottom: 1px solid #cccccc;
+    width: 248px;
+    height: 70px;
+    border: 2px solid #5cbed6;
     font-size: 20px;
+    margin-top: -2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.menuAdmin li :hover{
-    background-color: rgb(121, 121, 121);
+.caseAdmin{
+    display: block;
+    text-decoration: none;
+    width: 248px;
+    height: 58px;
+    border: 2px solid #5cbed6;
+    font-size: 20px;
+    margin-top: -2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caseUtilisateur{
+    display: block;
+    text-decoration: none;
+    width: 248px;
+    height: 118px;
+    border: 2px solid #5cbed6;
+    font-size: 20px;
+    margin-top: -2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.menuUtilisateur{
+    height: 100px;
+}
+
+.menuAdmin li:hover{
+    background-color: #5cbed6;
 }
 
 .menuAdmin li :active{
-    background-color: rgb(180, 180, 180);
+    background-color: #ffffff;
 }
 
 /* modification du bloc information compte*/
-.mesInfos{
-    position: relative;
-    top: -50px;
-}
-.mesInfos ul{
-    padding: 0px;
-    margin: 0px;
-    list-style-type: none;
-}
 
-.mesInfos h1{
-    font-size: 40px;
-}
-
-.mesInfos ul li {
-    font-size: 20px;
+.conteneur2{
+    width: 550px;
+    height: 328px;
 }
 
 /* modification de la barre de recherche*/
@@ -91,10 +109,11 @@
 
 
 
-
-
-
 /* pour le Header */
+
+li{
+    font-size: 115%;
+}
 
 
 header
@@ -108,11 +127,9 @@ header
 h1
 {
     font-family: 'Crete Round', serif;
-    font-size: 45px;
+    font-size: 50px;
     color: #444;
 }
-
-
 
 
 a
@@ -127,4 +144,14 @@ a
     width: 940px;
     margin: 0 auto;
     padding: 0 10px;
+}
+
+input{
+    width: 20%;
+    height: 3%;
+    margin-right: 10px;
+}
+
+.btn{
+    font-size: 14px;
 }

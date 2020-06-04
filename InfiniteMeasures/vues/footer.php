@@ -3,7 +3,7 @@
 	<head>
 		<base href="/InfiniteMeasures/">
 		<meta charset="utf-8"/>
-		<title>Bas de page</title>
+		<title><?php echo trad("Bas de page","Page Bottom")?></title>
 		<link href="css/footer.css" rel="stylesheet">
 		
 	</head>
