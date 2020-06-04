@@ -3,15 +3,16 @@
 	<head>
 		<base href="/InfiniteMeasures/">
 		<meta charset="utf-8"/>
-		<title>Réflexe sonore</title>
-		<link rel="stylesheet" href="css/tests/styleTest.css" />
+		<title><?=trad("Mesure à un stimulus sonore","Measurement to a sound stimulus")?></title>
+		<link rel="stylesheet" href="css/styleTest.css" />
+		<link rel="stylesheet" href="css/titreEtBloc.css" />
 		<script type="text/javascript" src="js/rebours.js"></script>
 		<script src="js/help.js"></script>
 	</head>
 
 	<body>
 
-	<div class="titre"><h2><?= trad("Réflexe sonore","Sound reflex") ?></h2></div>
+	<h2><?= trad("Réflexe sonore","Sound reflex") ?></h2>
 
 	<section class="conteneur1">
 		<section class="conteneur2">

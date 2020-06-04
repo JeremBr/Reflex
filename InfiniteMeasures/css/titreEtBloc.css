@@ -21,7 +21,6 @@ h2
     align-items: center;
     width: 1000px;
     border : 2px #5cbed6 solid;
-    border-radius: 5px;
 	padding-bottom: 30px;
 	background-color: #efefef;
 }
@@ -30,4 +29,29 @@ h2
     margin-top: 30px;
     margin-left: 100px;
     margin-right: 100px;
+}
+
+.textbox input{
+    border: none;
+    outline: none;
+    background: none;
+    color: #444;
+    font-size: 18px;
+    width: 80%;
+    float: left;
+    margin: 0 10px;
+}
+
+.btn{
+    background: none;
+    border: 2px solid #5cbed6;
+    color: #444;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 12px 0 0 0; /* mettre 10% */
+}
+
+.btn:hover{
+    background: #5cbed6;
 }
