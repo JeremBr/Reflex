@@ -42,13 +42,10 @@
             ?>
          </div>
 
-<<<<<<< Updated upstream
-      <div class="oublie">
-         <a href="motDePasseOublie"><?php echo trad("Mot de passe oublié ?","Forgot password")?></a>
-=======
+
       <div class="test">
          <a href="motDePasseOublie"><?php echo trad("Mot de passe oublié ?","Forgot password ?")?></a>
->>>>>>> Stashed changes
+
       </div>
 
          </section>
