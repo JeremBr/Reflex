@@ -3,19 +3,18 @@
 	<head>
 		<base href="/InfiniteMeasures/">
 		<meta charset="utf-8"/>
-		<title>Résultats de votre test</title>
+		<title><?= trad("Résultats de votre test","Test results") ?></title>
 		<link rel="stylesheet" href="css/styleResultatsTests.css" />
-		
+		<link rel="stylesheet" href="css/titreEtBloc.css" />
 	</head>
 
 	<body>
 
 	
-
-		<section class="conteneur">
 			
-			<div class="titre"><h2><?= trad("Résultats de votre test","Test results") ?></h2></div>
+		<h2><?= trad("Résultats de votre test","Test results") ?></h2>
 
+		<section class="conteneur1">
 			<table>
 
 				<tr>
@@ -60,7 +59,11 @@
 			} else {
 				header("Location: accueil");
 			}
+<<<<<<< Updated upstream
 		?>
+=======
+			?>
+>>>>>>> Stashed changes
 			
 
 		</section>
