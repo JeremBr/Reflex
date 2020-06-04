@@ -1,8 +1,7 @@
 <?php
 	
-	// PAS ICI QUIL FAUT APPELER, il faut modifier
-	session_start();
-	$bdd = new PDO('mysql:host=127.0.0.1;dbname=reflex', 'root', '');
+
+	include("modele/connexion.php");
 	
 	ini_set('display_errors', 1);
 
