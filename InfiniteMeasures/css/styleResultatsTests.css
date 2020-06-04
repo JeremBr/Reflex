@@ -14,18 +14,7 @@ td, th /* Mettre une bordure sur les td ET les th */
 {
     border: 1px solid black;
 }
-.commentaire
-{
-	margin : auto;
-	padding-left: 100px;
-	padding-top: 20px;
-	padding-bottom : 50px;
-	margin-top: 80px; 
-	margin-bottom: 5%;
-	width: 700px;
-	border : 2px #17e2cd solid;
-	border-radius: 40px;
-}
+
 label
 {
 	font-size: 20px;
@@ -36,4 +25,13 @@ textarea
 {
 	border: 1px solid #ddd;
 	border-radius: 10px;
+}
+
+
+p{
+	text-align: center;
+}
+
+.conteneur2{
+	width: 300px;
 }
